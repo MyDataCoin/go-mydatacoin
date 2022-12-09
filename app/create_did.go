@@ -38,12 +38,12 @@ func createDID(ctx client.Context) func(http.ResponseWriter, *http.Request) {
 		}
 		intermediateVariable, err := io.ReadAll(r.Body)
 		if err != nil {
-			http.Error(w, "3", http.StatusBadRequest)
+			http.Error(w, err.Error(), http.StatusBadRequest)
 			return
 		}
 		var InpData InputData
 		if err = json.Unmarshal(intermediateVariable, &InpData); err != nil {
-			http.Error(w, "4", http.StatusBadRequest)
+			http.Error(w, err.Error(), http.StatusBadRequest)
 			return
 		}
 		// // бирдеме болсо сен жактан кором
@@ -51,18 +51,18 @@ func createDID(ctx client.Context) func(http.ResponseWriter, *http.Request) {
 
 		mnemonic, bip39Passphrase, err := readBIP39ParamsFrom(false, inBuf)
 		if err != nil {
-			http.Error(w, "5", 500)
+			http.Error(w, err.Error(), 500)
 			return
 		}
 		privKey, err := didcrypto.GenSecp256k1PrivKey(mnemonic, bip39Passphrase)
 		if err != nil {
-			http.Error(w, "6", 500)
+			http.Error(w, err.Error(), 500)
 			return
 		}
 
 		msg, err := newMsgCreateDID(InpData.Address, privKey)
 		if err != nil {
-			http.Error(w, "7", 500)
+			http.Error(w, err.Error(), 500)
 			return
 		}
 		// _ = msg
@@ -73,7 +73,7 @@ func createDID(ctx client.Context) func(http.ResponseWriter, *http.Request) {
 
 		record, err := ctx.Keyring.Key("alice")
 		if err != nil {
-			http.Error(w, "netu", 500)
+			http.Error(w, err.Error(), 500)
 		}
 		sdkAddress := record.GetAddress()
 	
