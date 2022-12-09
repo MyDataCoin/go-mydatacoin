@@ -91,9 +91,13 @@ func createDID(ctx client.Context) func(http.ResponseWriter, *http.Request) {
 			http.Error(w, err.Error(), 500)
 			return
 		}
-
-		w.Write([]byte(msg.Did))
-
+		OutputObject := &OutputData{DID: msg.Did}
+		response, err := json.Marshal(OutputObject)
+		if err != nil {
+			http.Error(w, err.Error(),500)
+			return 
+		}
+		w.Write(response)
 	}
 }
 
