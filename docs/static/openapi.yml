@@ -3424,44 +3424,33 @@ paths:
                       last_commit_hash:
                         type: string
                         format: byte
-                        description: commit from validators from the last block
                         title: hashes of block data
                       data_hash:
                         type: string
                         format: byte
-                        title: transactions
                       validators_hash:
                         type: string
                         format: byte
-                        description: validators for the current block
                         title: hashes from the app output from the prev block
                       next_validators_hash:
                         type: string
                         format: byte
-                        title: validators for the next block
                       consensus_hash:
                         type: string
                         format: byte
-                        title: consensus params for current block
                       app_hash:
                         type: string
                         format: byte
-                        title: state after txs from the previous block
                       last_results_hash:
                         type: string
                         format: byte
-                        title: >-
-                          root hash of all results from the txs from the
-                          previous block
                       evidence_hash:
                         type: string
                         format: byte
-                        description: evidence included in the block
                         title: consensus info
                       proposer_address:
                         type: string
                         format: byte
-                        title: original proposer of the block
                     description: Header defines the structure of a Tendermint block header.
                   data:
                     type: object
@@ -3533,7 +3522,6 @@ paths:
                                               format: byte
                                           title: PartsetHeader
                                       title: BlockID
-                                      description: zero if vote is nil.
                                     timestamp:
                                       type: string
                                       format: date-time
@@ -3591,7 +3579,6 @@ paths:
                                               format: byte
                                           title: PartsetHeader
                                       title: BlockID
-                                      description: zero if vote is nil.
                                     timestamp:
                                       type: string
                                       format: date-time
@@ -3680,48 +3667,35 @@ paths:
                                             last_commit_hash:
                                               type: string
                                               format: byte
-                                              description: >-
-                                                commit from validators from the last
-                                                block
                                               title: hashes of block data
                                             data_hash:
                                               type: string
                                               format: byte
-                                              title: transactions
                                             validators_hash:
                                               type: string
                                               format: byte
-                                              description: validators for the current block
                                               title: >-
                                                 hashes from the app output from the prev
                                                 block
                                             next_validators_hash:
                                               type: string
                                               format: byte
-                                              title: validators for the next block
                                             consensus_hash:
                                               type: string
                                               format: byte
-                                              title: consensus params for current block
                                             app_hash:
                                               type: string
                                               format: byte
-                                              title: state after txs from the previous block
                                             last_results_hash:
                                               type: string
                                               format: byte
-                                              title: >-
-                                                root hash of all results from the txs
-                                                from the previous block
                                             evidence_hash:
                                               type: string
                                               format: byte
-                                              description: evidence included in the block
                                               title: consensus info
                                             proposer_address:
                                               type: string
                                               format: byte
-                                              title: original proposer of the block
                                           description: >-
                                             Header defines the structure of a
                                             Tendermint block header.
@@ -4204,44 +4178,33 @@ paths:
                       last_commit_hash:
                         type: string
                         format: byte
-                        description: commit from validators from the last block
                         title: hashes of block data
                       data_hash:
                         type: string
                         format: byte
-                        title: transactions
                       validators_hash:
                         type: string
                         format: byte
-                        description: validators for the current block
                         title: hashes from the app output from the prev block
                       next_validators_hash:
                         type: string
                         format: byte
-                        title: validators for the next block
                       consensus_hash:
                         type: string
                         format: byte
-                        title: consensus params for current block
                       app_hash:
                         type: string
                         format: byte
-                        title: state after txs from the previous block
                       last_results_hash:
                         type: string
                         format: byte
-                        title: >-
-                          root hash of all results from the txs from the
-                          previous block
                       evidence_hash:
                         type: string
                         format: byte
-                        description: evidence included in the block
                         title: consensus info
                       proposer_address:
                         type: string
                         format: byte
-                        title: original proposer of the block
                     description: Header defines the structure of a Tendermint block header.
                   data:
                     type: object
@@ -4313,7 +4276,6 @@ paths:
                                               format: byte
                                           title: PartsetHeader
                                       title: BlockID
-                                      description: zero if vote is nil.
                                     timestamp:
                                       type: string
                                       format: date-time
@@ -4371,7 +4333,6 @@ paths:
                                               format: byte
                                           title: PartsetHeader
                                       title: BlockID
-                                      description: zero if vote is nil.
                                     timestamp:
                                       type: string
                                       format: date-time
@@ -4460,48 +4421,35 @@ paths:
                                             last_commit_hash:
                                               type: string
                                               format: byte
-                                              description: >-
-                                                commit from validators from the last
-                                                block
                                               title: hashes of block data
                                             data_hash:
                                               type: string
                                               format: byte
-                                              title: transactions
                                             validators_hash:
                                               type: string
                                               format: byte
-                                              description: validators for the current block
                                               title: >-
                                                 hashes from the app output from the prev
                                                 block
                                             next_validators_hash:
                                               type: string
                                               format: byte
-                                              title: validators for the next block
                                             consensus_hash:
                                               type: string
                                               format: byte
-                                              title: consensus params for current block
                                             app_hash:
                                               type: string
                                               format: byte
-                                              title: state after txs from the previous block
                                             last_results_hash:
                                               type: string
                                               format: byte
-                                              title: >-
-                                                root hash of all results from the txs
-                                                from the previous block
                                             evidence_hash:
                                               type: string
                                               format: byte
-                                              description: evidence included in the block
                                               title: consensus info
                                             proposer_address:
                                               type: string
                                               format: byte
-                                              title: original proposer of the block
                                           description: >-
                                             Header defines the structure of a
                                             Tendermint block header.
@@ -12029,10 +11977,7 @@ paths:
                             description: >-
                               RedelegationEntry defines a redelegation object
                               with relevant metadata.
-                          description: |-
-                            entries are the redelegation entries.
-
-                            redelegation entries
+                          description: entries are the redelegation entries.
                       description: >-
                         Redelegation contains the list of a particular
                         delegator's redelegating bonds
@@ -12432,10 +12377,7 @@ paths:
                         description: >-
                           UnbondingDelegationEntry defines an unbonding object
                           with relevant metadata.
-                      description: |-
-                        entries are the unbonding delegation entries.
-
-                        unbonding delegation entries
+                      description: entries are the unbonding delegation entries.
                   description: >-
                     UnbondingDelegation stores all of a single delegator's
                     unbonding bonds
@@ -13887,44 +13829,33 @@ paths:
                       last_commit_hash:
                         type: string
                         format: byte
-                        description: commit from validators from the last block
                         title: hashes of block data
                       data_hash:
                         type: string
                         format: byte
-                        title: transactions
                       validators_hash:
                         type: string
                         format: byte
-                        description: validators for the current block
                         title: hashes from the app output from the prev block
                       next_validators_hash:
                         type: string
                         format: byte
-                        title: validators for the next block
                       consensus_hash:
                         type: string
                         format: byte
-                        title: consensus params for current block
                       app_hash:
                         type: string
                         format: byte
-                        title: state after txs from the previous block
                       last_results_hash:
                         type: string
                         format: byte
-                        title: >-
-                          root hash of all results from the txs from the
-                          previous block
                       evidence_hash:
                         type: string
                         format: byte
-                        description: evidence included in the block
                         title: consensus info
                       proposer_address:
                         type: string
                         format: byte
-                        title: original proposer of the block
                     description: Header defines the structure of a Tendermint block header.
                   valset:
                     type: array
@@ -16613,10 +16544,7 @@ paths:
                       description: >-
                         UnbondingDelegationEntry defines an unbonding object
                         with relevant metadata.
-                    description: |-
-                      entries are the unbonding delegation entries.
-
-                      unbonding delegation entries
+                    description: entries are the unbonding delegation entries.
                 description: >-
                   UnbondingDelegation stores all of a single delegator's
                   unbonding bonds
@@ -16882,10 +16810,7 @@ paths:
                         description: >-
                           UnbondingDelegationEntry defines an unbonding object
                           with relevant metadata.
-                      description: |-
-                        entries are the unbonding delegation entries.
-
-                        unbonding delegation entries
+                      description: entries are the unbonding delegation entries.
                   description: >-
                     UnbondingDelegation stores all of a single delegator's
                     unbonding bonds
@@ -17225,7 +17150,6 @@ paths:
                                 format: byte
                               index:
                                 type: boolean
-                                title: nondeterministic
                             description: >-
                               EventAttribute is a single key-value pair,
                               associated with an event.
@@ -18013,7 +17937,6 @@ paths:
                                 format: byte
                               index:
                                 type: boolean
-                                title: nondeterministic
                             description: >-
                               EventAttribute is a single key-value pair,
                               associated with an event.
@@ -29886,22 +29809,207 @@ paths:
           format: uint64
       tags:
         - Query
-  /mdc/mdc/params:
+  /mdc/did/{did_base64}:
     get:
       summary: Parameters queries the parameters of the module.
-      operationId: MdcMdcParams
+      operationId: MdcDidDID
       responses:
         '200':
           description: A successful response.
           schema:
             type: object
             properties:
-              params:
-                description: params holds all the parameters of this module.
+              did_document_with_seq:
                 type: object
-            description: >-
-              QueryParamsResponse is response type for the Query/Params RPC
-              method.
+                properties:
+                  document:
+                    type: object
+                    properties:
+                      contexts:
+                        type: object
+                        properties:
+                          values:
+                            type: array
+                            items:
+                              type: string
+                        description: >-
+                          Strings defines a JSON-LD string array format which is
+                          marshalled to a single string if the array length is
+                          1.
+                      id:
+                        type: string
+                      controller:
+                        type: object
+                        properties:
+                          values:
+                            type: array
+                            items:
+                              type: string
+                        description: >-
+                          Strings defines a JSON-LD string array format which is
+                          marshalled to a single string if the array length is
+                          1.
+                      verification_methods:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                            type:
+                              type: string
+                            controller:
+                              type: string
+                            public_key_base58:
+                              type: string
+                          title: VerificationMethod defines a W3C verification method
+                      authentications:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            verification_method_id:
+                              type: string
+                            verification_method:
+                              type: object
+                              properties:
+                                id:
+                                  type: string
+                                type:
+                                  type: string
+                                controller:
+                                  type: string
+                                public_key_base58:
+                                  type: string
+                              title: >-
+                                VerificationMethod defines a W3C verification
+                                method
+                          title: >-
+                            VerificationRelationship defines a W3C verification
+                            relationship
+                        title: >-
+                          TODO: the repeated gogoproto.customtype has an issue:
+                          https://github.com/gogo/protobuf/issues/478
+                      assertion_methods:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            verification_method_id:
+                              type: string
+                            verification_method:
+                              type: object
+                              properties:
+                                id:
+                                  type: string
+                                type:
+                                  type: string
+                                controller:
+                                  type: string
+                                public_key_base58:
+                                  type: string
+                              title: >-
+                                VerificationMethod defines a W3C verification
+                                method
+                          title: >-
+                            VerificationRelationship defines a W3C verification
+                            relationship
+                      key_agreements:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            verification_method_id:
+                              type: string
+                            verification_method:
+                              type: object
+                              properties:
+                                id:
+                                  type: string
+                                type:
+                                  type: string
+                                controller:
+                                  type: string
+                                public_key_base58:
+                                  type: string
+                              title: >-
+                                VerificationMethod defines a W3C verification
+                                method
+                          title: >-
+                            VerificationRelationship defines a W3C verification
+                            relationship
+                      capability_invocations:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            verification_method_id:
+                              type: string
+                            verification_method:
+                              type: object
+                              properties:
+                                id:
+                                  type: string
+                                type:
+                                  type: string
+                                controller:
+                                  type: string
+                                public_key_base58:
+                                  type: string
+                              title: >-
+                                VerificationMethod defines a W3C verification
+                                method
+                          title: >-
+                            VerificationRelationship defines a W3C verification
+                            relationship
+                      capability_delegations:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            verification_method_id:
+                              type: string
+                            verification_method:
+                              type: object
+                              properties:
+                                id:
+                                  type: string
+                                type:
+                                  type: string
+                                controller:
+                                  type: string
+                                public_key_base58:
+                                  type: string
+                              title: >-
+                                VerificationMethod defines a W3C verification
+                                method
+                          title: >-
+                            VerificationRelationship defines a W3C verification
+                            relationship
+                      services:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                            type:
+                              type: string
+                            service_endpoint:
+                              type: string
+                          description: Service defines a service in the W3C DID Document.
+                    description: >-
+                      NOTE: All 'json_name' and 'gogoproto.customtype' tags are
+                      for panacea-core to unmarshal the v1.3 genesis which is in
+                      the W3C JSON-LD format.
+                            On the other hand, the panacea-core and cosmos-sdk don't use those tags to marshal result to JSON (via grpc-gateway).
+                    title: DIDDocument defines a W3C DID Document
+                  sequence:
+                    type: string
+                    format: uint64
+                description: >-
+                  DIDDocumentWithSeq defines a message for DID Document with a
+                  sequence number for preventing replay attacks.
         default:
           description: An unexpected error response.
           schema:
@@ -29920,6 +30028,11 @@ paths:
                     '@type':
                       type: string
                   additionalProperties: {}
+      parameters:
+        - name: did_base64
+          in: path
+          required: true
+          type: string
       tags:
         - Query
   /tendermint/spn/claim/airdrop_supply:
@@ -30083,6 +30196,16 @@ paths:
           in: query
           required: false
           type: boolean
+        - name: pagination.reverse
+          description: >-
+            reverse is set to true if results are to be returned in the
+            descending order.
+
+
+            Since: cosmos-sdk 0.43
+          in: query
+          required: false
+          type: boolean
       tags:
         - Query
   /tendermint/spn/claim/claim_record/{address}:
@@ -30243,6 +30366,16 @@ paths:
             when key
 
             is set.
+          in: query
+          required: false
+          type: boolean
+        - name: pagination.reverse
+          description: >-
+            reverse is set to true if results are to be returned in the
+            descending order.
+
+
+            Since: cosmos-sdk 0.43
           in: query
           required: false
           type: boolean
@@ -32911,42 +33044,33 @@ definitions:
               last_commit_hash:
                 type: string
                 format: byte
-                description: commit from validators from the last block
                 title: hashes of block data
               data_hash:
                 type: string
                 format: byte
-                title: transactions
               validators_hash:
                 type: string
                 format: byte
-                description: validators for the current block
                 title: hashes from the app output from the prev block
               next_validators_hash:
                 type: string
                 format: byte
-                title: validators for the next block
               consensus_hash:
                 type: string
                 format: byte
-                title: consensus params for current block
               app_hash:
                 type: string
                 format: byte
-                title: state after txs from the previous block
               last_results_hash:
                 type: string
                 format: byte
-                title: root hash of all results from the txs from the previous block
               evidence_hash:
                 type: string
                 format: byte
-                description: evidence included in the block
                 title: consensus info
               proposer_address:
                 type: string
                 format: byte
-                title: original proposer of the block
             description: Header defines the structure of a Tendermint block header.
           data:
             type: object
@@ -33015,7 +33139,6 @@ definitions:
                                       format: byte
                                   title: PartsetHeader
                               title: BlockID
-                              description: zero if vote is nil.
                             timestamp:
                               type: string
                               format: date-time
@@ -33073,7 +33196,6 @@ definitions:
                                       format: byte
                                   title: PartsetHeader
                               title: BlockID
-                              description: zero if vote is nil.
                             timestamp:
                               type: string
                               format: date-time
@@ -33162,48 +33284,35 @@ definitions:
                                     last_commit_hash:
                                       type: string
                                       format: byte
-                                      description: >-
-                                        commit from validators from the last
-                                        block
                                       title: hashes of block data
                                     data_hash:
                                       type: string
                                       format: byte
-                                      title: transactions
                                     validators_hash:
                                       type: string
                                       format: byte
-                                      description: validators for the current block
                                       title: >-
                                         hashes from the app output from the prev
                                         block
                                     next_validators_hash:
                                       type: string
                                       format: byte
-                                      title: validators for the next block
                                     consensus_hash:
                                       type: string
                                       format: byte
-                                      title: consensus params for current block
                                     app_hash:
                                       type: string
                                       format: byte
-                                      title: state after txs from the previous block
                                     last_results_hash:
                                       type: string
                                       format: byte
-                                      title: >-
-                                        root hash of all results from the txs
-                                        from the previous block
                                     evidence_hash:
                                       type: string
                                       format: byte
-                                      description: evidence included in the block
                                       title: consensus info
                                     proposer_address:
                                       type: string
                                       format: byte
-                                      title: original proposer of the block
                                   description: >-
                                     Header defines the structure of a Tendermint
                                     block header.
@@ -33486,42 +33595,33 @@ definitions:
               last_commit_hash:
                 type: string
                 format: byte
-                description: commit from validators from the last block
                 title: hashes of block data
               data_hash:
                 type: string
                 format: byte
-                title: transactions
               validators_hash:
                 type: string
                 format: byte
-                description: validators for the current block
                 title: hashes from the app output from the prev block
               next_validators_hash:
                 type: string
                 format: byte
-                title: validators for the next block
               consensus_hash:
                 type: string
                 format: byte
-                title: consensus params for current block
               app_hash:
                 type: string
                 format: byte
-                title: state after txs from the previous block
               last_results_hash:
                 type: string
                 format: byte
-                title: root hash of all results from the txs from the previous block
               evidence_hash:
                 type: string
                 format: byte
-                description: evidence included in the block
                 title: consensus info
               proposer_address:
                 type: string
                 format: byte
-                title: original proposer of the block
             description: Header defines the structure of a Tendermint block header.
           data:
             type: object
@@ -33590,7 +33690,6 @@ definitions:
                                       format: byte
                                   title: PartsetHeader
                               title: BlockID
-                              description: zero if vote is nil.
                             timestamp:
                               type: string
                               format: date-time
@@ -33648,7 +33747,6 @@ definitions:
                                       format: byte
                                   title: PartsetHeader
                               title: BlockID
-                              description: zero if vote is nil.
                             timestamp:
                               type: string
                               format: date-time
@@ -33737,48 +33835,35 @@ definitions:
                                     last_commit_hash:
                                       type: string
                                       format: byte
-                                      description: >-
-                                        commit from validators from the last
-                                        block
                                       title: hashes of block data
                                     data_hash:
                                       type: string
                                       format: byte
-                                      title: transactions
                                     validators_hash:
                                       type: string
                                       format: byte
-                                      description: validators for the current block
                                       title: >-
                                         hashes from the app output from the prev
                                         block
                                     next_validators_hash:
                                       type: string
                                       format: byte
-                                      title: validators for the next block
                                     consensus_hash:
                                       type: string
                                       format: byte
-                                      title: consensus params for current block
                                     app_hash:
                                       type: string
                                       format: byte
-                                      title: state after txs from the previous block
                                     last_results_hash:
                                       type: string
                                       format: byte
-                                      title: >-
-                                        root hash of all results from the txs
-                                        from the previous block
                                     evidence_hash:
                                       type: string
                                       format: byte
-                                      description: evidence included in the block
                                       title: consensus info
                                     proposer_address:
                                       type: string
                                       format: byte
-                                      title: original proposer of the block
                                   description: >-
                                     Header defines the structure of a Tendermint
                                     block header.
@@ -34820,42 +34905,33 @@ definitions:
           last_commit_hash:
             type: string
             format: byte
-            description: commit from validators from the last block
             title: hashes of block data
           data_hash:
             type: string
             format: byte
-            title: transactions
           validators_hash:
             type: string
             format: byte
-            description: validators for the current block
             title: hashes from the app output from the prev block
           next_validators_hash:
             type: string
             format: byte
-            title: validators for the next block
           consensus_hash:
             type: string
             format: byte
-            title: consensus params for current block
           app_hash:
             type: string
             format: byte
-            title: state after txs from the previous block
           last_results_hash:
             type: string
             format: byte
-            title: root hash of all results from the txs from the previous block
           evidence_hash:
             type: string
             format: byte
-            description: evidence included in the block
             title: consensus info
           proposer_address:
             type: string
             format: byte
-            title: original proposer of the block
         description: Header defines the structure of a Tendermint block header.
       data:
         type: object
@@ -34924,7 +35000,6 @@ definitions:
                                   format: byte
                               title: PartsetHeader
                           title: BlockID
-                          description: zero if vote is nil.
                         timestamp:
                           type: string
                           format: date-time
@@ -34982,7 +35057,6 @@ definitions:
                                   format: byte
                               title: PartsetHeader
                           title: BlockID
-                          description: zero if vote is nil.
                         timestamp:
                           type: string
                           format: date-time
@@ -35070,46 +35144,35 @@ definitions:
                                 last_commit_hash:
                                   type: string
                                   format: byte
-                                  description: commit from validators from the last block
                                   title: hashes of block data
                                 data_hash:
                                   type: string
                                   format: byte
-                                  title: transactions
                                 validators_hash:
                                   type: string
                                   format: byte
-                                  description: validators for the current block
                                   title: >-
                                     hashes from the app output from the prev
                                     block
                                 next_validators_hash:
                                   type: string
                                   format: byte
-                                  title: validators for the next block
                                 consensus_hash:
                                   type: string
                                   format: byte
-                                  title: consensus params for current block
                                 app_hash:
                                   type: string
                                   format: byte
-                                  title: state after txs from the previous block
                                 last_results_hash:
                                   type: string
                                   format: byte
-                                  title: >-
-                                    root hash of all results from the txs from
-                                    the previous block
                                 evidence_hash:
                                   type: string
                                   format: byte
-                                  description: evidence included in the block
                                   title: consensus info
                                 proposer_address:
                                   type: string
                                   format: byte
-                                  title: original proposer of the block
                               description: >-
                                 Header defines the structure of a Tendermint
                                 block header.
@@ -35476,7 +35539,6 @@ definitions:
                     format: byte
                 title: PartsetHeader
             title: BlockID
-            description: zero if vote is nil.
           timestamp:
             type: string
             format: date-time
@@ -35533,7 +35595,6 @@ definitions:
                     format: byte
                 title: PartsetHeader
             title: BlockID
-            description: zero if vote is nil.
           timestamp:
             type: string
             format: date-time
@@ -35608,7 +35669,6 @@ definitions:
                         format: byte
                     title: PartsetHeader
                 title: BlockID
-                description: zero if vote is nil.
               timestamp:
                 type: string
                 format: date-time
@@ -35665,7 +35725,6 @@ definitions:
                         format: byte
                     title: PartsetHeader
                 title: BlockID
-                description: zero if vote is nil.
               timestamp:
                 type: string
                 format: date-time
@@ -35753,44 +35812,33 @@ definitions:
                       last_commit_hash:
                         type: string
                         format: byte
-                        description: commit from validators from the last block
                         title: hashes of block data
                       data_hash:
                         type: string
                         format: byte
-                        title: transactions
                       validators_hash:
                         type: string
                         format: byte
-                        description: validators for the current block
                         title: hashes from the app output from the prev block
                       next_validators_hash:
                         type: string
                         format: byte
-                        title: validators for the next block
                       consensus_hash:
                         type: string
                         format: byte
-                        title: consensus params for current block
                       app_hash:
                         type: string
                         format: byte
-                        title: state after txs from the previous block
                       last_results_hash:
                         type: string
                         format: byte
-                        title: >-
-                          root hash of all results from the txs from the
-                          previous block
                       evidence_hash:
                         type: string
                         format: byte
-                        description: evidence included in the block
                         title: consensus info
                       proposer_address:
                         type: string
                         format: byte
-                        title: original proposer of the block
                     description: Header defines the structure of a Tendermint block header.
                   commit:
                     type: object
@@ -35994,7 +36042,6 @@ definitions:
                               format: byte
                           title: PartsetHeader
                       title: BlockID
-                      description: zero if vote is nil.
                     timestamp:
                       type: string
                       format: date-time
@@ -36052,7 +36099,6 @@ definitions:
                               format: byte
                           title: PartsetHeader
                       title: BlockID
-                      description: zero if vote is nil.
                     timestamp:
                       type: string
                       format: date-time
@@ -36140,44 +36186,33 @@ definitions:
                             last_commit_hash:
                               type: string
                               format: byte
-                              description: commit from validators from the last block
                               title: hashes of block data
                             data_hash:
                               type: string
                               format: byte
-                              title: transactions
                             validators_hash:
                               type: string
                               format: byte
-                              description: validators for the current block
                               title: hashes from the app output from the prev block
                             next_validators_hash:
                               type: string
                               format: byte
-                              title: validators for the next block
                             consensus_hash:
                               type: string
                               format: byte
-                              title: consensus params for current block
                             app_hash:
                               type: string
                               format: byte
-                              title: state after txs from the previous block
                             last_results_hash:
                               type: string
                               format: byte
-                              title: >-
-                                root hash of all results from the txs from the
-                                previous block
                             evidence_hash:
                               type: string
                               format: byte
-                              description: evidence included in the block
                               title: consensus info
                             proposer_address:
                               type: string
                               format: byte
-                              title: original proposer of the block
                           description: >-
                             Header defines the structure of a Tendermint block
                             header.
@@ -36381,42 +36416,33 @@ definitions:
       last_commit_hash:
         type: string
         format: byte
-        description: commit from validators from the last block
         title: hashes of block data
       data_hash:
         type: string
         format: byte
-        title: transactions
       validators_hash:
         type: string
         format: byte
-        description: validators for the current block
         title: hashes from the app output from the prev block
       next_validators_hash:
         type: string
         format: byte
-        title: validators for the next block
       consensus_hash:
         type: string
         format: byte
-        title: consensus params for current block
       app_hash:
         type: string
         format: byte
-        title: state after txs from the previous block
       last_results_hash:
         type: string
         format: byte
-        title: root hash of all results from the txs from the previous block
       evidence_hash:
         type: string
         format: byte
-        description: evidence included in the block
         title: consensus info
       proposer_address:
         type: string
         format: byte
-        title: original proposer of the block
     description: Header defines the structure of a Tendermint block header.
   tendermint.types.LightBlock:
     type: object
@@ -36473,42 +36499,33 @@ definitions:
               last_commit_hash:
                 type: string
                 format: byte
-                description: commit from validators from the last block
                 title: hashes of block data
               data_hash:
                 type: string
                 format: byte
-                title: transactions
               validators_hash:
                 type: string
                 format: byte
-                description: validators for the current block
                 title: hashes from the app output from the prev block
               next_validators_hash:
                 type: string
                 format: byte
-                title: validators for the next block
               consensus_hash:
                 type: string
                 format: byte
-                title: consensus params for current block
               app_hash:
                 type: string
                 format: byte
-                title: state after txs from the previous block
               last_results_hash:
                 type: string
                 format: byte
-                title: root hash of all results from the txs from the previous block
               evidence_hash:
                 type: string
                 format: byte
-                description: evidence included in the block
                 title: consensus info
               proposer_address:
                 type: string
                 format: byte
-                title: original proposer of the block
             description: Header defines the structure of a Tendermint block header.
           commit:
             type: object
@@ -36677,44 +36694,33 @@ definitions:
                   last_commit_hash:
                     type: string
                     format: byte
-                    description: commit from validators from the last block
                     title: hashes of block data
                   data_hash:
                     type: string
                     format: byte
-                    title: transactions
                   validators_hash:
                     type: string
                     format: byte
-                    description: validators for the current block
                     title: hashes from the app output from the prev block
                   next_validators_hash:
                     type: string
                     format: byte
-                    title: validators for the next block
                   consensus_hash:
                     type: string
                     format: byte
-                    title: consensus params for current block
                   app_hash:
                     type: string
                     format: byte
-                    title: state after txs from the previous block
                   last_results_hash:
                     type: string
                     format: byte
-                    title: >-
-                      root hash of all results from the txs from the previous
-                      block
                   evidence_hash:
                     type: string
                     format: byte
-                    description: evidence included in the block
                     title: consensus info
                   proposer_address:
                     type: string
                     format: byte
-                    title: original proposer of the block
                 description: Header defines the structure of a Tendermint block header.
               commit:
                 type: object
@@ -36927,42 +36933,33 @@ definitions:
           last_commit_hash:
             type: string
             format: byte
-            description: commit from validators from the last block
             title: hashes of block data
           data_hash:
             type: string
             format: byte
-            title: transactions
           validators_hash:
             type: string
             format: byte
-            description: validators for the current block
             title: hashes from the app output from the prev block
           next_validators_hash:
             type: string
             format: byte
-            title: validators for the next block
           consensus_hash:
             type: string
             format: byte
-            title: consensus params for current block
           app_hash:
             type: string
             format: byte
-            title: state after txs from the previous block
           last_results_hash:
             type: string
             format: byte
-            title: root hash of all results from the txs from the previous block
           evidence_hash:
             type: string
             format: byte
-            description: evidence included in the block
             title: consensus info
           proposer_address:
             type: string
             format: byte
-            title: original proposer of the block
         description: Header defines the structure of a Tendermint block header.
       commit:
         type: object
@@ -37149,7 +37146,6 @@ definitions:
                 format: byte
             title: PartsetHeader
         title: BlockID
-        description: zero if vote is nil.
       timestamp:
         type: string
         format: date-time
@@ -39955,42 +39951,33 @@ definitions:
           last_commit_hash:
             type: string
             format: byte
-            description: commit from validators from the last block
             title: hashes of block data
           data_hash:
             type: string
             format: byte
-            title: transactions
           validators_hash:
             type: string
             format: byte
-            description: validators for the current block
             title: hashes from the app output from the prev block
           next_validators_hash:
             type: string
             format: byte
-            title: validators for the next block
           consensus_hash:
             type: string
             format: byte
-            title: consensus params for current block
           app_hash:
             type: string
             format: byte
-            title: state after txs from the previous block
           last_results_hash:
             type: string
             format: byte
-            title: root hash of all results from the txs from the previous block
           evidence_hash:
             type: string
             format: byte
-            description: evidence included in the block
             title: consensus info
           proposer_address:
             type: string
             format: byte
-            title: original proposer of the block
         description: Header defines the structure of a Tendermint block header.
       valset:
         type: array
@@ -40523,10 +40510,7 @@ definitions:
                 description: >-
                   UnbondingDelegationEntry defines an unbonding object with
                   relevant metadata.
-              description: |-
-                entries are the unbonding delegation entries.
-
-                unbonding delegation entries
+              description: entries are the unbonding delegation entries.
           description: >-
             UnbondingDelegation stores all of a single delegator's unbonding
             bonds
@@ -41214,42 +41198,33 @@ definitions:
               last_commit_hash:
                 type: string
                 format: byte
-                description: commit from validators from the last block
                 title: hashes of block data
               data_hash:
                 type: string
                 format: byte
-                title: transactions
               validators_hash:
                 type: string
                 format: byte
-                description: validators for the current block
                 title: hashes from the app output from the prev block
               next_validators_hash:
                 type: string
                 format: byte
-                title: validators for the next block
               consensus_hash:
                 type: string
                 format: byte
-                title: consensus params for current block
               app_hash:
                 type: string
                 format: byte
-                title: state after txs from the previous block
               last_results_hash:
                 type: string
                 format: byte
-                title: root hash of all results from the txs from the previous block
               evidence_hash:
                 type: string
                 format: byte
-                description: evidence included in the block
                 title: consensus info
               proposer_address:
                 type: string
                 format: byte
-                title: original proposer of the block
             description: Header defines the structure of a Tendermint block header.
           valset:
             type: array
@@ -41651,10 +41626,7 @@ definitions:
                     description: >-
                       RedelegationEntry defines a redelegation object with
                       relevant metadata.
-                  description: |-
-                    entries are the redelegation entries.
-
-                    redelegation entries
+                  description: entries are the redelegation entries.
               description: >-
                 Redelegation contains the list of a particular delegator's
                 redelegating bonds
@@ -41773,10 +41745,7 @@ definitions:
               description: >-
                 UnbondingDelegationEntry defines an unbonding object with
                 relevant metadata.
-            description: |-
-              entries are the unbonding delegation entries.
-
-              unbonding delegation entries
+            description: entries are the unbonding delegation entries.
         description: |-
           UnbondingDelegation stores all of a single delegator's unbonding bonds
           for a single validator in an time-ordered list.
@@ -42188,10 +42157,7 @@ definitions:
                 description: >-
                   UnbondingDelegationEntry defines an unbonding object with
                   relevant metadata.
-              description: |-
-                entries are the unbonding delegation entries.
-
-                unbonding delegation entries
+              description: entries are the unbonding delegation entries.
           description: >-
             UnbondingDelegation stores all of a single delegator's unbonding
             bonds
@@ -42580,10 +42546,7 @@ definitions:
           description: >-
             RedelegationEntry defines a redelegation object with relevant
             metadata.
-        description: |-
-          entries are the redelegation entries.
-
-          redelegation entries
+        description: entries are the redelegation entries.
     description: >-
       Redelegation contains the list of a particular delegator's redelegating
       bonds
@@ -42696,10 +42659,7 @@ definitions:
               description: >-
                 RedelegationEntry defines a redelegation object with relevant
                 metadata.
-            description: |-
-              entries are the redelegation entries.
-
-              redelegation entries
+            description: entries are the redelegation entries.
         description: >-
           Redelegation contains the list of a particular delegator's
           redelegating bonds
@@ -42789,10 +42749,7 @@ definitions:
           description: >-
             UnbondingDelegationEntry defines an unbonding object with relevant
             metadata.
-        description: |-
-          entries are the unbonding delegation entries.
-
-          unbonding delegation entries
+        description: entries are the unbonding delegation entries.
     description: |-
       UnbondingDelegation stores all of a single delegator's unbonding bonds
       for a single validator in an time-ordered list.
@@ -43187,7 +43144,6 @@ definitions:
                     format: byte
                   index:
                     type: boolean
-                    title: nondeterministic
                 description: >-
                   EventAttribute is a single key-value pair, associated with an
                   event.
@@ -43495,7 +43451,6 @@ definitions:
                     format: byte
                   index:
                     type: boolean
-                    title: nondeterministic
                 description: >-
                   EventAttribute is a single key-value pair, associated with an
                   event.
@@ -43979,7 +43934,6 @@ definitions:
                         format: byte
                       index:
                         type: boolean
-                        title: nondeterministic
                     description: >-
                       EventAttribute is a single key-value pair, associated with
                       an event.
@@ -44144,42 +44098,33 @@ definitions:
               last_commit_hash:
                 type: string
                 format: byte
-                description: commit from validators from the last block
                 title: hashes of block data
               data_hash:
                 type: string
                 format: byte
-                title: transactions
               validators_hash:
                 type: string
                 format: byte
-                description: validators for the current block
                 title: hashes from the app output from the prev block
               next_validators_hash:
                 type: string
                 format: byte
-                title: validators for the next block
               consensus_hash:
                 type: string
                 format: byte
-                title: consensus params for current block
               app_hash:
                 type: string
                 format: byte
-                title: state after txs from the previous block
               last_results_hash:
                 type: string
                 format: byte
-                title: root hash of all results from the txs from the previous block
               evidence_hash:
                 type: string
                 format: byte
-                description: evidence included in the block
                 title: consensus info
               proposer_address:
                 type: string
                 format: byte
-                title: original proposer of the block
             description: Header defines the structure of a Tendermint block header.
           data:
             type: object
@@ -44248,7 +44193,6 @@ definitions:
                                       format: byte
                                   title: PartsetHeader
                               title: BlockID
-                              description: zero if vote is nil.
                             timestamp:
                               type: string
                               format: date-time
@@ -44306,7 +44250,6 @@ definitions:
                                       format: byte
                                   title: PartsetHeader
                               title: BlockID
-                              description: zero if vote is nil.
                             timestamp:
                               type: string
                               format: date-time
@@ -44395,48 +44338,35 @@ definitions:
                                     last_commit_hash:
                                       type: string
                                       format: byte
-                                      description: >-
-                                        commit from validators from the last
-                                        block
                                       title: hashes of block data
                                     data_hash:
                                       type: string
                                       format: byte
-                                      title: transactions
                                     validators_hash:
                                       type: string
                                       format: byte
-                                      description: validators for the current block
                                       title: >-
                                         hashes from the app output from the prev
                                         block
                                     next_validators_hash:
                                       type: string
                                       format: byte
-                                      title: validators for the next block
                                     consensus_hash:
                                       type: string
                                       format: byte
-                                      title: consensus params for current block
                                     app_hash:
                                       type: string
                                       format: byte
-                                      title: state after txs from the previous block
                                     last_results_hash:
                                       type: string
                                       format: byte
-                                      title: >-
-                                        root hash of all results from the txs
-                                        from the previous block
                                     evidence_hash:
                                       type: string
                                       format: byte
-                                      description: evidence included in the block
                                       title: consensus info
                                     proposer_address:
                                       type: string
                                       format: byte
-                                      title: original proposer of the block
                                   description: >-
                                     Header defines the structure of a Tendermint
                                     block header.
@@ -44951,7 +44881,6 @@ definitions:
                         format: byte
                       index:
                         type: boolean
-                        title: nondeterministic
                     description: >-
                       EventAttribute is a single key-value pair, associated with
                       an event.
@@ -45274,7 +45203,6 @@ definitions:
                           format: byte
                         index:
                           type: boolean
-                          title: nondeterministic
                       description: >-
                         EventAttribute is a single key-value pair, associated
                         with an event.
@@ -45723,7 +45651,6 @@ definitions:
                         format: byte
                       index:
                         type: boolean
-                        title: nondeterministic
                     description: >-
                       EventAttribute is a single key-value pair, associated with
                       an event.
@@ -46882,7 +46809,6 @@ definitions:
               format: byte
             index:
               type: boolean
-              title: nondeterministic
           description: EventAttribute is a single key-value pair, associated with an event.
     description: >-
       Event allows application developers to attach additional information to
@@ -46902,7 +46828,6 @@ definitions:
         format: byte
       index:
         type: boolean
-        title: nondeterministic
     description: EventAttribute is a single key-value pair, associated with an event.
   cosmos.upgrade.v1beta1.ModuleVersion:
     type: object
@@ -51817,16 +51742,568 @@ definitions:
     description: |-
       Version defines the versioning scheme used to negotiate the IBC verison in
       the connection handshake.
-  mdc.mdc.Params:
-    type: object
-    description: Params defines the parameters for the module.
-  mdc.mdc.QueryParamsResponse:
+  mdc.did.DIDDocument:
     type: object
     properties:
-      params:
-        description: params holds all the parameters of this module.
+      contexts:
         type: object
-    description: QueryParamsResponse is response type for the Query/Params RPC method.
+        properties:
+          values:
+            type: array
+            items:
+              type: string
+        description: >-
+          Strings defines a JSON-LD string array format which is marshalled to a
+          single string if the array length is 1.
+      id:
+        type: string
+      controller:
+        type: object
+        properties:
+          values:
+            type: array
+            items:
+              type: string
+        description: >-
+          Strings defines a JSON-LD string array format which is marshalled to a
+          single string if the array length is 1.
+      verification_methods:
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              type: string
+            type:
+              type: string
+            controller:
+              type: string
+            public_key_base58:
+              type: string
+          title: VerificationMethod defines a W3C verification method
+      authentications:
+        type: array
+        items:
+          type: object
+          properties:
+            verification_method_id:
+              type: string
+            verification_method:
+              type: object
+              properties:
+                id:
+                  type: string
+                type:
+                  type: string
+                controller:
+                  type: string
+                public_key_base58:
+                  type: string
+              title: VerificationMethod defines a W3C verification method
+          title: VerificationRelationship defines a W3C verification relationship
+        title: >-
+          TODO: the repeated gogoproto.customtype has an issue:
+          https://github.com/gogo/protobuf/issues/478
+      assertion_methods:
+        type: array
+        items:
+          type: object
+          properties:
+            verification_method_id:
+              type: string
+            verification_method:
+              type: object
+              properties:
+                id:
+                  type: string
+                type:
+                  type: string
+                controller:
+                  type: string
+                public_key_base58:
+                  type: string
+              title: VerificationMethod defines a W3C verification method
+          title: VerificationRelationship defines a W3C verification relationship
+      key_agreements:
+        type: array
+        items:
+          type: object
+          properties:
+            verification_method_id:
+              type: string
+            verification_method:
+              type: object
+              properties:
+                id:
+                  type: string
+                type:
+                  type: string
+                controller:
+                  type: string
+                public_key_base58:
+                  type: string
+              title: VerificationMethod defines a W3C verification method
+          title: VerificationRelationship defines a W3C verification relationship
+      capability_invocations:
+        type: array
+        items:
+          type: object
+          properties:
+            verification_method_id:
+              type: string
+            verification_method:
+              type: object
+              properties:
+                id:
+                  type: string
+                type:
+                  type: string
+                controller:
+                  type: string
+                public_key_base58:
+                  type: string
+              title: VerificationMethod defines a W3C verification method
+          title: VerificationRelationship defines a W3C verification relationship
+      capability_delegations:
+        type: array
+        items:
+          type: object
+          properties:
+            verification_method_id:
+              type: string
+            verification_method:
+              type: object
+              properties:
+                id:
+                  type: string
+                type:
+                  type: string
+                controller:
+                  type: string
+                public_key_base58:
+                  type: string
+              title: VerificationMethod defines a W3C verification method
+          title: VerificationRelationship defines a W3C verification relationship
+      services:
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              type: string
+            type:
+              type: string
+            service_endpoint:
+              type: string
+          description: Service defines a service in the W3C DID Document.
+    description: >-
+      NOTE: All 'json_name' and 'gogoproto.customtype' tags are for panacea-core
+      to unmarshal the v1.3 genesis which is in the W3C JSON-LD format.
+            On the other hand, the panacea-core and cosmos-sdk don't use those tags to marshal result to JSON (via grpc-gateway).
+    title: DIDDocument defines a W3C DID Document
+  mdc.did.DIDDocumentWithSeq:
+    type: object
+    properties:
+      document:
+        type: object
+        properties:
+          contexts:
+            type: object
+            properties:
+              values:
+                type: array
+                items:
+                  type: string
+            description: >-
+              Strings defines a JSON-LD string array format which is marshalled
+              to a single string if the array length is 1.
+          id:
+            type: string
+          controller:
+            type: object
+            properties:
+              values:
+                type: array
+                items:
+                  type: string
+            description: >-
+              Strings defines a JSON-LD string array format which is marshalled
+              to a single string if the array length is 1.
+          verification_methods:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: string
+                type:
+                  type: string
+                controller:
+                  type: string
+                public_key_base58:
+                  type: string
+              title: VerificationMethod defines a W3C verification method
+          authentications:
+            type: array
+            items:
+              type: object
+              properties:
+                verification_method_id:
+                  type: string
+                verification_method:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    type:
+                      type: string
+                    controller:
+                      type: string
+                    public_key_base58:
+                      type: string
+                  title: VerificationMethod defines a W3C verification method
+              title: VerificationRelationship defines a W3C verification relationship
+            title: >-
+              TODO: the repeated gogoproto.customtype has an issue:
+              https://github.com/gogo/protobuf/issues/478
+          assertion_methods:
+            type: array
+            items:
+              type: object
+              properties:
+                verification_method_id:
+                  type: string
+                verification_method:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    type:
+                      type: string
+                    controller:
+                      type: string
+                    public_key_base58:
+                      type: string
+                  title: VerificationMethod defines a W3C verification method
+              title: VerificationRelationship defines a W3C verification relationship
+          key_agreements:
+            type: array
+            items:
+              type: object
+              properties:
+                verification_method_id:
+                  type: string
+                verification_method:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    type:
+                      type: string
+                    controller:
+                      type: string
+                    public_key_base58:
+                      type: string
+                  title: VerificationMethod defines a W3C verification method
+              title: VerificationRelationship defines a W3C verification relationship
+          capability_invocations:
+            type: array
+            items:
+              type: object
+              properties:
+                verification_method_id:
+                  type: string
+                verification_method:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    type:
+                      type: string
+                    controller:
+                      type: string
+                    public_key_base58:
+                      type: string
+                  title: VerificationMethod defines a W3C verification method
+              title: VerificationRelationship defines a W3C verification relationship
+          capability_delegations:
+            type: array
+            items:
+              type: object
+              properties:
+                verification_method_id:
+                  type: string
+                verification_method:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    type:
+                      type: string
+                    controller:
+                      type: string
+                    public_key_base58:
+                      type: string
+                  title: VerificationMethod defines a W3C verification method
+              title: VerificationRelationship defines a W3C verification relationship
+          services:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: string
+                type:
+                  type: string
+                service_endpoint:
+                  type: string
+              description: Service defines a service in the W3C DID Document.
+        description: >-
+          NOTE: All 'json_name' and 'gogoproto.customtype' tags are for
+          panacea-core to unmarshal the v1.3 genesis which is in the W3C JSON-LD
+          format.
+                On the other hand, the panacea-core and cosmos-sdk don't use those tags to marshal result to JSON (via grpc-gateway).
+        title: DIDDocument defines a W3C DID Document
+      sequence:
+        type: string
+        format: uint64
+    description: >-
+      DIDDocumentWithSeq defines a message for DID Document with a sequence
+      number for preventing replay attacks.
+  mdc.did.MsgCreateDIDResponse:
+    type: object
+  mdc.did.QueryDIDResponse:
+    type: object
+    properties:
+      did_document_with_seq:
+        type: object
+        properties:
+          document:
+            type: object
+            properties:
+              contexts:
+                type: object
+                properties:
+                  values:
+                    type: array
+                    items:
+                      type: string
+                description: >-
+                  Strings defines a JSON-LD string array format which is
+                  marshalled to a single string if the array length is 1.
+              id:
+                type: string
+              controller:
+                type: object
+                properties:
+                  values:
+                    type: array
+                    items:
+                      type: string
+                description: >-
+                  Strings defines a JSON-LD string array format which is
+                  marshalled to a single string if the array length is 1.
+              verification_methods:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    type:
+                      type: string
+                    controller:
+                      type: string
+                    public_key_base58:
+                      type: string
+                  title: VerificationMethod defines a W3C verification method
+              authentications:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    verification_method_id:
+                      type: string
+                    verification_method:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        type:
+                          type: string
+                        controller:
+                          type: string
+                        public_key_base58:
+                          type: string
+                      title: VerificationMethod defines a W3C verification method
+                  title: >-
+                    VerificationRelationship defines a W3C verification
+                    relationship
+                title: >-
+                  TODO: the repeated gogoproto.customtype has an issue:
+                  https://github.com/gogo/protobuf/issues/478
+              assertion_methods:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    verification_method_id:
+                      type: string
+                    verification_method:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        type:
+                          type: string
+                        controller:
+                          type: string
+                        public_key_base58:
+                          type: string
+                      title: VerificationMethod defines a W3C verification method
+                  title: >-
+                    VerificationRelationship defines a W3C verification
+                    relationship
+              key_agreements:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    verification_method_id:
+                      type: string
+                    verification_method:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        type:
+                          type: string
+                        controller:
+                          type: string
+                        public_key_base58:
+                          type: string
+                      title: VerificationMethod defines a W3C verification method
+                  title: >-
+                    VerificationRelationship defines a W3C verification
+                    relationship
+              capability_invocations:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    verification_method_id:
+                      type: string
+                    verification_method:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        type:
+                          type: string
+                        controller:
+                          type: string
+                        public_key_base58:
+                          type: string
+                      title: VerificationMethod defines a W3C verification method
+                  title: >-
+                    VerificationRelationship defines a W3C verification
+                    relationship
+              capability_delegations:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    verification_method_id:
+                      type: string
+                    verification_method:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        type:
+                          type: string
+                        controller:
+                          type: string
+                        public_key_base58:
+                          type: string
+                      title: VerificationMethod defines a W3C verification method
+                  title: >-
+                    VerificationRelationship defines a W3C verification
+                    relationship
+              services:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    type:
+                      type: string
+                    service_endpoint:
+                      type: string
+                  description: Service defines a service in the W3C DID Document.
+            description: >-
+              NOTE: All 'json_name' and 'gogoproto.customtype' tags are for
+              panacea-core to unmarshal the v1.3 genesis which is in the W3C
+              JSON-LD format.
+                    On the other hand, the panacea-core and cosmos-sdk don't use those tags to marshal result to JSON (via grpc-gateway).
+            title: DIDDocument defines a W3C DID Document
+          sequence:
+            type: string
+            format: uint64
+        description: >-
+          DIDDocumentWithSeq defines a message for DID Document with a sequence
+          number for preventing replay attacks.
+  mdc.did.Service:
+    type: object
+    properties:
+      id:
+        type: string
+      type:
+        type: string
+      service_endpoint:
+        type: string
+    description: Service defines a service in the W3C DID Document.
+  mdc.did.Strings:
+    type: object
+    properties:
+      values:
+        type: array
+        items:
+          type: string
+    description: >-
+      Strings defines a JSON-LD string array format which is marshalled to a
+      single string if the array length is 1.
+  mdc.did.VerificationMethod:
+    type: object
+    properties:
+      id:
+        type: string
+      type:
+        type: string
+      controller:
+        type: string
+      public_key_base58:
+        type: string
+    title: VerificationMethod defines a W3C verification method
+  mdc.did.VerificationRelationship:
+    type: object
+    properties:
+      verification_method_id:
+        type: string
+      verification_method:
+        type: object
+        properties:
+          id:
+            type: string
+          type:
+            type: string
+          controller:
+            type: string
+          public_key_base58:
+            type: string
+        title: VerificationMethod defines a W3C verification method
+    title: VerificationRelationship defines a W3C verification relationship
   tendermint.spn.claim.ClaimRecord:
     type: object
     properties:

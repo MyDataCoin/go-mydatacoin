@@ -1,0 +1,26 @@
+syntax = "proto3";
+package mdc.did;
+
+// this line is used by starport scaffolding # proto/tx/import
+import "mdc/did/did_document.proto";
+
+option go_package = "mdc/x/did/types";
+
+// Msg defines the Msg service.
+service Msg {
+      rpc CreateDID(MsgCreateDID) returns (MsgCreateDIDResponse);
+// this line is used by starport scaffolding # proto/tx/rpc
+}
+
+message MsgCreateDID {
+  string did = 1;
+  DIDDocument document = 2;
+  string verificationMethodId = 3;
+  bytes signature = 4;
+  string fromAddress = 5;
+}
+
+message MsgCreateDIDResponse {
+}
+
+// this line is used by starport scaffolding # proto/tx/message

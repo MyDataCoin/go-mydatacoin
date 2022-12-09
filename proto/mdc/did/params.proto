@@ -1,0 +1,12 @@
+syntax = "proto3";
+package mdc.did;
+
+import "gogoproto/gogo.proto";
+
+option go_package = "mdc/x/did/types";
+
+// Params defines the parameters for the module.
+message Params {
+  option (gogoproto.goproto_stringer) = false;
+  
+}

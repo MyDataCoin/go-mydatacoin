@@ -1,0 +1,14 @@
+syntax = "proto3";
+package mdc.did;
+
+
+import "mdc/did/did_document.proto";
+
+// this line is used by starport scaffolding # genesis/proto/import
+
+option go_package = "mdc/x/did/types";
+
+// GenesisState defines the did module's genesis state.
+message GenesisState {
+  map<string, DIDDocumentWithSeq> documents = 1;
+}

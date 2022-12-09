@@ -24,13 +24,13 @@ import { Module as IbcApplicationsTransferV1, msgTypes as IbcApplicationsTransfe
 import { Module as IbcCoreChannelV1, msgTypes as IbcCoreChannelV1MsgTypes } from './ibc.core.channel.v1'
 import { Module as IbcCoreClientV1, msgTypes as IbcCoreClientV1MsgTypes } from './ibc.core.client.v1'
 import { Module as IbcCoreConnectionV1, msgTypes as IbcCoreConnectionV1MsgTypes } from './ibc.core.connection.v1'
-import { Module as MdcMdc, msgTypes as MdcMdcMsgTypes } from './mdc.mdc'
+import { Module as MdcDid, msgTypes as MdcDidMsgTypes } from './mdc.did'
 import { Module as TendermintSpnClaim, msgTypes as TendermintSpnClaimMsgTypes } from './tendermint.spn.claim'
 import { Module as TendermintSpnMonitoringp, msgTypes as TendermintSpnMonitoringpMsgTypes } from './tendermint.spn.monitoringp'
 
 
 const Client = IgniteClient.plugin([
-    CosmosAuthV1Beta1, CosmosAuthzV1Beta1, CosmosBankV1Beta1, CosmosBaseTendermintV1Beta1, CosmosCrisisV1Beta1, CosmosDistributionV1Beta1, CosmosEvidenceV1Beta1, CosmosFeegrantV1Beta1, CosmosGovV1Beta1, CosmosMintV1Beta1, CosmosParamsV1Beta1, CosmosSlashingV1Beta1, CosmosStakingV1Beta1, CosmosTxV1Beta1, CosmosUpgradeV1Beta1, CosmosVestingV1Beta1, IbcApplicationsInterchainAccountsControllerV1, IbcApplicationsInterchainAccountsHostV1, IbcApplicationsTransferV1, IbcCoreChannelV1, IbcCoreClientV1, IbcCoreConnectionV1, MdcMdc, TendermintSpnClaim, TendermintSpnMonitoringp
+    CosmosAuthV1Beta1, CosmosAuthzV1Beta1, CosmosBankV1Beta1, CosmosBaseTendermintV1Beta1, CosmosCrisisV1Beta1, CosmosDistributionV1Beta1, CosmosEvidenceV1Beta1, CosmosFeegrantV1Beta1, CosmosGovV1Beta1, CosmosMintV1Beta1, CosmosParamsV1Beta1, CosmosSlashingV1Beta1, CosmosStakingV1Beta1, CosmosTxV1Beta1, CosmosUpgradeV1Beta1, CosmosVestingV1Beta1, IbcApplicationsInterchainAccountsControllerV1, IbcApplicationsInterchainAccountsHostV1, IbcApplicationsTransferV1, IbcCoreChannelV1, IbcCoreClientV1, IbcCoreConnectionV1, MdcDid, TendermintSpnClaim, TendermintSpnMonitoringp
 ]);
 
 const registry = new Registry([
@@ -56,7 +56,7 @@ const registry = new Registry([
   ...IbcCoreChannelV1MsgTypes,
   ...IbcCoreClientV1MsgTypes,
   ...IbcCoreConnectionV1MsgTypes,
-  ...MdcMdcMsgTypes,
+  ...MdcDidMsgTypes,
   ...TendermintSpnClaimMsgTypes,
   ...TendermintSpnMonitoringpMsgTypes,
   

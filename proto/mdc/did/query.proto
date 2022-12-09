@@ -1,0 +1,31 @@
+syntax = "proto3";
+package mdc.did;
+
+import "mdc/did/did_document.proto";
+import "google/api/annotations.proto";
+
+// this line is used by starport scaffolding # 1
+
+option go_package = "mdc/x/did/types";
+
+// Query defines the gRPC querier service.
+service Query {
+  // Parameters queries the parameters of the module.
+	rpc DID(QueryDIDRequest) returns (QueryDIDResponse) {
+		option (google.api.http).get = "/mdc/did/{did_base64}";
+	}
+
+// this line is used by starport scaffolding # 2
+}
+
+// QueryParamsRequest is request type for the Query/Params RPC method.
+
+message QueryDIDRequest {
+  string did_base64 = 1;
+}
+
+message QueryDIDResponse {
+	DIDDocumentWithSeq did_document_with_seq = 1;
+}
+
+// this line is used by starport scaffolding # 3

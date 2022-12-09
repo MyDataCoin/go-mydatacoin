@@ -1,10 +1,10 @@
 // THIS FILE IS GENERATED AUTOMATICALLY. DO NOT MODIFY.
 
-import MdcMdc from './mdc.mdc'
+import MdcDid from './mdc.did'
 
 
 export default { 
-  MdcMdc: load(MdcMdc, 'mdc.mdc'),
+  MdcDid: load(MdcDid, 'mdc.did'),
   
 }
 
