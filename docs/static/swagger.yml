@@ -1,0 +1,48 @@
+basePath: /
+definitions:
+  app.InputData:
+    properties:
+      address:
+        type: string
+    type: object
+host: localhost:1317
+info:
+  contact: {}
+  description: API server for Blockchain
+  title: MydataCoin API
+  version: "1.0"
+paths:
+  /createdid:
+    post:
+      consumes:
+      - application/json
+      description: create DID for address
+      operationId: create-did
+      parameters:
+      - description: account adress
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/app.InputData'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: Object
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "405":
+          description: Method Not Allowed
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      summary: CreateDID
+swagger: "2.0"

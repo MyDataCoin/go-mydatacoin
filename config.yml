@@ -21,7 +21,7 @@ client:
   vuex:
     path: vue/src/store
   openapi:
-    path: docs/static/openapi.yml
+    path: docs/blockchain/openapi.yml
 genesis:
   app_state:
     staking:

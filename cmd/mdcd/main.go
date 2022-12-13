@@ -8,6 +8,14 @@ import (
 	"mdc/app"
 )
 
+// @title MydataCoin API
+// @version 1.0
+// @description API server for Blockchain
+
+// @host localhost:1317
+// @BasePath /
+
+
 func main() {
 	rootCmd, _ := cosmoscmd.NewRootCmd(
 		app.Name,

@@ -13,13 +13,13 @@ import (
 	"mdc/x/did/secp256k1util"
 	"mdc/x/did/types"
 
-	"github.com/tendermint/tendermint/crypto/secp256k1"
 	"github.com/cosmos/cosmos-sdk/client"
+	"github.com/cosmos/cosmos-sdk/client/input"
 	"github.com/cosmos/cosmos-sdk/client/tx"
 	"github.com/cosmos/go-bip39"
 	"github.com/spf13/cobra"
+	"github.com/tendermint/tendermint/crypto/secp256k1"
 	tmcli "github.com/tendermint/tendermint/libs/cli"
-	"github.com/cosmos/cosmos-sdk/client/input"
 )
 
 type InputData struct {
@@ -29,6 +29,20 @@ type OutputData struct {
 	DID string `json:"did"`
 }
 
+
+
+// @Summary CreateDID
+// @Tag DID
+// @description create DID for address
+// @ID create-did
+// @Accept json
+// @Produce json
+// @Param input body InputData true "account adress"
+// @Success 200 {Object} OutputData
+// @Failure 500 {string} string
+// @Failure 405 {string} string
+// @Failure 400 {string} string
+// @Router /createdid [post]
 func createDID(ctx client.Context) func(http.ResponseWriter, *http.Request) {
 	return func(w http.ResponseWriter, r *http.Request) {
 
@@ -76,7 +90,7 @@ func createDID(ctx client.Context) func(http.ResponseWriter, *http.Request) {
 			http.Error(w, err.Error(), 500)
 		}
 		sdkAddress := record.GetAddress()
-	
+
 		ctx = ctx.WithSkipConfirmation(true)
 		ctx = ctx.WithFrom(record.GetName())
 		ctx = ctx.WithFromAddress(sdkAddress)
@@ -94,8 +108,8 @@ func createDID(ctx client.Context) func(http.ResponseWriter, *http.Request) {
 		OutputObject := &OutputData{DID: msg.Did}
 		response, err := json.Marshal(OutputObject)
 		if err != nil {
-			http.Error(w, err.Error(),500)
-			return 
+			http.Error(w, err.Error(), 500)
+			return
 		}
 		w.Write(response)
 	}
