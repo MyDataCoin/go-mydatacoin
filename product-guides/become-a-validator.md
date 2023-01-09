@@ -1,4 +1,4 @@
-# 📎 Understanding Projects
+# ⚙ Become a Validator
 
 ## How Projects work
 

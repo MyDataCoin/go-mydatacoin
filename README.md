@@ -1,4 +1,4 @@
-# 👋 Welcome to MyDataCoin Bridge
+# 👋 Welcome to MyDataCoin
 
 {% hint style="info" %}
 **GitBook tip:** your product docs aren't just a reference of all your features! use them to encourage folks to perform certain actions and discover the value in your product.
@@ -24,8 +24,8 @@ Here are a couple of example overviews from products with really great docs:
 [what-we-do.md](overview/what-we-do.md)
 {% endcontent-ref %}
 
-{% content-ref url="overview/our-features.md" %}
-[our-features.md](overview/our-features.md)
+{% content-ref url="overview/how-to-contribute.md" %}
+[how-to-contribute.md](overview/how-to-contribute.md)
 {% endcontent-ref %}
 
 ## Get Started

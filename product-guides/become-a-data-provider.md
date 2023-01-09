@@ -1,4 +1,4 @@
-# 📪 Become a Data Provider
+# 💰 Become a Data Provider
 
 ## Step 1 - Registration
 

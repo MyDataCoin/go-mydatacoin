@@ -5,12 +5,12 @@
 ## Overview
 
 * [💡 What we do](overview/what-we-do.md)
-* [✨ Our Features](overview/our-features.md)
+* [💁 How to contribute](overview/how-to-contribute.md)
 
 ## Product Guides
 
-* [📪 Become a Data Provider](product-guides/become-a-data-provider.md)
-* [📎 Understanding Projects](product-guides/understanding-projects.md)
+* [💰 Become a Data Provider](product-guides/become-a-data-provider.md)
+* [⚙ Become a Validator](product-guides/become-a-validator.md)
 
 ## Fundamentals
 
@@ -20,5 +20,4 @@
 
 ## Use Cases
 
-* [🎨 For Designers](use-cases/for-designers.md)
 * [🖥 For Developers](use-cases/for-developers.md)
