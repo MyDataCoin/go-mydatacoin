@@ -1,6 +1,6 @@
 # Table of contents
 
-* [👋 Welcome to MyDataCoin Bridge](README.md)
+* [👋 Welcome to MyDataCoin](README.md)
 
 ## Overview
 
@@ -9,7 +9,7 @@
 
 ## Product Guides
 
-* [📪 Making a post](product-guides/making-a-post.md)
+* [📪 Become a Data Provider](product-guides/become-a-data-provider.md)
 * [📎 Understanding Projects](product-guides/understanding-projects.md)
 
 ## Fundamentals
