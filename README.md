@@ -12,8 +12,6 @@ description: Your data - Your digital asset. Earn, control and protect your asse
 
 MyDataCoin - is a Web3 social and innovative smart solution based on blockchain technology. It allows to earn for any Internet user on their data in the form of a new social,digital currency and control the data flow without any hassle. It is an innovative solution that addresses current global socio-economic data challenges.
 
-
-
 ## Quick links
 
 {% content-ref url="overview/mdc-token-distribution-and-supply.md" %}
@@ -38,8 +36,4 @@ We've put together some helpful guides for you to get setup with our product qui
 
 {% content-ref url="product-guides/become-a-validator.md" %}
 [become-a-validator.md](product-guides/become-a-validator.md)
-{% endcontent-ref %}
-
-{% content-ref url="overview/how-to-contribute/inviting-members.md" %}
-[inviting-members.md](overview/how-to-contribute/inviting-members.md)
 {% endcontent-ref %}

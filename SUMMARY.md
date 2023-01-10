@@ -9,7 +9,8 @@
   * [🏢 Protocol Architecture](overview/tech-stack/protocol-architecture.md)
   * [🤖 Self-Sovereign Identity](overview/tech-stack/self-sovereign-identity.md)
 * [💁 How to contribute](overview/how-to-contribute/README.md)
-  * [🧑 Inviting Members](overview/how-to-contribute/inviting-members.md)
+  * [🐞 By reporting bugs](overview/how-to-contribute/by-reporting-bugs.md)
+  * [🧑 By inviting new members](overview/how-to-contribute/by-inviting-new-members.md)
 
 ## Product Guides
 

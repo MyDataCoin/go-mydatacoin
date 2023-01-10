@@ -10,10 +10,12 @@ description: Help us grow.
 
 ## By reporting bugs
 
-Will be anounced soon...
+{% content-ref url="by-reporting-bugs.md" %}
+[by-reporting-bugs.md](by-reporting-bugs.md)
+{% endcontent-ref %}
 
-## By Inviting people
+## By inviting new members
 
-{% content-ref url="inviting-members.md" %}
-[inviting-members.md](inviting-members.md)
+{% content-ref url="by-inviting-new-members.md" %}
+[by-inviting-new-members.md](by-inviting-new-members.md)
 {% endcontent-ref %}
