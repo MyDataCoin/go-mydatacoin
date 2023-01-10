@@ -23,4 +23,5 @@
 
 ## Use Cases
 
+* [⬇ Downloads](use-cases/downloads.md)
 * [🖥 For Developers](use-cases/for-developers.md)
