@@ -16,6 +16,6 @@ description: Help us grow.
 
 ## By inviting new members
 
-{% content-ref url="by-inviting-new-members.md" %}
-[by-inviting-new-members.md](by-inviting-new-members.md)
+{% content-ref url="inviting-members.md" %}
+[inviting-members.md](inviting-members.md)
 {% endcontent-ref %}
