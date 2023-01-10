@@ -8,8 +8,7 @@
 
 * [Registration](become-a-data-provider.md#registration)
 * [Organization Details](become-a-data-provider.md#organization-details)
-
-
+* [Verification](become-a-data-provider.md#verify-your-organization)
 
 ### Registration
 
@@ -33,3 +32,8 @@ The very next step is provide us your organization data. To do that you need to 
 
 ### Verify your organization
 
+After all fields were filled, you need to send your organization to verification process.&#x20;
+
+> It cat take from one to three business days.&#x20;
+>
+> To start verification, be sure all required data provided. Then press "Verify" buttom.
