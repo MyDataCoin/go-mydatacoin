@@ -4,7 +4,10 @@
 
 ## Overview
 
-* [💡 What we do](overview/what-we-do.md)
+* [🪙 MDC Token Distribution and Supply](overview/mdc-token-distribution-and-supply.md)
+* [💡 Tech Stack](overview/tech-stack/README.md)
+  * [🏢 Protocol Architecture](overview/tech-stack/protocol-architecture.md)
+  * [🤖 Self-Sovereign Identity](overview/tech-stack/self-sovereign-identity.md)
 * [💁 How to contribute](overview/how-to-contribute.md)
 
 ## Product Guides
