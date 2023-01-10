@@ -12,7 +12,13 @@
 
 ### Registration
 
-To start visit https://client.mydatacoin.io/ and press tab "Register".\
+The registration process is not complicated, and requires a maximum of 5 minutes of your time. To get started, go to the page:
+
+{% embed url="https://client.mydatacoin.io/" %}
+Bridge service
+{% endembed %}
+
+and press tab "Register".\
 \
 Enter your email and get verification code. After successful verification you'll be able to see dashboard. After pressing "Profile" menu you will be able to see your Access Token.
 
@@ -35,5 +41,5 @@ The very next step is provide us your organization data. To do that you need to 
 After all fields were filled, you need to send your organization to verification process.&#x20;
 
 > It cat take from one to three business days.&#x20;
->
-> To start verification, be sure all required data provided. Then press "Verify" buttom.
+
+To start verification, be sure all required data provided. Then press "Verify" buttom.
