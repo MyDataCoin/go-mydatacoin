@@ -1,4 +1,4 @@
-# 💰 Become a Data Provider
+# 👨💼 For Managers
 
 {% hint style="warning" %}
 **Disclaimer:** The development team is working hard. The documentation will be updated as new releases are released.
@@ -6,9 +6,9 @@
 
 **Table of contents:**
 
-* [Registration](become-a-data-provider.md#registration)
-* [Organization Details](become-a-data-provider.md#organization-details)
-* [Verification](become-a-data-provider.md#verify-your-organization)
+* [Registration](for-managers.md#registration)
+* [Organization Details](for-managers.md#organization-details)
+* [Verification](for-managers.md#verify-your-organization)
 
 ### Registration
 
@@ -22,7 +22,7 @@ and press tab "Register".\
 \
 Enter your email and get verification code. After successful verification you'll be able to see dashboard. After pressing "Profile" menu you will be able to see your Access Token.
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-01-10 at 18.56.23.png" alt=""><figcaption><p>Access Token</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2023-01-10 at 18.56.23.png" alt=""><figcaption><p>Access Token</p></figcaption></figure>
 
 This token gives you an access to work with MyDataCoin Bridge.&#x20;
 
@@ -34,7 +34,7 @@ Do not transfer the token to third parties, and beware of getting the token on t
 
 The very next step is provide us your organization data. To do that you need to press "+" button and fill all required data.
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-01-10 at 19.04.19.png" alt=""><figcaption><p>Organization Details</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2023-01-10 at 19.04.19.png" alt=""><figcaption><p>Organization Details</p></figcaption></figure>
 
 ### Verify your organization
 
