@@ -4,6 +4,13 @@
 **Disclaimer:** The development team is working hard. The documentation will be updated as new releases are released.
 {% endhint %}
 
+**Table of contents:**
+
+* [Registration](become-a-data-provider.md#registration)
+* [Organization Details](become-a-data-provider.md#organization-details)
+
+
+
 ### Registration
 
 To start visit https://client.mydatacoin.io/ and press tab "Register".\
@@ -22,4 +29,7 @@ Do not transfer the token to third parties, and beware of getting the token on t
 
 The very next step is provide us your organization data. To do that you need to press "+" button and fill all required data.
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-01-10 at 19.04.19.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-01-10 at 19.04.19.png" alt=""><figcaption><p>Organization Details</p></figcaption></figure>
+
+### Verify your organization
+
