@@ -8,7 +8,8 @@
 * [💡 Tech Stack](overview/tech-stack/README.md)
   * [🏢 Protocol Architecture](overview/tech-stack/protocol-architecture.md)
   * [🤖 Self-Sovereign Identity](overview/tech-stack/self-sovereign-identity.md)
-* [💁 How to contribute](overview/how-to-contribute.md)
+* [💁 How to contribute](overview/how-to-contribute/README.md)
+  * [🧑 Inviting Members](overview/how-to-contribute/inviting-members.md)
 
 ## Product Guides
 
@@ -19,7 +20,6 @@
 
 * [🛠 Getting set up](fundamentals/getting-set-up/README.md)
   * [📝 Setting permissions](fundamentals/getting-set-up/setting-permissions.md)
-  * [🧑 Inviting Members](fundamentals/getting-set-up/inviting-members.md)
 
 ## Use Cases
 

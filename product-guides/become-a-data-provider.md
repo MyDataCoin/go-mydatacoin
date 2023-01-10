@@ -6,7 +6,7 @@ Disclaimer**:** The development team is working hard. The documentation will be 
 
 ## Step 1 - Registration
 
-Go to <mark style="color:blue;">https://client.mydatacoin.io/</mark>
+Go to <mark style="color:blue;">https://client.mydatacoin.io/</mark> enter your email and input verification code.
 
 ## Step 2 - Send verification request
 

@@ -5,7 +5,7 @@ description: Your data - Your digital asset. Earn, control and protect your asse
 # 👋 Welcome to MyDataCoin
 
 {% hint style="warning" %}
-Disclaimer**:** The development team is working hard. The documentation will be updated as new releases are released.
+**Disclaimer:** The development team is working hard. The documentation will be updated as new releases are released.
 {% endhint %}
 
 ## Overview
@@ -24,8 +24,8 @@ MyDataCoin - is a Web3 social and innovative smart solution based on blockchain 
 [tech-stack](overview/tech-stack/)
 {% endcontent-ref %}
 
-{% content-ref url="overview/how-to-contribute.md" %}
-[how-to-contribute.md](overview/how-to-contribute.md)
+{% content-ref url="overview/how-to-contribute/" %}
+[how-to-contribute](overview/how-to-contribute/)
 {% endcontent-ref %}
 
 ## Product Guides
@@ -40,6 +40,6 @@ We've put together some helpful guides for you to get setup with our product qui
 [become-a-validator.md](product-guides/become-a-validator.md)
 {% endcontent-ref %}
 
-{% content-ref url="fundamentals/getting-set-up/inviting-members.md" %}
-[inviting-members.md](fundamentals/getting-set-up/inviting-members.md)
+{% content-ref url="overview/how-to-contribute/inviting-members.md" %}
+[inviting-members.md](overview/how-to-contribute/inviting-members.md)
 {% endcontent-ref %}
