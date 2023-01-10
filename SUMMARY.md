@@ -17,11 +17,6 @@
 * [💰 Become a Data Provider](product-guides/become-a-data-provider.md)
 * [⚙ Become a Validator](product-guides/become-a-validator.md)
 
-## Fundamentals
-
-* [🛠 Getting set up](fundamentals/getting-set-up/README.md)
-  * [📝 Setting permissions](fundamentals/getting-set-up/setting-permissions.md)
-
 ## Use Cases
 
 * [⬇ Downloads](use-cases/downloads.md)
