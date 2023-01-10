@@ -16,7 +16,6 @@ The MDC is the native currency of the MyDataCoin blockchain, and is required to 
 
 The initial distribution of MDC is 1 billion tokens. This number includes all categories of token recipients in the distribution schedule, with the exception of data producers, who will receive rewards in the form of dividends for the share of personal data. With an increase in the number of users and data categories, there will be an increase in inflation, which is very important for the system, at the first stages of network development.
 
-\
 
 
 <figure><img src="https://lh4.googleusercontent.com/dFExctd7AEa4ZSLo_GhYooHzAOcT6M5XstgiUzkblJ0Mg7D7wjkVLPzFvMir_eh0BWkS-4qG9tsJECj_1dVvF4cKmFyjU2B2oORTivVUh6GqQ33GJmEmDexh7uuJyK8XiV55DRGJPHp-9O8mOrNh43wJVQk5fXjIGFek4CXelhnbz1ezZrnEPnzZbCvhP1Y" alt=""><figcaption></figcaption></figure>
