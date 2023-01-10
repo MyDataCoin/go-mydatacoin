@@ -30,8 +30,8 @@ MyDataCoin - is a Web3 social and innovative smart solution based on blockchain 
 
 We've put together some helpful guides for you to get setup with our product quickly and easily.
 
-{% content-ref url="product-guides/become-a-data-provider/" %}
-[become-a-data-provider](product-guides/become-a-data-provider/)
+{% content-ref url="product-guides/become-a-data-provider/for-managers.md" %}
+[for-managers.md](product-guides/become-a-data-provider/for-managers.md)
 {% endcontent-ref %}
 
 {% content-ref url="product-guides/become-a-validator.md" %}
