@@ -1,3 +1,7 @@
+---
+description: Help us to find bugs and earn coins
+---
+
 # 🐞 By reporting bugs
 
 {% hint style="warning" %}

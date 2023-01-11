@@ -10,7 +10,7 @@
   * [🤖 Self-Sovereign Identity](overview/tech-stack/self-sovereign-identity.md)
 * [💁 How to contribute](overview/how-to-contribute/README.md)
   * [🐞 By reporting bugs](overview/how-to-contribute/by-reporting-bugs.md)
-  * [📺 By wathcing paid adds](overview/how-to-contribute/by-wathcing-paid-adds.md)
+  * [📺 By wathcing paid Ads](overview/how-to-contribute/by-wathcing-paid-ads.md)
   * [🧑 By inviting new members](overview/how-to-contribute/inviting-members.md)
 
 ## Product Guides
