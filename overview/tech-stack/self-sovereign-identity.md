@@ -4,7 +4,7 @@ Blockchain technology, Decentralized Identifiers and Verifiable Credentials are 
 
 <figure><img src="https://lh3.googleusercontent.com/U8IcCN6OnhXBMWoisQFNTB7NYewv4LhKmBeO-im6qTM7_xumUO9pP4XIYspTHZPzQ2ylrP0lMi6F1MeME32m17hhcd0anVKKAs9OgGbzWyKn4ihLkuKFuKQ74gzCFSKgYTXZSV1q9nXWAewJyjovF6t1UC5kwLcaJnyk5JbtQZk5MmT7M_MxGBTd72WvLiM" alt=""><figcaption></figcaption></figure>
 
-Why SSI?
+**Why SSI?**
 
 * A secure and digital peer-to-peer channel is established between ID Issuer, ID Owner and ID Verifier. When credentials are exchanged not even the Self-Sovereign Identity system provider knows what is being exchanged. Credential issuing becomes simpler and faster.
 * SSI Credentials are tamper-proof through the use of cryptography.
