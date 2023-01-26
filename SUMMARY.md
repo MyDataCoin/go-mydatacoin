@@ -20,7 +20,6 @@
   * [👨💻 For Developers](product-guides/become-a-data-provider/for-developers.md)
 * [⚙ Become a Validator](product-guides/become-a-validator.md)
 
-## Use Cases
+## HELPFUL MATERIALS
 
-* [⬇ Downloads](use-cases/downloads.md)
-* [🖥 For Developers](use-cases/for-developers.md)
+* [⬇ Downloads](helpful-materials/downloads.md)

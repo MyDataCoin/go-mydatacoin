@@ -44,11 +44,11 @@ We've put together some helpful guides for you to get setup with our product qui
 
 ### Use Cases
 
-{% content-ref url="use-cases/downloads.md" %}
-[downloads.md](use-cases/downloads.md)
+{% content-ref url="helpful-materials/downloads.md" %}
+[downloads.md](helpful-materials/downloads.md)
 {% endcontent-ref %}
 
-{% content-ref url="use-cases/for-developers.md" %}
-[for-developers.md](use-cases/for-developers.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
