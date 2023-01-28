@@ -44,7 +44,7 @@ Your account has to be approved by system operator, otherwise you'll get 204 res
 {% swagger-response status="200: OK" description="Ok" %}
 ```javascript
 {
-    "code":"200",
+    "code": 200,
     "message":"Ok"
 }
 ```
@@ -57,8 +57,8 @@ Your account has to be approved by system operator, otherwise you'll get 204 res
 {% swagger-response status="400: Bad Request" description="Error" %}
 ```javascript
 {
-    "code":"400",
-    "message":"Error Message"
+    "code": 400,
+    "message": "Error Message"
 }
 ```
 {% endswagger-response %}
@@ -181,32 +181,32 @@ If you no longer want to receive WebHooks from MyDataCoin you need to send a req
 Your secret token
 {% endswagger-parameter %}
 
-{% swagger-response status="200: OK" description="" %}
+{% swagger-response status="200: OK" description="Ok" %}
 ```javascript
 {
-    "code":"200",
-    "message":"Ok"
+    "code": 200,
+    "message": "Ok"
 }
 ```
 {% endswagger-response %}
 
-{% swagger-response status="204: No Content" description="" %}
+{% swagger-response status="204: No Content" description="User Not Found" %}
 
 {% endswagger-response %}
 
-{% swagger-response status="400: Bad Request" description="" %}
+{% swagger-response status="400: Bad Request" description="Error" %}
 ```javascript
 {
-    "code":"400",
-    "message":"Error Message"
+    "code": 400,
+    "message": "Error Message"
 }
 ```
 {% endswagger-response %}
 
-{% swagger-response status="500: Internal Server Error" description="" %}
+{% swagger-response status="500: Internal Server Error" description="Server Error" %}
 ```javascript
 {
-    // Response
+    "Error": "Internal server error"
 }
 ```
 {% endswagger-response %}
