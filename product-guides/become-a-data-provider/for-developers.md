@@ -18,6 +18,7 @@ Further, all the necessary information is provided to establish communication wi
 
 * [Subscribe](for-developers.md#subscribe)
 * [Unsubscribe](for-developers.md#unsubscribe)
+* [WebHook Event Types](for-developers.md#webhook-event-types)
 
 {% hint style="info" %}
 Before you start, make sure that you have an Access Token. You should receive the token after the registration, which is described in the previous step.
@@ -171,7 +172,7 @@ const response = await axios.post(
 
 If you no longer want to receive WebHooks from MyDataCoin you need to send a request to a following address.
 
-{% swagger method="get" path="/api/v1/webhooks/usubscribe" baseUrl="https://bridge.mydatacoin.io" summary="Unsubscribe from receiving WebHooks" expanded="true" %}
+{% swagger method="get" path="/api/v1/webhooks/unsubscribe" baseUrl="https://bridge.mydatacoin.io" summary="Unsubscribe from receiving WebHooks" expanded="true" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -273,4 +274,8 @@ curl_close($ch);
 </strong></code></pre>
 {% endtab %}
 {% endtabs %}
+
+### WebHook event types
+
+Will be announced soon...
 
