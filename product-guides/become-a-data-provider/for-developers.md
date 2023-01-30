@@ -344,49 +344,15 @@ To be able to accept webhooks on your side, you must configure your endpoint to 
 
 </details>
 
-
-
 Every time a request comes to the endpoint you provided, pay attention to the Action parameter, there will always be one of two types of request:\
 1 - Request for personal data of user\
 2- Request for a report on the account\
 \
 The email parameter can contain either one email or there can be several (linked to the same account).
 
-WebHook server will wait a following response:
-
-<details>
-
-<summary></summary>
-
-
-
-</details>
+WebHook server will wait for a one of the following responses:
 
 #### Response:
-
-<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>FirstName</td><td>string</td><td>false</td></tr><tr><td>LastName</td><td>string</td><td>false</td></tr><tr><td>DateOfBirth</td><td>DateTime</td><td>true</td></tr><tr><td>Gender</td><td>int</td><td>true</td></tr><tr><td>Email</td><td>string[]</td><td>false</td></tr><tr><td>Phone</td><td>string[]</td><td>true</td></tr><tr><td>BasicData</td><td><a href="for-developers.md#basicdata">BasicData</a></td><td>true</td></tr><tr><td>Contacts</td><td><a href="for-developers.md#contacts">Contacts</a></td><td>true</td></tr><tr><td>WorkAndEducation</td><td><a href="for-developers.md#workandeducation">WorkAndEducation</a></td><td>true</td></tr><tr><td>PlaceOfResidence</td><td><a href="for-developers.md#placeofresidence">PlaceOfResidence</a></td><td>true</td></tr><tr><td>PersonalInterests</td><td><a href="for-developers.md#personalinterests">PersonalInterests</a></td><td>true</td></tr></tbody></table>
-
-#### BasicData
-
-<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>Interests</td><td>string[]</td><td>true</td></tr><tr><td>Languages</td><td>string[]</td><td>true</td></tr><tr><td>ReligionViews</td><td>string[]</td><td>true</td></tr><tr><td>PoliticalViews</td><td>string[]</td><td>true</td></tr></tbody></table>
-
-#### Contacts
-
-<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox"></th></tr></thead><tbody><tr><td>MobilePhone</td><td>string</td><td>true</td></tr><tr><td>Address</td><td>string</td><td>true</td></tr><tr><td>LinkedAccounts</td><td>string[]</td><td>true</td></tr><tr><td>Website</td><td>string</td><td>true</td></tr></tbody></table>
-
-#### WorkAndEducation
-
-<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>PlaceOfWork</td><td>string</td><td>true</td></tr><tr><td>Skills</td><td>string[]</td><td>true</td></tr><tr><td>University</td><td>string</td><td>true</td></tr><tr><td>Faculty</td><td>string</td><td>true</td></tr></tbody></table>
-
-#### PlaceOfResidence
-
-<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>CurrentCity</td><td>string</td><td>true</td></tr><tr><td>BirthPlace</td><td>string</td><td>true</td></tr><tr><td>OtherCities</td><td>string[]</td><td>true</td></tr></tbody></table>
-
-#### PersonalInterests
-
-<table><thead><tr><th></th><th>Data Type</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>BreifDescription</td><td>string</td><td>true</td></tr><tr><td>Hobby</td><td>string[]</td><td>true</td></tr><tr><td>Sport</td><td>string[]</td><td>true</td></tr></tbody></table>
-
-####
 
 <details>
 
@@ -497,7 +463,7 @@ WebHook server will wait a following response:
       "required": [
         "MobilePhone",
         "Address",
-        "LinedAccounts",
+        "LinkedAccounts",
         "Website"
       ]
     },
@@ -641,11 +607,17 @@ WebHook server will wait a following response:
       ]
     },
     "DateOfBirth": {
-      "type": "string",
+      "type": [
+        "string",
+        "null"
+      ],
       "format": "date-time"
     },
     "Gender": {
-      "type": "integer"
+      "type": [
+        "integer",
+        "null"
+      ]
     },
     "Email": {
       "type": [
@@ -700,10 +672,34 @@ WebHook server will wait a following response:
     "PlaceOfResidence",
     "PersonalInterests"
   ]
-}json
+}
 ```
 
 </details>
+
+Details
+
+<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>FirstName</td><td>string</td><td>false</td></tr><tr><td>LastName</td><td>string</td><td>false</td></tr><tr><td>DateOfBirth</td><td>DateTime</td><td>true</td></tr><tr><td>Gender</td><td>int</td><td>true</td></tr><tr><td>Email</td><td>string[]</td><td>false</td></tr><tr><td>Phone</td><td>string[]</td><td>true</td></tr><tr><td>BasicData</td><td><a href="for-developers.md#basicdata">BasicData</a></td><td>true</td></tr><tr><td>Contacts</td><td><a href="for-developers.md#contacts">Contacts</a></td><td>true</td></tr><tr><td>WorkAndEducation</td><td><a href="for-developers.md#workandeducation">WorkAndEducation</a></td><td>true</td></tr><tr><td>PlaceOfResidence</td><td><a href="for-developers.md#placeofresidence">PlaceOfResidence</a></td><td>true</td></tr><tr><td>PersonalInterests</td><td><a href="for-developers.md#personalinterests">PersonalInterests</a></td><td>true</td></tr></tbody></table>
+
+#### BasicData
+
+<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>Interests</td><td>string[]</td><td>true</td></tr><tr><td>Languages</td><td>string[]</td><td>true</td></tr><tr><td>ReligionViews</td><td>string[]</td><td>true</td></tr><tr><td>PoliticalViews</td><td>string[]</td><td>true</td></tr></tbody></table>
+
+#### Contacts
+
+<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox"></th></tr></thead><tbody><tr><td>MobilePhone</td><td>string</td><td>true</td></tr><tr><td>Address</td><td>string</td><td>true</td></tr><tr><td>LinkedAccounts</td><td>string[]</td><td>true</td></tr><tr><td>Website</td><td>string</td><td>true</td></tr></tbody></table>
+
+#### WorkAndEducation
+
+<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>PlaceOfWork</td><td>string</td><td>true</td></tr><tr><td>Skills</td><td>string[]</td><td>true</td></tr><tr><td>University</td><td>string</td><td>true</td></tr><tr><td>Faculty</td><td>string</td><td>true</td></tr></tbody></table>
+
+#### PlaceOfResidence
+
+<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>CurrentCity</td><td>string</td><td>true</td></tr><tr><td>BirthPlace</td><td>string</td><td>true</td></tr><tr><td>OtherCities</td><td>string[]</td><td>true</td></tr></tbody></table>
+
+#### PersonalInterests
+
+<table><thead><tr><th></th><th>Data Type</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>BreifDescription</td><td>string</td><td>true</td></tr><tr><td>Hobby</td><td>string[]</td><td>true</td></tr><tr><td>Sport</td><td>string[]</td><td>true</td></tr></tbody></table>
 
 
 

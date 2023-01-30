@@ -1,0 +1,2673 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "MyDataCoinBridge.io",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/v1/BridgeStatistic/add": {
+      "post": {
+        "tags": [
+          "BridgeStatistic"
+        ],
+        "summary": "add statistic from provider",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "token",
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TransactionProviderRequest"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          }
+        }
+      }
+    },
+    "/api/v1/BridgeStatistic/getFromProvider": {
+      "get": {
+        "tags": [
+          "BridgeStatistic"
+        ],
+        "summary": "get statistic from provider",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "token",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TransactionProviderResponse"
+              }
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          }
+        }
+      }
+    },
+    "/api/v1/BridgeStatistic/getFromAdmin": {
+      "get": {
+        "tags": [
+          "BridgeStatistic"
+        ],
+        "summary": "get statistic from admin",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TransactionProviderResponse"
+              }
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          }
+        }
+      }
+    },
+    "/api/v1/BridgeStatistic/claim/{userId}": {
+      "get": {
+        "tags": [
+          "BridgeStatistic"
+        ],
+        "summary": "claim USDMDC from user",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "format": "double",
+              "type": "number"
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          }
+        }
+      }
+    },
+    "/api/v1/Providers/get-provider-by-id/{id}": {
+      "get": {
+        "tags": [
+          "Providers"
+        ],
+        "summary": "Get provider by id",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "$ref": "#/definitions/DataProvider"
+            }
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v1/Providers/get-users-providers/{countryCode}/{userId}": {
+      "get": {
+        "tags": [
+          "Providers"
+        ],
+        "summary": "Get providers by country code (KG, KZ)",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "countryCode",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Country"
+              }
+            }
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v1/Providers/LoginGoogle": {
+      "get": {
+        "tags": [
+          "Providers"
+        ],
+        "summary": "LoginGoogle",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "421": {
+            "description": "Returns User Not Found"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/api/v1/Providers/SignIn": {
+      "get": {
+        "tags": [
+          "Providers"
+        ],
+        "summary": "SignIn",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "code",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "scope",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "state",
+            "type": "string",
+            "default": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "421": {
+            "description": "Returns User Not Found"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/api/v1/Providers/LoginFacebook": {
+      "get": {
+        "tags": [
+          "Providers"
+        ],
+        "summary": "LoginFacebook",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "421": {
+            "description": "Returns User Not Found"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/api/v1/Providers/LoginFacebookSignIn": {
+      "get": {
+        "tags": [
+          "Providers"
+        ],
+        "summary": "LoginFacebookSignIn",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "code",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "421": {
+            "description": "Returns User Not Found"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/api/v1/Providers/GetPersonInfoGoogle": {
+      "get": {
+        "tags": [
+          "Providers"
+        ],
+        "summary": "GetPersonInfoGoogle",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "accessToken",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "421": {
+            "description": "Returns User Not Found"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/api/v1/Providers/DataProviderCreate": {
+      "post": {
+        "tags": [
+          "Providers"
+        ],
+        "summary": "CRUD Create Data Provider",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/DataProviderRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "421": {
+            "description": "Returns User Not Found"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/Providers/DataProviderEdit/{Id}": {
+      "put": {
+        "tags": [
+          "Providers"
+        ],
+        "summary": "CRUD Edit Data Provider",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Id",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/DataProviderRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "421": {
+            "description": "Returns User Not Found"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/Providers/DataProviderGet": {
+      "get": {
+        "tags": [
+          "Providers"
+        ],
+        "summary": "CRUD Get Data Provider by Id",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "token",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "$ref": "#/definitions/DataProviderRequest"
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "421": {
+            "description": "Returns User Not Found"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/Providers/DataProviderGetList": {
+      "get": {
+        "tags": [
+          "Providers"
+        ],
+        "summary": "CRUD Get Data Provider List",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DataProviderRequest"
+              }
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "421": {
+            "description": "Returns User Not Found"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/Providers/DataProviderDelete/{Id}": {
+      "delete": {
+        "tags": [
+          "Providers"
+        ],
+        "summary": "CRUD Delete Data Provider by Id",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Id",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "421": {
+            "description": "Returns User Not Found"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v1/Providers/RewardCategoryCreate": {
+      "post": {
+        "tags": [
+          "Providers"
+        ],
+        "summary": "CRUD Create Reward Category",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/RewardCategoryRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "421": {
+            "description": "Returns User Not Found"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/Providers/RewardCategoryEdit/{Id}": {
+      "put": {
+        "tags": [
+          "Providers"
+        ],
+        "summary": "CRUD Edit Reward Category",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Id",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/RewardCategoryRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "421": {
+            "description": "Returns User Not Found"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v1/Providers/RewardCategoryGet/{Id}": {
+      "get": {
+        "tags": [
+          "Providers"
+        ],
+        "summary": "CRUD Get Reward Category by Id",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Id",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "421": {
+            "description": "Returns User Not Found"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/Providers/RewardCategoryGetList": {
+      "get": {
+        "tags": [
+          "Providers"
+        ],
+        "summary": "CRUD Get Reward Category List",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "421": {
+            "description": "Returns User Not Found"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/Providers/RewardCategoryDelete/{Id}": {
+      "delete": {
+        "tags": [
+          "Providers"
+        ],
+        "summary": "CRUD Delete Reward Category by Id",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Id",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "421": {
+            "description": "Returns User Not Found"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v1/Providers/TransactionCreate": {
+      "post": {
+        "tags": [
+          "Providers"
+        ],
+        "summary": "CRUD Create Transaction",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/TransactionRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "421": {
+            "description": "Returns User Not Found"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/Providers/TransactionEdit/{Id}": {
+      "put": {
+        "tags": [
+          "Providers"
+        ],
+        "summary": "CRUD Edit Transaction",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Id",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/TransactionRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "421": {
+            "description": "Returns User Not Found"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/Providers/TransactionGet/{Id}": {
+      "get": {
+        "tags": [
+          "Providers"
+        ],
+        "summary": "CRUD Get Transaction by Id",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Id",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "$ref": "#/definitions/TransactionRequest"
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "421": {
+            "description": "Returns User Not Found"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/Providers/TransactionGetList": {
+      "get": {
+        "tags": [
+          "Providers"
+        ],
+        "summary": "CRUD Get Transaction List",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TransactionRequest"
+              }
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "421": {
+            "description": "Returns User Not Found"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/Providers/GETLISTCountry": {
+      "get": {
+        "tags": [
+          "Providers"
+        ],
+        "summary": "CRUD Get Country List",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CountryRequest"
+              }
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "421": {
+            "description": "Returns User Not Found"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/Providers/TransactionDelete/{Id}": {
+      "delete": {
+        "tags": [
+          "Providers"
+        ],
+        "summary": "CRUD Delete Transaction by Id",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Id",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "421": {
+            "description": "Returns User Not Found"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v1/Providers/TermsOfUse": {
+      "get": {
+        "tags": [
+          "Providers"
+        ],
+        "summary": "Get the terms of use status for user from provider",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "fio",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "userId",
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "in": "query",
+            "name": "provaiderId",
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TransactionRequest"
+              }
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "421": {
+            "description": "Returns User Not Found"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/Providers/TermsOfUseExtended": {
+      "post": {
+        "tags": [
+          "Providers"
+        ],
+        "summary": "Get extended status for user from provider's terms of use",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/TermOfUseRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TransactionRequest"
+              }
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "421": {
+            "description": "Returns User Not Found"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/Providers/TermOfUseApply": {
+      "get": {
+        "tags": [
+          "Providers"
+        ],
+        "summary": "Agree to the terms of use",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "userId",
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "in": "query",
+            "name": "providerId",
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TransactionRequest"
+              }
+            }
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "421": {
+            "description": "Returns User Not Found"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v1/Providers/TermOfUseCancel": {
+      "get": {
+        "tags": [
+          "Providers"
+        ],
+        "summary": "Refuse terms of services with provider",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "userId",
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "in": "query",
+            "name": "providerId",
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TransactionRequest"
+              }
+            }
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "421": {
+            "description": "Returns User Not Found"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v1/Providers/GetStatistics": {
+      "get": {
+        "tags": [
+          "Providers"
+        ],
+        "summary": "Get statistics for user",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "userId",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "$ref": "#/definitions/AllDataFromStatisticRequest"
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "421": {
+            "description": "Returns User Not Found"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/Providers/GetStatisticsExtend": {
+      "get": {
+        "tags": [
+          "Providers"
+        ],
+        "summary": "Get statistics for user extended",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "userId",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Success",
+            "schema": {
+              "$ref": "#/definitions/AllDataFromStatisticRequest"
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "401": {
+            "description": "Returns Unauthorized"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "421": {
+            "description": "Returns User Not Found"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/Providers/upload_logo": {
+      "post": {
+        "tags": [
+          "Providers"
+        ],
+        "summary": "Upload logo",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Uploadrequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/User/send_code/{email}": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "User authentication by email, needs to authenticate managers",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "email",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Ok",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/User/verify_code": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Verify code sent by system to get JWT",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/VerifyCodeRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Ok",
+            "schema": {
+              "$ref": "#/definitions/VerifyCodeResponse"
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/User/refresh": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Verify code sent by system to get JWT",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Tokens"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Ok",
+            "schema": {
+              "$ref": "#/definitions/VerifyCodeResponse"
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/User/registration/{email}": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Registration",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "email",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Ok",
+            "schema": {
+              "$ref": "#/definitions/VerifyCodeResponse"
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/User/verify/{email}": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Verify",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "email",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Ok",
+            "schema": {
+              "$ref": "#/definitions/VerifyCodeResponse"
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/User/verify": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Verify request for user",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "token",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Ok",
+            "schema": {
+              "$ref": "#/definitions/VerifyCodeResponse"
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/User/list": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "List",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Ok",
+            "schema": {
+              "$ref": "#/definitions/VerifyCodeResponse"
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/User/UpToManager": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Verify",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "userId",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Ok",
+            "schema": {
+              "$ref": "#/definitions/VerifyCodeResponse"
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/WebHooks/subscribe": {
+      "post": {
+        "tags": [
+          "WebHooks"
+        ],
+        "summary": "Subscribe",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/SubscribeRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Ok",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "204": {
+            "description": "Returns User Not Found",
+            "schema": {
+              "$ref": "#/definitions/NoContentResult"
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type",
+            "schema": {
+              "$ref": "#/definitions/UnsupportedMediaTypeResult"
+            }
+          },
+          "500": {
+            "description": "Returns Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/GeneralResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/WebHooks/unsubscribe/{token}": {
+      "get": {
+        "tags": [
+          "WebHooks"
+        ],
+        "summary": "Unsubscribe",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Ok",
+            "schema": {
+              "$ref": "#/definitions/Profile"
+            }
+          },
+          "400": {
+            "description": "Returns Bad Request"
+          },
+          "415": {
+            "description": "Returns Unsupported Media Type"
+          },
+          "500": {
+            "description": "Returns Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "AllDataFromStatisticRequest": {
+      "type": "object",
+      "properties": {
+        "totalEarneds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TotalEarned"
+          }
+        },
+        "totalTransactions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TransactionRequest"
+          }
+        }
+      }
+    },
+    "BasicData": {
+      "type": "object",
+      "properties": {
+        "interests": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "languages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "religionViews": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "politicalViews": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "BridgeUser": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "role": {
+          "$ref": "#/definitions/Roles"
+        },
+        "verificationCode": {
+          "type": "string"
+        },
+        "isVerified": {
+          "$ref": "#/definitions/VerifiedEnum"
+        },
+        "tokenForService": {
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "secret": {
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    },
+    "Contacts": {
+      "type": "object",
+      "properties": {
+        "mobilePhone": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "linkedAccounts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "website": {
+          "type": "string"
+        }
+      }
+    },
+    "Country": {
+      "required": [
+        "countryCode",
+        "countryName"
+      ],
+      "type": "object",
+      "properties": {
+        "countryName": {
+          "description": "Country name\r\n<example>Russia</example>",
+          "minLength": 1,
+          "type": "string"
+        },
+        "countryCode": {
+          "description": "Country code by ISO\r\n<example>RUS</example>",
+          "minLength": 1,
+          "type": "string"
+        },
+        "phoneCode": {
+          "description": "Country phone code by ISO\r\n<example>+996</example>",
+          "type": "string"
+        },
+        "dataProviders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DataProvider"
+          }
+        }
+      }
+    },
+    "CountryRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "countryName": {
+          "type": "string"
+        },
+        "countryCode": {
+          "type": "string"
+        },
+        "phoneCode": {
+          "type": "string"
+        }
+      }
+    },
+    "DataProvider": {
+      "description": "It is assumed that if one provider is present in more than one country,\r\nthen another provider should be created for each country.",
+      "required": [
+        "name"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "bridgeUser": {
+          "$ref": "#/definitions/BridgeUser"
+        },
+        "bridgeUserId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "icon": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "rewardCategories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RewardCategory"
+          }
+        },
+        "countries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Country"
+          }
+        }
+      }
+    },
+    "DataProviderRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "icon": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "bridgeUserId": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        },
+        "connected": {
+          "type": "boolean"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "rewardCategories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RewardCategoryRequest"
+          }
+        },
+        "countries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CountryRequest"
+          }
+        },
+        "verificationCode": {
+          "type": "string"
+        },
+        "isVerified": {
+          "$ref": "#/definitions/VerifiedEnum"
+        },
+        "bridgeUserEmail": {
+          "type": "string"
+        }
+      }
+    },
+    "GeneralResponse": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "format": "int32",
+          "description": "The HTTP Status Code",
+          "type": "integer",
+          "example": 200
+        },
+        "message": {
+          "description": "The Message from response"
+        }
+      }
+    },
+    "NoContentResult": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "PersonalInterests": {
+      "type": "object",
+      "properties": {
+        "breifDescription": {
+          "type": "string"
+        },
+        "hobby": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "sport": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "PlaceOfResidence": {
+      "type": "object",
+      "properties": {
+        "currentCity": {
+          "type": "string"
+        },
+        "birthPlace": {
+          "type": "string"
+        },
+        "otherCities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Profile": {
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "dateOfBirth": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "gender": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "email": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "phone": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "basicData": {
+          "$ref": "#/definitions/BasicData"
+        },
+        "contacts": {
+          "$ref": "#/definitions/Contacts"
+        },
+        "workAndEducation": {
+          "$ref": "#/definitions/WorkAndEducation"
+        },
+        "placeOfResidence": {
+          "$ref": "#/definitions/PlaceOfResidence"
+        },
+        "personalInterests": {
+          "$ref": "#/definitions/PersonalInterests"
+        }
+      }
+    },
+    "RewardCategory": {
+      "required": [
+        "name"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "description": "Unique identifier of reward category\r\n<example>e12318b4-dbc7-4d18-87c2-100bed209dce</example>",
+          "type": "string"
+        },
+        "name": {
+          "description": "Enum of reward category\r\n<example>Click</example>",
+          "minLength": 1,
+          "type": "string"
+        },
+        "description": {
+          "description": "Description of reward category\r\n<example>Reward description</example>",
+          "type": "string"
+        }
+      }
+    },
+    "RewardCategoryRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "Roles": {
+      "format": "int32",
+      "enum": [
+        0,
+        1,
+        2
+      ],
+      "type": "integer"
+    },
+    "SubscribeRequest": {
+      "required": [
+        "token",
+        "url"
+      ],
+      "type": "object",
+      "properties": {
+        "token": {
+          "description": "Access Token from adminpanel\r\n<example>$2a$11$345F#lBpXelQlWknng4JGeU4c.UnjEZii#%$g#wMnLwvAey.dd</example>",
+          "minLength": 1,
+          "type": "string"
+        },
+        "url": {
+          "format": "uri",
+          "description": "URL of your service which will return personal data\r\n<example>https://yourwebsite/api/v1/pd_request</example>",
+          "minLength": 1,
+          "type": "string"
+        }
+      }
+    },
+    "TermOfUseRequest": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "provaiderId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "email": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "phone": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Tokens": {
+      "type": "object",
+      "properties": {
+        "access_Token": {
+          "type": "string"
+        },
+        "refresh_Token": {
+          "type": "string"
+        }
+      }
+    },
+    "TotalEarned": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "amount": {
+          "format": "double",
+          "type": "number"
+        }
+      }
+    },
+    "TransactionProviderRequest": {
+      "type": "object",
+      "properties": {
+        "emailPhone": {
+          "type": "string"
+        },
+        "rewardCategoryId": {
+          "type": "string"
+        },
+        "count": {
+          "format": "double",
+          "type": "number"
+        }
+      }
+    },
+    "TransactionProviderResponse": {
+      "type": "object",
+      "properties": {
+        "emailPhone": {
+          "type": "string"
+        },
+        "rewardCategoryName": {
+          "type": "string"
+        },
+        "count": {
+          "format": "double",
+          "type": "number"
+        },
+        "usdmcdAmount": {
+          "format": "double",
+          "type": "number"
+        },
+        "created": {
+          "format": "date-time",
+          "type": "string"
+        }
+      }
+    },
+    "TransactionRequest": {
+      "type": "object",
+      "properties": {
+        "txId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        },
+        "amount": {
+          "format": "double",
+          "type": "number"
+        },
+        "txDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    },
+    "UnsupportedMediaTypeResult": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "Uploadrequest": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string"
+        },
+        "imageData": {
+          "type": "string"
+        },
+        "extension": {
+          "type": "string"
+        }
+      }
+    },
+    "VerifiedEnum": {
+      "format": "int32",
+      "enum": [
+        0,
+        1,
+        2
+      ],
+      "type": "integer"
+    },
+    "VerifyCodeRequest": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        }
+      }
+    },
+    "VerifyCodeResponse": {
+      "type": "object",
+      "properties": {
+        "tokens": {
+          "$ref": "#/definitions/Tokens"
+        },
+        "code": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "message": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        },
+        "isVerified": {
+          "$ref": "#/definitions/VerifiedEnum"
+        }
+      }
+    },
+    "WorkAndEducation": {
+      "type": "object",
+      "properties": {
+        "placeOfWork": {
+          "type": "string"
+        },
+        "skills": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "university": {
+          "type": "string"
+        },
+        "faculty": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "Bearer": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header",
+      "description": "JWT Authorization header using the Bearer scheme. \\r\\n\\r\\n \n              Enter 'Bearer' [space] and then your token in the text input below.\n              \\r\\n\\r\\nExample: 'Bearer 12345abcdef'"
+    }
+  }
+}
