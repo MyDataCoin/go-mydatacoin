@@ -285,7 +285,24 @@ curl_close($ch);
 
 To be able to accept webhooks on your side, you must configure your endpoint to receive data in the form of the following json:
 
-<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox">Nullabe</th></tr></thead><tbody><tr><td>Secret</td><td>string</td><td>false</td></tr><tr><td>Action</td><td>int<br>0 - Personal data requested<br>1 - Report requested</td><td>false</td></tr><tr><td>Email</td><td>string[]</td><td>false</td></tr><tr><td>Phone</td><td>string[]</td><td>true</td></tr></tbody></table>
+<details>
+
+<summary>Example</summary>
+
+```
+{
+  "secret": "your_secret_key",
+  "action": 0,
+  "email": [
+    "example@mail.com"
+  ],
+  "phone": [
+    "string"
+  ]
+}
+```
+
+</details>
 
 <details>
 
@@ -344,15 +361,86 @@ To be able to accept webhooks on your side, you must configure your endpoint to 
 
 </details>
 
+Model details:
+
+<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox">Nullabe</th></tr></thead><tbody><tr><td>Secret</td><td>string</td><td>false</td></tr><tr><td>Action</td><td>int<br>0 - Personal data requested<br>1 - Report requested</td><td>false</td></tr><tr><td>Email</td><td>string[]</td><td>false</td></tr><tr><td>Phone</td><td>string[]</td><td>true</td></tr></tbody></table>
+
 Every time a request comes to the endpoint you provided, pay attention to the Action parameter, there will always be one of two types of request:\
-1 - Request for personal data of user\
-2- Request for a report on the account\
+0 - Request for personal data of user\
+1 - Request for a report on the account\
 \
 The email parameter can contain either one email or there can be several (linked to the same account).
 
 WebHook server will wait for a one of the following responses:
 
 #### Response:
+
+<details>
+
+<summary>Example</summary>
+
+```json5
+{
+  "firstName": "string",
+  "lastName": "string",
+  "dateOfBirth": "2023-01-30T13:50:19.765Z",
+  "gender": 0,
+  "email": [
+    "string"
+  ],
+  "phone": [
+    "string"
+  ],
+  "basicData": {
+    "interests": [
+      "string"
+    ],
+    "languages": [
+      "string"
+    ],
+    "religionViews": [
+      "string"
+    ],
+    "politicalViews": [
+      "string"
+    ]
+  },
+  "contacts": {
+    "mobilePhone": "string",
+    "address": "string",
+    "linkedAccounts": [
+      "string"
+    ],
+    "website": "string"
+  },
+  "workAndEducation": {
+    "placeOfWork": "string",
+    "skills": [
+      "string"
+    ],
+    "university": "string",
+    "faculty": "string"
+  },
+  "placeOfResidence": {
+    "currentCity": "string",
+    "birthPlace": "string",
+    "otherCities": [
+      "string"
+    ]
+  },
+  "personalInterests": {
+    "breifDescription": "string",
+    "hobby": [
+      "string"
+    ],
+    "sport": [
+      "string"
+    ]
+  }
+}
+```
+
+</details>
 
 <details>
 
@@ -677,7 +765,7 @@ WebHook server will wait for a one of the following responses:
 
 </details>
 
-Details
+Model details:
 
 <table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>FirstName</td><td>string</td><td>false</td></tr><tr><td>LastName</td><td>string</td><td>false</td></tr><tr><td>DateOfBirth</td><td>DateTime</td><td>true</td></tr><tr><td>Gender</td><td>int</td><td>true</td></tr><tr><td>Email</td><td>string[]</td><td>false</td></tr><tr><td>Phone</td><td>string[]</td><td>true</td></tr><tr><td>BasicData</td><td><a href="for-developers.md#basicdata">BasicData</a></td><td>true</td></tr><tr><td>Contacts</td><td><a href="for-developers.md#contacts">Contacts</a></td><td>true</td></tr><tr><td>WorkAndEducation</td><td><a href="for-developers.md#workandeducation">WorkAndEducation</a></td><td>true</td></tr><tr><td>PlaceOfResidence</td><td><a href="for-developers.md#placeofresidence">PlaceOfResidence</a></td><td>true</td></tr><tr><td>PersonalInterests</td><td><a href="for-developers.md#personalinterests">PersonalInterests</a></td><td>true</td></tr></tbody></table>
 
