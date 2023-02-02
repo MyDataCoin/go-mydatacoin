@@ -6,9 +6,7 @@ description: >-
 
 # 👨💻 For Developers
 
-{% hint style="warning" %}
 **Disclaimer:** The development team is working hard. The documentation will be updated as new releases are released.
-{% endhint %}
 
 ### Overview
 
@@ -363,21 +361,34 @@ To be able to accept webhooks on your side, you must configure your endpoint to 
 
 Model details:
 
-<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox">Nullabe</th></tr></thead><tbody><tr><td>Secret</td><td>string</td><td>false</td></tr><tr><td>Action</td><td>int<br>0 - Personal data requested<br>1 - Report requested</td><td>false</td></tr><tr><td>Email</td><td>string[]</td><td>false</td></tr><tr><td>Phone</td><td>string[]</td><td>true</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox">Nullabe</th></tr></thead><tbody><tr><td>Secret</td><td>int</td><td>false</td></tr><tr><td>Action</td><td>string<br>0 - Personal data requested<br>1 - Report requested</td><td>false</td></tr><tr><td>Email</td><td>string[]</td><td>false</td></tr><tr><td>Phone</td><td>string[]</td><td>true</td></tr></tbody></table>
 
 Every time a request comes to the endpoint you provided, pay attention to the Action parameter, there will always be one of two types of request:\
-0 - Request for personal data of user\
+0 - Request for a personal data of user\
 1 - Request for a report on the account\
 \
 The email parameter can contain either one email or there can be several (linked to the same account).
 
-WebHook server will wait for a one of the following responses:
+After you successfully subscribed be ready to receive webhooks. WebHook server will wait for the following response:
 
-#### Response:
+#### Response for action = 0 (Request for a personal data of user):
 
 <details>
 
-<summary>Example</summary>
+<summary>Response Example</summary>
+
+```json5
+{
+	"action": 0,
+	"payload": "{'firstName': 'string','lastName': 'string','dateOfBirth': '2023-01-30T13:50:19.765Z','gender': '0','email': [ 'string' ],'phone': ['string'],'basicData': {'interests': ['string'],'languages': ['string'],'religionViews': ['string'],'politicalViews': ['string']},'contacts': {'mobilePhone': 'string','address': 'string','linkedAccounts': ['string'],'website': 'string'},'workAndEducation': {'placeOfWork': 'string',skills': ['string'],'university': 'string','faculty': 'string'},'placeOfResidence': {'currentCity': 'string','birthPlace': 'string','otherCities': ['string']},'personalInterests': {'breifDescription': 'string','hobby': ['string'],'sport': ['string']}}"
+}
+```
+
+</details>
+
+<details>
+
+<summary>Payload Body</summary>
 
 ```json5
 {
@@ -442,329 +453,6 @@ WebHook server will wait for a one of the following responses:
 
 </details>
 
-<details>
-
-<summary>Json Schema</summary>
-
-```json5
-{
-  "definitions": {
-    "BasicData": {
-      "type": [
-        "object",
-        "null"
-      ],
-      "properties": {
-        "Interests": {
-          "type": [
-            "array",
-            "null"
-          ],
-          "items": {
-            "type": [
-              "string",
-              "null"
-            ]
-          }
-        },
-        "Languages": {
-          "type": [
-            "array",
-            "null"
-          ],
-          "items": {
-            "type": [
-              "string",
-              "null"
-            ]
-          }
-        },
-        "ReligionViews": {
-          "type": [
-            "array",
-            "null"
-          ],
-          "items": {
-            "type": [
-              "string",
-              "null"
-            ]
-          }
-        },
-        "PoliticalViews": {
-          "type": [
-            "array",
-            "null"
-          ],
-          "items": {
-            "type": [
-              "string",
-              "null"
-            ]
-          }
-        }
-      },
-      "required": [
-        "Interests",
-        "Languages",
-        "ReligionViews",
-        "PoliticalViews"
-      ]
-    },
-    "Contacts": {
-      "type": [
-        "object",
-        "null"
-      ],
-      "properties": {
-        "MobilePhone": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "Address": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "LinkedAccounts": {
-          "type": [
-            "array",
-            "null"
-          ],
-          "items": {
-            "type": [
-              "string",
-              "null"
-            ]
-          }
-        },
-        "Website": {
-          "type": [
-            "string",
-            "null"
-          ]
-        }
-      },
-      "required": [
-        "MobilePhone",
-        "Address",
-        "LinkedAccounts",
-        "Website"
-      ]
-    },
-    "PersonalInterests": {
-      "type": [
-        "object",
-        "null"
-      ],
-      "properties": {
-        "BreifDescription": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "Hobby": {
-          "type": [
-            "array",
-            "null"
-          ],
-          "items": {
-            "type": [
-              "string",
-              "null"
-            ]
-          }
-        },
-        "Sport": {
-          "type": [
-            "array",
-            "null"
-          ],
-          "items": {
-            "type": [
-              "string",
-              "null"
-            ]
-          }
-        }
-      },
-      "required": [
-        "BreifDescription",
-        "Hobby",
-        "Sport"
-      ]
-    },
-    "PlaceOfResidence": {
-      "type": [
-        "object",
-        "null"
-      ],
-      "properties": {
-        "CurrentCity": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "BirthPlace": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "OtherCities": {
-          "type": [
-            "array",
-            "null"
-          ],
-          "items": {
-            "type": [
-              "string",
-              "null"
-            ]
-          }
-        }
-      },
-      "required": [
-        "CurrentCity",
-        "BirthPlace",
-        "OtherCities"
-      ]
-    },
-    "WorkAndEducation": {
-      "type": [
-        "object",
-        "null"
-      ],
-      "properties": {
-        "PlaceOfWork": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "Skills": {
-          "type": [
-            "array",
-            "null"
-          ],
-          "items": {
-            "type": [
-              "string",
-              "null"
-            ]
-          }
-        },
-        "University": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "Faculty": {
-          "type": [
-            "string",
-            "null"
-          ]
-        }
-      },
-      "required": [
-        "PlaceOfWork",
-        "Skills",
-        "University",
-        "Faculty"
-      ]
-    }
-  },
-  "type": "object",
-  "properties": {
-    "FirstName": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
-    "LastName": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
-    "DateOfBirth": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "format": "date-time"
-    },
-    "Gender": {
-      "type": [
-        "integer",
-        "null"
-      ]
-    },
-    "Email": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "type": [
-          "string",
-          "null"
-        ]
-      }
-    },
-    "Phone": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "type": [
-          "string",
-          "null"
-        ]
-      }
-    },
-    "BasicData": {
-      "$ref": "#/definitions/BasicData"
-    },
-    "Contacts": {
-      "$ref": "#/definitions/Contacts"
-    },
-    "WorkAndEducation": {
-      "$ref": "#/definitions/WorkAndEducation"
-    },
-    "PlaceOfResidence": {
-      "$ref": "#/definitions/PlaceOfResidence"
-    },
-    "PersonalInterests": {
-      "$ref": "#/definitions/PersonalInterests"
-    }
-  },
-  "required": [
-    "FirstName",
-    "LastName",
-    "DateOfBirth",
-    "Gender",
-    "Email",
-    "Phone",
-    "BasicData",
-    "Contacts",
-    "WorkAndEducation",
-    "PlaceOfResidence",
-    "PersonalInterests"
-  ]
-}
-```
-
-</details>
-
 Model details:
 
 <table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>FirstName</td><td>string</td><td>false</td></tr><tr><td>LastName</td><td>string</td><td>false</td></tr><tr><td>DateOfBirth</td><td>DateTime</td><td>true</td></tr><tr><td>Gender</td><td>int</td><td>true</td></tr><tr><td>Email</td><td>string[]</td><td>false</td></tr><tr><td>Phone</td><td>string[]</td><td>true</td></tr><tr><td>BasicData</td><td><a href="for-developers.md#basicdata">BasicData</a></td><td>true</td></tr><tr><td>Contacts</td><td><a href="for-developers.md#contacts">Contacts</a></td><td>true</td></tr><tr><td>WorkAndEducation</td><td><a href="for-developers.md#workandeducation">WorkAndEducation</a></td><td>true</td></tr><tr><td>PlaceOfResidence</td><td><a href="for-developers.md#placeofresidence">PlaceOfResidence</a></td><td>true</td></tr><tr><td>PersonalInterests</td><td><a href="for-developers.md#personalinterests">PersonalInterests</a></td><td>true</td></tr></tbody></table>
@@ -789,5 +477,48 @@ Model details:
 
 <table><thead><tr><th></th><th>Data Type</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>BreifDescription</td><td>string</td><td>true</td></tr><tr><td>Hobby</td><td>string[]</td><td>true</td></tr><tr><td>Sport</td><td>string[]</td><td>true</td></tr></tbody></table>
 
+#### Response for action = 1 (Request for a report on the account):&#x20;
 
+<details>
 
+<summary>Response Example</summary>
+
+```json5
+{
+	"action": 1,
+	"payload": "'Video_VAST_desktop': 0, 'Video_VAST_mobile': 0, 'Multitag_mobile': 0, 'In-page_desktop': 0, 'Credit_History': 0, 'Banner_mobile': 0, 'Personal_Data': 0, 'Banner_desktop': 0, 'Conversion': 0, 'Popunder_desktop': 0, 'Multitag_desktop': 0, 'View': 0, 'Insurance_History': 0, 'Popunder_mobile': 0, 'Click': 0, 'In-page_mobile': 0"
+}
+```
+
+</details>
+
+<details>
+
+<summary>Payload Body</summary>
+
+```json5
+{
+	"Video_VAST_desktop": 0,
+	"Video_VAST_mobile": 0,
+	"Multitag_mobile": 0,
+	"In-page_desktop": 0,
+	"Credit_History": 0,
+	"Banner_mobile": 0,
+	"Personal_Data": 0,
+	"Banner_desktop": 0,
+	"Conversion": 0,
+	"Popunder_desktop": 0,
+	"Multitag_desktop": 0,
+	"View": 0,
+	"Insurance_History": 0,
+	"Popunder_mobile": 0,
+	"Click": 0,
+	"In-page_mobile": 0
+}
+```
+
+</details>
+
+Model details:
+
+<table><thead><tr><th>Monetization type</th><th>Data Type</th><th data-type="checkbox"></th></tr></thead><tbody><tr><td>View</td><td>int</td><td>false</td></tr><tr><td>Click</td><td>int</td><td>false</td></tr><tr><td>Conversion</td><td>int</td><td>false</td></tr><tr><td>Personal Data</td><td>int</td><td>false</td></tr><tr><td>Credit History</td><td>int</td><td>false</td></tr><tr><td>Insurance History</td><td>int</td><td>false</td></tr><tr><td>Banner mobile</td><td>int</td><td>false</td></tr><tr><td>Banner desktop</td><td>int</td><td>false</td></tr><tr><td>Video VAST mobile</td><td>int</td><td>false</td></tr><tr><td>Video VAST desktop</td><td>int</td><td>false</td></tr><tr><td>Popunder desktop</td><td>int</td><td>false</td></tr><tr><td>Popunder mobile</td><td>int</td><td>false</td></tr><tr><td>Multitag desktop</td><td>int</td><td>false</td></tr><tr><td>Multitag mobile</td><td>int</td><td>false</td></tr><tr><td>In-page desktop</td><td>int</td><td>false</td></tr><tr><td>In-page mobile</td><td>int</td><td>false</td></tr></tbody></table>

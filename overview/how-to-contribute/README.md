@@ -16,8 +16,8 @@ description: Help us grow.
 
 ### By watching paid Ads
 
-{% content-ref url="by-wathcing-paid-adds.md" %}
-[by-wathcing-paid-adds.md](by-wathcing-paid-adds.md)
+{% content-ref url="by-watching-paid-ads.md" %}
+[by-watching-paid-ads.md](by-watching-paid-ads.md)
 {% endcontent-ref %}
 
 ## By inviting new members
