@@ -1,26 +1,24 @@
 ---
 description: >-
   Instructions for connecting a Data Holder to MyDataCoin Bridge and getting
-  webhooks
+  requests
 ---
 
 # 👨💻 For Developers
 
+{% hint style="warning" %}
 **Disclaimer:** The development team is working hard. The documentation will be updated as new releases are released.
+{% endhint %}
 
 ### Overview
 
-A webhook is a way for a application to provide callbacks for 3-part applications.
-
-When an event occurs, the source application typically triggers an http POST call to a pre-configured external URL and wraps the data from the triggered event in the request's payload.
-
-This approach allows external applications to respond to events via the standard WebAPI interface.
+This manual describes in detail how to interact with the system. For successful integration, you will need to provide an endpoint for receiving POST requests, which in turn will return the response described below.
 
 **Table of contents:**
 
 * [Subscribe](for-developers.md#subscribe)
 * [Unsubscribe](for-developers.md#unsubscribe)
-* [Receiving WebHooks](for-developers.md#receiving-webhooks)
+* [Receiving Requests](for-developers.md#receiving-requests)
 
 {% hint style="info" %}
 Before you start, make sure that you have an Access Token. You should receive the token after the registration, which is described in the previous step.
@@ -28,9 +26,9 @@ Before you start, make sure that you have an Access Token. You should receive th
 
 ### Subscribe
 
-In order to start receiving updates from the MyDataCoin in the form of webhooks, you need to subscribe.&#x20;
+In order to start receiving requests from the MyDataCoin, you need to subscribe.&#x20;
 
-{% swagger method="post" path="/api/v1/webhooks/subscribe" baseUrl="https://bridge.mydatacoin.io" summary="Subscribe to receive WebHooks" expanded="false" %}
+{% swagger method="post" path="/api/v1/webhooks/subscribe" baseUrl="https://bridge.mydatacoin.io" summary="Subscribe to receive requests" expanded="false" %}
 {% swagger-description %}
 Your account has to be approved by system operator, otherwise you'll get 204 response code.
 {% endswagger-description %}
@@ -172,9 +170,9 @@ const response = await axios.post(
 
 ### Unsubscribe
 
-If you no longer want to receive WebHooks from MyDataCoin you need to send a request to a following address.
+If you no longer want to receive requests from MyDataCoin you need to send a request to a following address.
 
-{% swagger method="get" path="/api/v1/webhooks/unsubscribe" baseUrl="https://bridge.mydatacoin.io" summary="Unsubscribe from receiving WebHooks" expanded="false" %}
+{% swagger method="get" path="/api/v1/webhooks/unsubscribe" baseUrl="https://bridge.mydatacoin.io" summary="Unsubscribe from receiving requests" expanded="false" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -277,11 +275,11 @@ curl_close($ch);
 {% endtab %}
 {% endtabs %}
 
-### Receiving WebHooks
+### Receiving Requests
 
 #### Request:
 
-To be able to accept webhooks on your side, you must configure your endpoint to receive data in the form of the following json:
+To be able to accept requests on your side, you must configure your endpoint to receive data in the form of the following json:
 
 <details>
 
@@ -361,7 +359,7 @@ To be able to accept webhooks on your side, you must configure your endpoint to 
 
 Model details:
 
-<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox">Nullabe</th></tr></thead><tbody><tr><td>Secret</td><td>int</td><td>false</td></tr><tr><td>Action</td><td>string<br>0 - Personal data requested<br>1 - Report requested</td><td>false</td></tr><tr><td>Email</td><td>string[]</td><td>false</td></tr><tr><td>Phone</td><td>string[]</td><td>true</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox">Nullabe</th></tr></thead><tbody><tr><td>Secret</td><td>string</td><td>false</td></tr><tr><td>Action</td><td>int<br>0 - Personal data requested<br>1 - Report requested</td><td>false</td></tr><tr><td>Email</td><td>string[]</td><td>false</td></tr><tr><td>Phone</td><td>string[]</td><td>true</td></tr></tbody></table>
 
 Every time a request comes to the endpoint you provided, pay attention to the Action parameter, there will always be one of two types of request:\
 0 - Request for a personal data of user\
@@ -369,7 +367,7 @@ Every time a request comes to the endpoint you provided, pay attention to the Ac
 \
 The email parameter can contain either one email or there can be several (linked to the same account).
 
-After you successfully subscribed be ready to receive webhooks. WebHook server will wait for the following response:
+After you successfully subscribed be ready to receive requests. Our server will wait for the following response:
 
 #### Response for action = 0 (Request for a personal data of user):
 

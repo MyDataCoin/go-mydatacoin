@@ -5,9 +5,7 @@
 ## Overview
 
 * [🪙 MDC Token Distribution and Supply](overview/mdc-token-distribution-and-supply.md)
-* [💡 Tech Stack](overview/tech-stack/README.md)
-  * [🏢 Protocol Architecture](overview/tech-stack/protocol-architecture.md)
-  * [🤖 Self-Sovereign Identity](overview/tech-stack/self-sovereign-identity.md)
+* [🤖 Tech Stack](overview/tech-stack.md)
 * [💁 How to contribute](overview/how-to-contribute/README.md)
   * [🐞 By reporting bugs](overview/how-to-contribute/by-reporting-bugs.md)
   * [📺 By watching paid Ads](overview/how-to-contribute/by-watching-paid-ads.md)

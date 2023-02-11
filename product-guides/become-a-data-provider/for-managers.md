@@ -42,4 +42,8 @@ After all fields were filled, you need to send your organization to verification
 
 > It cat take from one to three business days.&#x20;
 
-To start verification, be sure all required data provided. Then press "Verify" buttom.
+To start verification, be sure all required data provided. Then press "Verify Organization" buttom.
+
+<figure><img src="../../.gitbook/assets/Screenshot 2023-02-09 at 17.11.08.png" alt=""><figcaption></figcaption></figure>
+
+After your status changes from "Not Verified" to "Verified", you will get access to the functionality of the system.

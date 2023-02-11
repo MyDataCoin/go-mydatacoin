@@ -18,8 +18,8 @@ MyDataCoin - is a Web3 social and innovative smart solution based on blockchain 
 [mdc-token-distribution-and-supply.md](overview/mdc-token-distribution-and-supply.md)
 {% endcontent-ref %}
 
-{% content-ref url="overview/tech-stack/" %}
-[tech-stack](overview/tech-stack/)
+{% content-ref url="overview/tech-stack.md" %}
+[tech-stack.md](overview/tech-stack.md)
 {% endcontent-ref %}
 
 {% content-ref url="overview/how-to-contribute/" %}
