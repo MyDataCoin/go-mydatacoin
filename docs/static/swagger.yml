@@ -16,7 +16,7 @@ paths:
     post:
       consumes:
       - application/json
-      description: create DID for address
+      description: to create a DID, you need to send the address as json
       operationId: create-did
       parameters:
       - description: account adress

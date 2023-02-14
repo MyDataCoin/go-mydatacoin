@@ -223,7 +223,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
    * @summary Queries a ConnectionChannelID by index.
    * @request GET:/tendermint/spn/monitoringp/connection_channel_id
    */
-  queryConnectionChannelId = (params: RequestParams = {}) =>
+  queryConnectionChannelID = (params: RequestParams = {}) =>
     this.request<MonitoringpQueryGetConnectionChannelIDResponse, RpcStatus>({
       path: `/tendermint/spn/monitoringp/connection_channel_id`,
       method: "GET",
@@ -239,7 +239,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
    * @summary Queries a ConsumerClientID by index.
    * @request GET:/tendermint/spn/monitoringp/consumer_client_id
    */
-  queryConsumerClientId = (params: RequestParams = {}) =>
+  queryConsumerClientID = (params: RequestParams = {}) =>
     this.request<MonitoringpQueryGetConsumerClientIDResponse, RpcStatus>({
       path: `/tendermint/spn/monitoringp/consumer_client_id`,
       method: "GET",

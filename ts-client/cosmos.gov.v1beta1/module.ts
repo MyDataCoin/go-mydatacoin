@@ -7,22 +7,31 @@ import { msgTypes } from './registry';
 import { IgniteClient } from "../client"
 import { MissingWalletError } from "../helpers"
 import { Api } from "./rest";
-import { MsgDeposit } from "./types/cosmos/gov/v1beta1/tx";
 import { MsgVoteWeighted } from "./types/cosmos/gov/v1beta1/tx";
+import { MsgDeposit } from "./types/cosmos/gov/v1beta1/tx";
 import { MsgVote } from "./types/cosmos/gov/v1beta1/tx";
 import { MsgSubmitProposal } from "./types/cosmos/gov/v1beta1/tx";
 
+import { WeightedVoteOption as typeWeightedVoteOption} from "./types"
+import { TextProposal as typeTextProposal} from "./types"
+import { Deposit as typeDeposit} from "./types"
+import { Proposal as typeProposal} from "./types"
+import { TallyResult as typeTallyResult} from "./types"
+import { Vote as typeVote} from "./types"
+import { DepositParams as typeDepositParams} from "./types"
+import { VotingParams as typeVotingParams} from "./types"
+import { TallyParams as typeTallyParams} from "./types"
 
-export { MsgDeposit, MsgVoteWeighted, MsgVote, MsgSubmitProposal };
+export { MsgVoteWeighted, MsgDeposit, MsgVote, MsgSubmitProposal };
 
-type sendMsgDepositParams = {
-  value: MsgDeposit,
+type sendMsgVoteWeightedParams = {
+  value: MsgVoteWeighted,
   fee?: StdFee,
   memo?: string
 };
 
-type sendMsgVoteWeightedParams = {
-  value: MsgVoteWeighted,
+type sendMsgDepositParams = {
+  value: MsgDeposit,
   fee?: StdFee,
   memo?: string
 };
@@ -40,12 +49,12 @@ type sendMsgSubmitProposalParams = {
 };
 
 
-type msgDepositParams = {
-  value: MsgDeposit,
-};
-
 type msgVoteWeightedParams = {
   value: MsgVoteWeighted,
+};
+
+type msgDepositParams = {
+  value: MsgDeposit,
 };
 
 type msgVoteParams = {
@@ -59,6 +68,18 @@ type msgSubmitProposalParams = {
 
 export const registry = new Registry(msgTypes);
 
+type Field = {
+	name: string;
+	type: unknown;
+}
+function getStructure(template) {
+	const structure: {fields: Field[]} = { fields: [] }
+	for (let [key, value] of Object.entries(template)) {
+		let field = { name: key, type: typeof value }
+		structure.fields.push(field)
+	}
+	return structure
+}
 const defaultFee = {
   amount: [],
   gas: "200000",
@@ -74,20 +95,6 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 
   return {
 		
-		async sendMsgDeposit({ value, fee, memo }: sendMsgDepositParams): Promise<DeliverTxResponse> {
-			if (!signer) {
-					throw new Error('TxClient:sendMsgDeposit: Unable to sign Tx. Signer is not present.')
-			}
-			try {			
-				const { address } = (await signer.getAccounts())[0]; 
-				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry, prefix});
-				let msg = this.msgDeposit({ value: MsgDeposit.fromPartial(value) })
-				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
-			} catch (e: any) {
-				throw new Error('TxClient:sendMsgDeposit: Could not broadcast Tx: '+ e.message)
-			}
-		},
-		
 		async sendMsgVoteWeighted({ value, fee, memo }: sendMsgVoteWeightedParams): Promise<DeliverTxResponse> {
 			if (!signer) {
 					throw new Error('TxClient:sendMsgVoteWeighted: Unable to sign Tx. Signer is not present.')
@@ -99,6 +106,20 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
 			} catch (e: any) {
 				throw new Error('TxClient:sendMsgVoteWeighted: Could not broadcast Tx: '+ e.message)
+			}
+		},
+		
+		async sendMsgDeposit({ value, fee, memo }: sendMsgDepositParams): Promise<DeliverTxResponse> {
+			if (!signer) {
+					throw new Error('TxClient:sendMsgDeposit: Unable to sign Tx. Signer is not present.')
+			}
+			try {			
+				const { address } = (await signer.getAccounts())[0]; 
+				const signingClient = await SigningStargateClient.connectWithSigner(addr,signer,{registry, prefix});
+				let msg = this.msgDeposit({ value: MsgDeposit.fromPartial(value) })
+				return await signingClient.signAndBroadcast(address, [msg], fee ? fee : defaultFee, memo)
+			} catch (e: any) {
+				throw new Error('TxClient:sendMsgDeposit: Could not broadcast Tx: '+ e.message)
 			}
 		},
 		
@@ -131,19 +152,19 @@ export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "ht
 		},
 		
 		
-		msgDeposit({ value }: msgDepositParams): EncodeObject {
-			try {
-				return { typeUrl: "/cosmos.gov.v1beta1.MsgDeposit", value: MsgDeposit.fromPartial( value ) }  
-			} catch (e: any) {
-				throw new Error('TxClient:MsgDeposit: Could not create message: ' + e.message)
-			}
-		},
-		
 		msgVoteWeighted({ value }: msgVoteWeightedParams): EncodeObject {
 			try {
 				return { typeUrl: "/cosmos.gov.v1beta1.MsgVoteWeighted", value: MsgVoteWeighted.fromPartial( value ) }  
 			} catch (e: any) {
 				throw new Error('TxClient:MsgVoteWeighted: Could not create message: ' + e.message)
+			}
+		},
+		
+		msgDeposit({ value }: msgDepositParams): EncodeObject {
+			try {
+				return { typeUrl: "/cosmos.gov.v1beta1.MsgDeposit", value: MsgDeposit.fromPartial( value ) }  
+			} catch (e: any) {
+				throw new Error('TxClient:MsgDeposit: Could not create message: ' + e.message)
 			}
 		},
 		
@@ -177,13 +198,25 @@ export const queryClient = ({ addr: addr }: QueryClientOptions = { addr: "http:/
 class SDKModule {
 	public query: ReturnType<typeof queryClient>;
 	public tx: ReturnType<typeof txClient>;
-	
+	public structure: Record<string,unknown>;
 	public registry: Array<[string, GeneratedType]> = [];
 
 	constructor(client: IgniteClient) {		
 	
 		this.query = queryClient({ addr: client.env.apiURL });		
 		this.updateTX(client);
+		this.structure =  {
+						WeightedVoteOption: getStructure(typeWeightedVoteOption.fromPartial({})),
+						TextProposal: getStructure(typeTextProposal.fromPartial({})),
+						Deposit: getStructure(typeDeposit.fromPartial({})),
+						Proposal: getStructure(typeProposal.fromPartial({})),
+						TallyResult: getStructure(typeTallyResult.fromPartial({})),
+						Vote: getStructure(typeVote.fromPartial({})),
+						DepositParams: getStructure(typeDepositParams.fromPartial({})),
+						VotingParams: getStructure(typeVotingParams.fromPartial({})),
+						TallyParams: getStructure(typeTallyParams.fromPartial({})),
+						
+		};
 		client.on('signer-changed',(signer) => {			
 		 this.updateTX(client);
 		})

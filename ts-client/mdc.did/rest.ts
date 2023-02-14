@@ -224,7 +224,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
    * @summary Parameters queries the parameters of the module.
    * @request GET:/mdc/did/{did_base64}
    */
-  queryDid = (didBase64: string, params: RequestParams = {}) =>
+  queryDID = (didBase64: string, params: RequestParams = {}) =>
     this.request<DidQueryDIDResponse, RpcStatus>({
       path: `/mdc/did/${didBase64}`,
       method: "GET",
