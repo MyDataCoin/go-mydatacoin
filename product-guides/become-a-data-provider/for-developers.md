@@ -12,7 +12,7 @@ description: >-
 
 ### Overview
 
-This manual describes in detail how to interact with the system. For successful integration, you will need to provide an endpoint for receiving POST requests, which in turn will return the response described below.
+This manual describes in detail how to interact with the MyDataCoin Ecosystem. For successful integration, you will need to provide an endpoint for receiving POST requests, which in turn will return the response described below.
 
 **Table of contents:**
 
@@ -373,78 +373,48 @@ After you successfully subscribed be ready to receive requests. Our server will 
 
 <details>
 
-<summary>Response Example</summary>
+<summary>Response Body</summary>
 
 ```json5
 {
-	"action": 0,
-	"payload": "{'firstName': 'string','lastName': 'string','dateOfBirth': '2023-01-30T13:50:19.765Z','gender': '0','email': [ 'string' ],'phone': ['string'],'basicData': {'interests': ['string'],'languages': ['string'],'religionViews': ['string'],'politicalViews': ['string']},'contacts': {'mobilePhone': 'string','address': 'string','linkedAccounts': ['string'],'website': 'string'},'workAndEducation': {'placeOfWork': 'string',skills': ['string'],'university': 'string','faculty': 'string'},'placeOfResidence': {'currentCity': 'string','birthPlace': 'string','otherCities': ['string']},'personalInterests': {'breifDescription': 'string','hobby': ['string'],'sport': ['string']}}"
-}
-```
-
-</details>
-
-<details>
-
-<summary>Payload Body</summary>
-
-```json5
-{
-  "firstName": "string",
-  "lastName": "string",
-  "dateOfBirth": "2023-01-30T13:50:19.765Z",
-  "gender": 0,
-  "email": [
-    "string"
-  ],
-  "phone": [
-    "string"
-  ],
+  "action": 0,
+  "profile": {
+    "firstName": "Alice",
+    "lastName": "Smith",
+    "dateOfBirth": "1999-09-09T00:00:00Z",
+    "gender": null,
+    "email": [
+      "example@mail.com"
+    ],
+    "phone": []
+  },
   "basicData": {
-    "interests": [
-      "string"
-    ],
-    "languages": [
-      "string"
-    ],
-    "religionViews": [
-      "string"
-    ],
-    "politicalViews": [
-      "string"
-    ]
+    "interests": null,
+    "languages": null,
+    "religionViews": null,
+    "politicalViews": null
   },
   "contacts": {
-    "mobilePhone": "string",
-    "address": "string",
-    "linkedAccounts": [
-      "string"
-    ],
-    "website": "string"
+    "mobilePhone": null,
+    "address": null,
+    "linkedAccounts": null,
+    "website": null
   },
   "workAndEducation": {
-    "placeOfWork": "string",
-    "skills": [
-      "string"
-    ],
-    "university": "string",
-    "faculty": "string"
+    "placeOfWork": null,
+    "skills": null,
+    "university": null,
+    "faculty": null
   },
   "placeOfResidence": {
-    "currentCity": "string",
-    "birthPlace": "string",
-    "otherCities": [
-      "string"
-    ]
+    "currentCity": null,
+    "birthPlace": null,
+    "otherCities": null
   },
   "personalInterests": {
-    "breifDescription": "string",
-    "hobby": [
-      "string"
-    ],
-    "sport": [
-      "string"
-    ]
+    "breifDescription": null,
+    "hobby": null,
+    "sport": null
   }
 }
 ```
