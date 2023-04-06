@@ -7,7 +7,7 @@ description: >-
 # 👨💻 For Developers
 
 {% hint style="warning" %}
-**Disclaimer:** The development team is working hard. The documentation will be updated as new releases are released.
+**Disclaimer:** The development team is working diligently, and the documentation will be updated with each new release.
 {% endhint %}
 
 ### Overview
@@ -377,7 +377,6 @@ After you successfully subscribed be ready to receive requests. Our server will 
 
 ```json5
 {
-  "action": 0,
   "profile": {
     "firstName": "Alice",
     "lastName": "Smith",
@@ -423,7 +422,11 @@ After you successfully subscribed be ready to receive requests. Our server will 
 
 Model details:
 
-<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>FirstName</td><td>string</td><td>false</td></tr><tr><td>LastName</td><td>string</td><td>false</td></tr><tr><td>DateOfBirth</td><td>DateTime</td><td>true</td></tr><tr><td>Gender</td><td>int</td><td>true</td></tr><tr><td>Email</td><td>string[]</td><td>false</td></tr><tr><td>Phone</td><td>string[]</td><td>true</td></tr><tr><td>BasicData</td><td><a href="for-developers.md#basicdata">BasicData</a></td><td>true</td></tr><tr><td>Contacts</td><td><a href="for-developers.md#contacts">Contacts</a></td><td>true</td></tr><tr><td>WorkAndEducation</td><td><a href="for-developers.md#workandeducation">WorkAndEducation</a></td><td>true</td></tr><tr><td>PlaceOfResidence</td><td><a href="for-developers.md#placeofresidence">PlaceOfResidence</a></td><td>true</td></tr><tr><td>PersonalInterests</td><td><a href="for-developers.md#personalinterests">PersonalInterests</a></td><td>true</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>Profile</td><td><a href="for-developers.md#profile">Profile</a></td><td>true</td></tr><tr><td>BasicData</td><td><a href="for-developers.md#basicdata">BasicData</a></td><td>true</td></tr><tr><td>Contacts</td><td><a href="for-developers.md#contacts">Contacts</a></td><td>true</td></tr><tr><td>WorkAndEducation</td><td><a href="for-developers.md#workandeducation">WorkAndEducation</a></td><td>true</td></tr><tr><td>PlaceOfResidence</td><td><a href="for-developers.md#placeofresidence">PlaceOfResidence</a></td><td>true</td></tr><tr><td>PersonalInterests</td><td><a href="for-developers.md#personalinterests">PersonalInterests</a></td><td>true</td></tr></tbody></table>
+
+#### Profile
+
+<table><thead><tr><th></th><th></th><th data-type="checkbox"></th></tr></thead><tbody><tr><td>FirstName</td><td>string</td><td>false</td></tr><tr><td>LastName</td><td>string</td><td>false</td></tr><tr><td>DateOfBirth</td><td>DateTime</td><td>true</td></tr><tr><td>Gender</td><td>int</td><td>true</td></tr><tr><td>Email</td><td>string[]</td><td>false</td></tr><tr><td>Phone</td><td>string[]</td><td>true</td></tr></tbody></table>
 
 #### BasicData
 

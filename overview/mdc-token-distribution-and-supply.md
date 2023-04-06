@@ -1,6 +1,6 @@
 # 🪙 MDC Token Distribution and Supply
 
-The MDC is the native currency of the MyDataCoin blockchain, and is required to participate in block production and purchasing rewards for users as rewards for sharing their data. MDC is an inflationary currency with no MAX supply cap.&#x20;
+MDC is the native currency of the MyDataCoin blockchain, and it is necessary to participate in block production and receive rewards for users who share their data. MDC is an inflationary currency with no maximum supply cap.
 
 
 
@@ -14,7 +14,7 @@ The MDC is the native currency of the MyDataCoin blockchain, and is required to 
 
 <figure><img src="https://lh4.googleusercontent.com/TsPVyxaQ4vbQ27I0Y_CEWsAHhCVezgg77u3KA437SjelFJTCemQcqopTKMHvPV2QyB9fTbNx6n9p6Zfo_78Rgf0xYLMU48RRFqLV_lrOKAWDuaYkvZgy-y5SI1y8VqwcA55dZGAm3Eb0oNQKlEBB4oRSZaBeMa8SXzIz-0M-UUZzZJ_6EEGU_3YTrxORF0I" alt=""><figcaption></figcaption></figure>
 
-The initial distribution of MDC is 1 billion tokens. This number includes all categories of token recipients in the distribution schedule, with the exception of data producers, who will receive rewards in the form of dividends for the share of personal data. With an increase in the number of users and data categories, there will be an increase in inflation, which is very important for the system, at the first stages of network development.
+The initial distribution of MDC is 1 billion tokens, which includes all categories of token recipients in the distribution schedule, except for data producers who receive rewards in the form of dividends for sharing their personal data. As the number of users and data categories increases, there will be an inflationary increase that is crucial for the system during the initial stages of network development.
 
 
 
@@ -22,7 +22,7 @@ The initial distribution of MDC is 1 billion tokens. This number includes all ca
 
 #### Inflation
 
-Inflation leads to stimulation. It is useful for network members to have an incentive to participate. For this reason, it was decided to provide high annual rates, such as 20%. Which will ultimately lead to the creation of a healthy network and decentralization. There are two main reasons to stake or delegate MDC:
+Inflation serves as a stimulus, providing network members with an incentive to participate. Therefore, it was decided to offer high annual rates, such as 20%, to create a healthy network and promote decentralization. There are two primary reasons to stake or delegate MDC:
 
 &#x20;
 

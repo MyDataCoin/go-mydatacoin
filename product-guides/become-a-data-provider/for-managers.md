@@ -1,7 +1,7 @@
 # 👨💼 For Managers
 
 {% hint style="warning" %}
-**Disclaimer:** The development team is working hard. The documentation will be updated as new releases are released.
+**Disclaimer:** The development team is working diligently, and the documentation will be updated with each new release.
 {% endhint %}
 
 **Table of contents:**
@@ -12,15 +12,11 @@
 
 ### Registration
 
-The registration process is not complicated, and requires a maximum of 5 minutes of your time. To get started, go to the page:
+Getting started with MyDataCoin is quick and easy, and the registration process should only take you around 5 minutes. To begin, simply navigate to our registration page: [Client App](https://client.mydatacoin.io/). To register for an account, simply navigate to the registration page and enter your email address. You will receive a verification code to confirm your email. Once your email is verified, you will be able to access your dashboard.&#x20;
 
-{% embed url="https://client.mydatacoin.io/" %}
-Bridge service
-{% endembed %}
+From there, you can click on the "Profile" menu to view your Access Token. It's a quick and easy process that should take no more than a few minutes to complete. Once you've completed the registration process, you'll be able to start exploring the features and benefits of MyDataCoin.
 
-and press tab "Register".\
-\
-Enter your email and get verification code. After successful verification you'll be able to see dashboard. After pressing "Profile" menu you will be able to see your Access Token.
+
 
 <figure><img src="../../.gitbook/assets/Screenshot 2023-01-10 at 18.56.23.png" alt=""><figcaption><p>Access Token</p></figcaption></figure>
 

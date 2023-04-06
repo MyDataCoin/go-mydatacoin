@@ -1,7 +1,7 @@
 # 🤖 Tech Stack
 
 {% hint style="warning" %}
-**Disclaimer:** The development team is working hard. The documentation will be updated as new releases are released.
+**Disclaimer:** The development team is working diligently, and the documentation will be updated with each new release.
 {% endhint %}
 
 * [Protocol Architecture](tech-stack.md#protocol-architecture)
@@ -9,7 +9,7 @@
 
 ## Overview
 
-MyDataCoin is developing a public blockchain based on Cosmos SDK and the Tendermint Core.
+MyDataCoin is in the process of developing a public blockchain that utilizes the **Cosmos SDK** and **Tendermint Core** technologies. The Cosmos SDK provides a framework for building customizable, modular blockchains that can interoperate with one another. It also includes tools for developing decentralized applications (dApps) and smart contracts. Tendermint Core is a consensus engine that uses the Tendermint BFT (Byzantine Fault Tolerance) algorithm to ensure secure and fast transaction processing on the blockchain. By utilizing these technologies, MyDataCoin aims to create a scalable and interoperable blockchain platform that can be used for a variety of decentralized applications, including data sharing and privacy-preserving technologies.
 
 <figure><img src="https://lh6.googleusercontent.com/rljPDPsCtDL6qYOcKp0xZaALBjHr0ALGI5DB7P17F7zIIk1LFhC8GePCu986fYr5RvpkyPUlk5NNiVjpHcbUdljLS8VY515IDYqrj8Pth5RcE7Cj5TXWX9yg69NiFrKaNwjMqEDehqQCjHvss2fzDIc3PBWph3J2sw2QbHNoo4P0sWbw5ZFBG22dLoOhaG8" alt=""><figcaption><p>MDC Tech Stack</p></figcaption></figure>
 
@@ -28,15 +28,28 @@ The signing of a smart agreement between the participants of the system should b
 
 ### Protocol Architecture
 
-The basis of this protocol will be based on the MyDataCoin network. The MyDataCoin network will be a protocol that implements a binding solution for connecting to data holders. The mechanism is a basic decentralized linking solution for interaction between data owners and data holders.
+To elaborate further, the MyDataCoin network will serve as the foundation for a protocol that enables secure and decentralized connectivity between data owners and data holders. This protocol will utilize a decentralized linking mechanism that allows data owners to connect with multiple data holders in a secure and transparent manner.
 
-The protocol intends to use the MyDataCoin Bridge implementation, which is the link between the main network and the data holders. It is also planned to use a “MyDataCoin Mapper” solution, which is necessary to combine many accounts from different data holders into one.
+The MyDataCoin Bridge implementation will serve as the link between the main network and the data holders, ensuring that data is transmitted securely and efficiently. The MyDataCoin Mapper solution will be used to combine multiple accounts from different data holders into one, providing a unified view of the data.
+
+The goal of this protocol is to provide a decentralized and transparent data sharing mechanism that empowers individuals to control their personal data and securely share it with trusted parties. By leveraging the MyDataCoin network and associated technologies, this protocol aims to improve data privacy and security while enabling more efficient and effective data sharing.
 
 <figure><img src="../.gitbook/assets/MainSchema2.drawio.png" alt=""><figcaption><p>Protocol Architecture</p></figcaption></figure>
 
 ### Self-Sovereign Identity
 
-Blockchain technology, Decentralized Identifiers and Verifiable Credentials are the 3 pillars of Self-Sovereign Identity.
+Self-Sovereign Identity (SSI) is a new approach to digital identity that puts individuals in control of their own identity data. It is built on three foundational technologies: blockchain, Decentralized Identifiers (DIDs), and Verifiable Credentials (VCs).
+
+Blockchain provides the decentralized infrastructure for SSI, allowing individuals to securely store and manage their identity data on a distributed ledger. This eliminates the need for centralized identity providers, which can be vulnerable to data breaches and hacks.
+
+Decentralized Identifiers (DIDs) are a type of identifier that is independent of any centralized authority or registry. DIDs are unique, cryptographically secure identifiers that are owned and controlled by the individual they represent. DIDs enable individuals to create and manage their own identity data, and to selectively share that data with others.
+
+Verifiable Credentials (VCs) are digital credentials that contain information about an individual's identity, such as their name, date of birth, and proof of address. VCs are issued by trusted parties, such as governments, educational institutions, or employers, and are cryptographically signed to ensure their authenticity. VCs can be stored and managed by the individual they represent, and can be selectively shared with others as needed.
+
+Together, these three technologies provide the foundation for a new paradigm of digital identity that is secure, decentralized, and empowers individuals to control their own identity data.
+
+\
+
 
 <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
@@ -50,7 +63,7 @@ Blockchain technology, Decentralized Identifiers and Verifiable Credentials are 
 * Self-Sovereign Identity **tries to abolish multiple passwords**. You just need to know your wallet password.
 
 \
-[DID](https://www.w3.org/TR/did-core/) is going to be used as a unique identifier in the MyDataCoin ecosystem. Data collectors can issue signed credentials using a decentralized identifier (DID) to users, enabling them to share their data with other data consumers. Anyone can check the authentication data by referring to the DID document on MyDataCoin. Additionally, the MyDataCoin-based DID is used to guarantee data reliability.
+A Decentralized Identifier ([DID](https://www.w3.org/TR/did-core/)) is a unique identifier that is going to be used in the MyDataCoin ecosystem. Data collectors can issue signed credentials using a DID to users, allowing them to share their data with other data consumers. The authenticity of the credentials can be verified by referring to the DID document on the MyDataCoin network. The MyDataCoin-based DID is also used to ensure the reliability and integrity of the shared data. By utilizing DIDs, MyDataCoin aims to establish a self-sovereign identity system that empowers individuals to control their own data and share it with others in a secure and transparent manner.
 
 [Decentralized Identifiers](https://www.w3.org/TR/did-core/#dfn-decentralized-identifiers) are a component of larger systems, such as the Verifiable Credentials ecosystem \[[VC-DATA-MODEL](https://www.w3.org/TR/did-core/#bib-vc-data-model)], which influenced the design goals for this specification. The design goals for Decentralized Identifiers are summarized here.
 

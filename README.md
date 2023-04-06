@@ -1,16 +1,16 @@
 ---
-description: Your data - Your digital asset. Earn, control and protect your asset!
+description: Join the personal data revolution with MyDataCoin!
 ---
 
 # 👋 Welcome to MyDataCoin
 
 {% hint style="warning" %}
-**Disclaimer:** The development team is working hard. The documentation will be updated as new releases are released.
+**Disclaimer:** The development team is working diligently, and the documentation will be updated with each new release.
 {% endhint %}
 
 ## About
 
-MyDataCoin - is a Web3 social and innovative smart solution based on blockchain technology. It allows to earn for any Internet user on their data in the form of a new social,digital currency and control the data flow without any hassle. It is an innovative solution that addresses current global socio-economic data challenges.
+MyDataCoin is a blockchain-based platform that aims to create a more transparent, ethical, and equitable model for personal data exchange. MyDataCoin also offers data buyers a more streamlined and cost-effective process for acquiring high-quality data while ensuring the privacy and consent of the data providers.
 
 ## Overview
 
@@ -28,7 +28,7 @@ MyDataCoin - is a Web3 social and innovative smart solution based on blockchain 
 
 ## Product Guides
 
-We've put together some helpful guides for you to get setup with our product quickly and easily.
+We have compiled some helpful guides to help you set up our product quickly and easily.
 
 {% content-ref url="product-guides/become-a-data-provider/" %}
 [become-a-data-provider](product-guides/become-a-data-provider/)
