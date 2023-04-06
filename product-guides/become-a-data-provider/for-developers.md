@@ -1,7 +1,7 @@
 ---
 description: >-
-  Instructions for connecting a Data Holder to MyDataCoin Bridge and getting
-  requests
+  In this guide, we provide detailed instructions for connecting a Data Holder
+  to MyDataCoin Bridge and receiving requests.
 ---
 
 # 👨💻 For Developers
@@ -12,7 +12,7 @@ description: >-
 
 ### Overview
 
-This manual describes in detail how to interact with the MyDataCoin Ecosystem. For successful integration, you will need to provide an endpoint for receiving POST requests, which in turn will return the response described below.
+This guide provides a comprehensive explanation of how to effectively interact with the MyDataCoin ecosystem. To integrate successfully, you will need to set up an endpoint that can receive POST requests, which will, in turn, return the response described in the sections below.
 
 **Table of contents:**
 
@@ -21,7 +21,7 @@ This manual describes in detail how to interact with the MyDataCoin Ecosystem. F
 * [Receiving Requests](for-developers.md#receiving-requests)
 
 {% hint style="info" %}
-Before you start, make sure that you have an Access Token. You should receive the token after the registration, which is described in the previous step.
+Before you begin, make sure that you have an Access Token. You should have received this token after completing the registration process, as described in the previous step.
 {% endhint %}
 
 ### Subscribe
