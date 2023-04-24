@@ -478,7 +478,7 @@ Model details:
 
 #### DeviceInformation
 
-<table><thead><tr><th>Parameter</th><th>Data Type</th><th>Comments</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>DeviceName</td><td>string</td><td>Device used to access the internet</td><td>false</td></tr><tr><td>OperatingSystem</td><td>string</td><td>Operating system and its version</td><td>false</td></tr><tr><td>DisplayResolution</td><td>string</td><td>Screen resolution</td><td>true</td></tr><tr><td>Browser</td><td>string</td><td>Used browser and its version</td><td>false</td></tr><tr><td>ISP</td><td>string</td><td>Information about the internet service provider and type of connection</td><td>true</td></tr><tr><td>AdBlock</td><td>bool</td><td>Presence of ad blockers</td><td>true</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th>Data Type</th><th>Comments</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>DeviceName</td><td>string</td><td>Device used to access the internet</td><td>false</td></tr><tr><td>DeviceId</td><td>string</td><td>DeviceId is a parameter that refers to a unique identifier for a device.</td><td>true</td></tr><tr><td>OperatingSystem</td><td>string</td><td>Operating system and its version</td><td>false</td></tr><tr><td>DisplayResolution</td><td>string</td><td>Screen resolution</td><td>true</td></tr><tr><td>Browser</td><td>string</td><td>Used browser and its version</td><td>false</td></tr><tr><td>ISP</td><td>string</td><td>Information about the internet service provider and type of connection</td><td>true</td></tr><tr><td>AdBlock</td><td>bool</td><td>Presence of ad blockers</td><td>true</td></tr></tbody></table>
 
 #### Cookies
 
