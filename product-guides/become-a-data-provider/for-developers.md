@@ -19,6 +19,7 @@ This guide provides a comprehensive explanation of how to effectively interact w
 * [Subscribe](for-developers.md#subscribe)
 * [Unsubscribe](for-developers.md#unsubscribe)
 * [Receiving Requests](for-developers.md#receiving-requests)
+* [User Model](for-developers.md#user-model)
 
 {% hint style="info" %}
 Before you begin, make sure that you have an Access Token. You should have received this token after completing the registration process, as described in the previous step.
@@ -421,6 +422,8 @@ After you successfully subscribed be ready to receive requests. Our server will 
 </details>
 
 Model details:
+
+### User model
 
 <table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>Profile</td><td><a href="for-developers.md#profile">Profile</a></td><td>true</td></tr><tr><td>BasicData</td><td><a href="for-developers.md#basicdata">BasicData</a></td><td>true</td></tr><tr><td>Contacts</td><td><a href="for-developers.md#contacts">Contacts</a></td><td>true</td></tr><tr><td>WorkAndEducation</td><td><a href="for-developers.md#workandeducation">WorkAndEducation</a></td><td>true</td></tr><tr><td>PlaceOfResidence</td><td><a href="for-developers.md#placeofresidence">PlaceOfResidence</a></td><td>true</td></tr><tr><td>PersonalInterests</td><td><a href="for-developers.md#personalinterests">PersonalInterests</a></td><td>true</td></tr><tr><td>DeviceInformation</td><td><a href="for-developers.md#deviceinformation">DeviceInformation</a></td><td>true</td></tr><tr><td>Cookies</td><td><a href="for-developers.md#cookies">Cookies</a></td><td>true</td></tr></tbody></table>
 
