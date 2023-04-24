@@ -422,11 +422,22 @@ After you successfully subscribed be ready to receive requests. Our server will 
 
 Model details:
 
-<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>Profile</td><td><a href="for-developers.md#profile">Profile</a></td><td>true</td></tr><tr><td>BasicData</td><td><a href="for-developers.md#basicdata">BasicData</a></td><td>true</td></tr><tr><td>Contacts</td><td><a href="for-developers.md#contacts">Contacts</a></td><td>true</td></tr><tr><td>WorkAndEducation</td><td><a href="for-developers.md#workandeducation">WorkAndEducation</a></td><td>true</td></tr><tr><td>PlaceOfResidence</td><td><a href="for-developers.md#placeofresidence">PlaceOfResidence</a></td><td>true</td></tr><tr><td>PersonalInterests</td><td><a href="for-developers.md#personalinterests">PersonalInterests</a></td><td>true</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>Profile</td><td><a href="for-developers.md#profile">Profile</a></td><td>true</td></tr><tr><td>BasicData</td><td><a href="for-developers.md#basicdata">BasicData</a></td><td>true</td></tr><tr><td>Contacts</td><td><a href="for-developers.md#contacts">Contacts</a></td><td>true</td></tr><tr><td>WorkAndEducation</td><td><a href="for-developers.md#workandeducation">WorkAndEducation</a></td><td>true</td></tr><tr><td>PlaceOfResidence</td><td><a href="for-developers.md#placeofresidence">PlaceOfResidence</a></td><td>true</td></tr><tr><td>PersonalInterests</td><td><a href="for-developers.md#personalinterests">PersonalInterests</a></td><td>true</td></tr><tr><td>DeviceInformation</td><td><a href="for-developers.md#deviceinformation">DeviceInformation</a></td><td>true</td></tr></tbody></table>
 
 #### Profile
 
-<table><thead><tr><th></th><th></th><th data-type="checkbox"></th></tr></thead><tbody><tr><td>FirstName</td><td>string</td><td>false</td></tr><tr><td>LastName</td><td>string</td><td>false</td></tr><tr><td>DateOfBirth</td><td>DateTime</td><td>true</td></tr><tr><td>Gender</td><td>int</td><td>true</td></tr><tr><td>Email</td><td>string[]</td><td>false</td></tr><tr><td>Phone</td><td>string[]</td><td>true</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th>Data Type</th><th>Comment</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>FirstName</td><td>string</td><td></td><td>false</td></tr><tr><td>LastName</td><td>string</td><td></td><td>false</td></tr><tr><td>DateOfBirth</td><td>DateTime</td><td></td><td>true</td></tr><tr><td>Gender</td><td>int</td><td><p>Enum</p><pre class="language-csharp"><code class="lang-csharp">0 = Male,
+1 = Female
+</code></pre></td><td>true</td></tr><tr><td>Email</td><td>string[]</td><td></td><td>false</td></tr><tr><td>Phone</td><td>string[]</td><td></td><td>true</td></tr><tr><td>MaritalStatus</td><td>int</td><td><p><a href="for-developers.md#maritalstatus">MaritalStatus</a></p><pre class="language-json"><code class="lang-json"><strong>0 = Single,
+</strong>1 = Married,
+2 = Divorced,
+3 = Bachelor,
+4 = Widow,
+5 = Cohabiting,
+6 = Separated,
+7 = Living_Separately,
+8 = Remarried
+</code></pre></td><td>true</td></tr></tbody></table>
 
 #### BasicData
 
@@ -446,7 +457,27 @@ Model details:
 
 #### PersonalInterests
 
-<table><thead><tr><th></th><th>Data Type</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>BreifDescription</td><td>string</td><td>true</td></tr><tr><td>Hobby</td><td>string[]</td><td>true</td></tr><tr><td>Sport</td><td>string[]</td><td>true</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>BreifDescription</td><td>string</td><td>true</td></tr><tr><td>Hobby</td><td>string[]</td><td>true</td></tr><tr><td>Sport</td><td>string[]</td><td>true</td></tr></tbody></table>
+
+#### DeviceInformation
+
+<table><thead><tr><th>Parameter</th><th>Data Type</th><th>Comments</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>DeviceName</td><td>string</td><td>Device used to access the internet</td><td>false</td></tr><tr><td>OperatingSystem</td><td>string</td><td>Operating system and its version</td><td>false</td></tr><tr><td>DisplayResolution</td><td>string</td><td>Screen resolution</td><td>true</td></tr><tr><td>Browser</td><td>string</td><td>Used browser and its version</td><td>false</td></tr><tr><td>ISP</td><td>string</td><td>Information about the internet service provider and type of connection</td><td>true</td></tr><tr><td>AdBlock</td><td>bool</td><td>Presence of ad blockers</td><td>true</td></tr></tbody></table>
+
+#### MaritalStatus
+
+Marital status is a characteristic that reflects a person's marital status. Depending on the country and culture, there are different categories of marital statuses. Some of them may include:
+
+| Value              |                                                                                                                   |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------- |
+| Single             | Single - a person who is not married and does not have an official partner.                                       |
+| Married            | Married - a person who is in an official marriage.                                                                |
+| Divorced           | Divorced - a person who was in an official marriage but got divorced.                                             |
+| Bachelor           | Bachelor/Spinster - a person who lives alone, regardless of their marital status.                                 |
+| Widow              | Widower/Widow - a person who lost their spouse.                                                                   |
+| Cohabiting         | Cohabiting - two people who live together but are not in an official marriage.                                    |
+| Separated          | Separated - a person who was in an official marriage but is in the process of getting divorced.                   |
+| Living\_Separately | Living separately - a person who lives separately from their family, for example, in a dormitory or student room. |
+| Remarried          | Remarried - spouses who have already been in an official marriage and have remarried.                             |
 
 #### Response for action = 1 (Request for a report on the account):&#x20;
 
