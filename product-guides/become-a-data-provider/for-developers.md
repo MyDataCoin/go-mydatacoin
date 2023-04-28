@@ -386,7 +386,9 @@ After you successfully subscribed be ready to receive requests. Our server will 
     "email": [
       "example@mail.com"
     ],
-    "phone": []
+    "phone": [],
+    "maritalStatus": 0,
+    "income": 0
   },
   "basicData": {
     "interests": null,
@@ -428,7 +430,17 @@ After you successfully subscribed be ready to receive requests. Our server will 
     "language": null,
     "region": null,
     "recentPages": null,
-    "shoppingCart": null
+    "shoppingCart": {
+      "productId": null,
+      "productName": null,
+      "productPrice": null,
+      "quantity": null,
+      "subTotal": null,
+      "total": null,
+      "couponCode": null,
+      "shippingInformation": null,
+      "taxInformation": null
+    }
   }
 }
 ```
