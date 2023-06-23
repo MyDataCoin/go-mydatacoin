@@ -10,6 +10,19 @@ description: >-
 **Disclaimer:** The development team is working diligently, and the documentation will be updated with each new release.
 {% endhint %}
 
+### System Requirements
+
+*   **Hardware:**\
+    CPU: Intel Core i3 or AMD Ryzen 3.
+
+    RAM: At least4GB.
+
+    HDD: 20GB free space.\
+    64-bit kernel and CPU support for virtualization.
+* **Software:**\
+  Linux 18.04 LTS or Windows 10\
+  Docker for [Linux](https://docs.docker.com/desktop/install/linux-install/) or [Windows](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm\_source=docker\&utm\_medium=webreferral\&utm\_campaign=dd-smartbutton\&utm\_location=module&\_gl=1\*1h1edy2\*\_ga\*MTY3NDYyODgzOC4xNjg1OTUxODU2\*\_ga\_XJWPQMJYHQ\*MTY4NzI1MzU5Ny4zLjEuMTY4NzI1MzcxMC42MC4wLjA.)
+
 ### Overview
 
 This guide provides a comprehensive explanation of how to effectively interact with the MyDataCoin ecosystem. To integrate successfully, you will need to set up an endpoint that can receive POST requests, which will, in turn, return the response described in the sections below.
@@ -414,7 +427,7 @@ After you successfully subscribed be ready to receive requests. Our server will 
     "otherCities": null
   },
   "personalInterests": {
-    "breifDescription": null,
+    "briefDescription": null,
     "hobby": null,
     "sport": null
   },

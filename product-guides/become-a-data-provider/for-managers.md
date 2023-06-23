@@ -12,13 +12,17 @@
 
 ### Registration
 
-Getting started with MyDataCoin is quick and easy, and the registration process should only take you around 5 minutes. To begin, simply navigate to our registration page: [Client App](https://client.mydatacoin.io/). To register for an account, simply navigate to the registration page and enter your email address. You will receive a verification code to confirm your email. Once your email is verified, you will be able to access your dashboard.&#x20;
+<figure><img src="../../.gitbook/assets/Screenshot 2023-06-20 at 17.58.03.png" alt=""><figcaption><p>Register</p></figcaption></figure>
 
-From there, you can click on the "Profile" menu to view your Access Token. It's a quick and easy process that should take no more than a few minutes to complete. Once you've completed the registration process, you'll be able to start exploring the features and benefits of MyDataCoin.
+Getting started with MyDataCoin is quick and easy, and the registration process should only take you around 5 minutes. To begin, simply navigate to our registration page: [Marketplace](https://app.mydatacoin.io/). To register for an account, simply navigate to the registration page and enter your email address. You will receive a verification code to confirm your email.&#x20;
 
+<figure><img src="../../.gitbook/assets/Screenshot 2023-06-20 at 18.03.35.png" alt=""><figcaption></figcaption></figure>
 
+Once your email is verified, you will be able to access your dashboard.&#x20;
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-01-10 at 18.56.23.png" alt=""><figcaption><p>Access Token</p></figcaption></figure>
+From there, you can click on the "Settings" menu to view your Access Token. It's a quick and easy process that should take no more than a few minutes to complete. Once you've completed the registration process, you'll be able to start exploring the features and benefits of MyDataCoin.
+
+<figure><img src="../../.gitbook/assets/Screenshot 2023-06-20 at 17.42.46.png" alt=""><figcaption><p>Your secret token</p></figcaption></figure>
 
 This token gives you an access to work with MyDataCoin Bridge.&#x20;
 
@@ -28,9 +32,9 @@ Do not transfer the token to third parties, and beware of getting the token on t
 
 ### Organization Details
 
-The very next step is provide us your organization data. To do that you need to press "+" button and fill all required data.
+The very next step is provide us your organization data. To do that you need to fill all required data and press "Submit" button.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-01-10 at 19.04.19.png" alt=""><figcaption><p>Organization Details</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2023-06-20 at 18.28.25.png" alt=""><figcaption></figcaption></figure>
 
 ### Verify your organization
 
@@ -38,8 +42,8 @@ After all fields were filled, you need to send your organization to verification
 
 > It cat take from one to three business days.&#x20;
 
-To start verification, be sure all required data provided. Then press "Verify Organization" buttom.
+To start verification, be sure all required data provided. Then press "Verify Now" button.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-02-09 at 17.11.08.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2023-06-23 at 14.35.35.png" alt=""><figcaption></figcaption></figure>
 
-After your status changes from "Not Verified" to "Verified", you will get access to the functionality of the system.
+After your status changes from "Awaiting" to "Verified", you will get access to the functionality of the system.
