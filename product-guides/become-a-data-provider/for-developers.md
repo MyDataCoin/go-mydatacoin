@@ -30,7 +30,7 @@ This guide provides a comprehensive explanation of how to effectively interact w
 **Table of contents:**
 
 * [Install Docker](for-developers.md#install-docker)
-* Setup Docker
+* [Setup Docker](for-developers.md#setup-docker)
 * [Subscribe](for-developers.md#subscribe)
 * [Unsubscribe](for-developers.md#unsubscribe)
 * [Receiving Requests](for-developers.md#receiving-requests)
@@ -44,15 +44,21 @@ Please select the appropriate link for your operation system and follow the prov
 * For Windows: [Docker Installation Instructions for Windows](https://docs.docker.com/docker-for-windows/install/)&#x20;
 * For macOS: [Docker Installation Instructions for macOS](https://docs.docker.com/docker-for-mac/install/)
 
+### Setup Docker
+
+{% hint style="info" %}
+Before you begin, make sure that you have an **Secret Token**. You should have received this token after completing the registration process, as described [here](for-managers.md#registration).
+{% endhint %}
+
 After Docker successfully installed, you need to download **docker-compose.yml** from our official repository:
 
 ```git
 git clone https://github.com/MyDataCoin/mdc-docker
 ```
 
-1. Open **docker-compose.yml** file to make changes
-2. Get your **Secret Token** from [https://app.mydatacoin.io](https://app.mydatacoin.io/). You will find it in **Settings** tab
-3. Put the token in AUTH\_TOKEN env variable
+1. Open **docker-compose.yml** file to make changes;
+2. Get your **Secret Token** from [https://app.mydatacoin.io](https://app.mydatacoin.io/). You will find it in **Settings** tab;
+3. Put the token in AUTH\_TOKEN env variable.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2023-06-28 at 17.40.23.png" alt=""><figcaption><p>Change Secret Token</p></figcaption></figure>
 
@@ -62,11 +68,15 @@ After you made changes, save the file and run the following command in terminal:
 docker-compose up -d
 ```
 
-### Subscribe
+### Upload a DataSet
 
-{% hint style="info" %}
-Before you begin, make sure that you have an Access Token. You should have received this token after completing the registration process, as described in the previous step.
+{% hint style="warning" %}
+Important! The data you upload will not be transferred to us or any third parties; it will be stored in your Docker container.
 {% endhint %}
+
+To prepare the data monetization process, you need to prepare a CSV file with data in the format [User Model](for-developers.md#user-model) shown below.
+
+
 
 In order to start receiving requests from the MyDataCoin, you need to subscribe.&#x20;
 
@@ -336,63 +346,6 @@ To be able to accept requests on your side, you must configure your endpoint to 
   ],
   "phone": [
     "string"
-  ]
-}
-```
-
-</details>
-
-<details>
-
-<summary>Json Schema</summary>
-
-```json5
-{
-  "type": "object",
-  "properties": {
-    "Secret": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
-    "Action": {
-      "type": "integer",
-      "enum": [
-        0,
-        1
-      ]
-    },
-    "Email": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "type": [
-          "string",
-          "null"
-        ]
-      }
-    },
-    "Phone": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "type": [
-          "string",
-          "null"
-        ]
-      }
-    }
-  },
-  "required": [
-    "Secret",
-    "Action",
-    "Email",
-    "Phone"
   ]
 }
 ```
