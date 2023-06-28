@@ -14,9 +14,9 @@
 
 <figure><img src="../../.gitbook/assets/Screenshot 2023-06-20 at 17.58.03.png" alt=""><figcaption><p>Register</p></figcaption></figure>
 
-Getting started with MyDataCoin is quick and easy, and the registration process should only take you around 5 minutes. To begin, simply navigate to our registration page: [Marketplace](https://app.mydatacoin.io/). To register for an account, simply navigate to the registration page and enter your email address. You will receive a verification code to confirm your email.&#x20;
+Getting started with MyDataCoin is quick and easy, and the registration process should only take you around 5 minutes. To begin, simply navigate to our registration page: [Marketplace](https://app.mydatacoin.io/). To register for an account, simply navigate to the registration page and enter your email address, first name and last name. You will receive a verification code to confirm your email.&#x20;
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-06-20 at 18.03.35.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2023-06-20 at 18.03.35.png" alt=""><figcaption><p>Regitration</p></figcaption></figure>
 
 Once your email is verified, you will be able to access your dashboard.&#x20;
 
@@ -34,7 +34,7 @@ Do not transfer the token to third parties, and beware of getting the token on t
 
 The very next step is provide us your organization data. To do that you need to fill all required data and press "Submit" button.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-06-20 at 18.28.25.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2023-06-20 at 18.28.25.png" alt=""><figcaption><p>Company details</p></figcaption></figure>
 
 ### Verify your organization
 
@@ -44,6 +44,6 @@ After all fields were filled, you need to send your organization to verification
 
 To start verification, be sure all required data provided. Then press "Verify Now" button.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-06-23 at 14.35.35.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2023-06-23 at 14.35.35.png" alt=""><figcaption><p>Verify Now button</p></figcaption></figure>
 
 After your status changes from "Awaiting" to "Verified", you will get access to the functionality of the system.

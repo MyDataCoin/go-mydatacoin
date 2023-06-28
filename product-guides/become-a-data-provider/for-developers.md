@@ -15,12 +15,12 @@ description: >-
 *   **Hardware:**\
     CPU: Intel Core i3 or AMD Ryzen 3.
 
-    RAM: At least4GB.
+    RAM: At least 4GB.
 
     HDD: 20GB free space.\
     64-bit kernel and CPU support for virtualization.
 * **Software:**\
-  Linux 18.04 LTS or Windows 10\
+  Linux 18.04 LTS or Higher, Windows 10 or Higher\
   Docker for [Linux](https://docs.docker.com/desktop/install/linux-install/) or [Windows](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm\_source=docker\&utm\_medium=webreferral\&utm\_campaign=dd-smartbutton\&utm\_location=module&\_gl=1\*1h1edy2\*\_ga\*MTY3NDYyODgzOC4xNjg1OTUxODU2\*\_ga\_XJWPQMJYHQ\*MTY4NzI1MzU5Ny4zLjEuMTY4NzI1MzcxMC42MC4wLjA.)
 
 ### Overview
@@ -29,16 +29,44 @@ This guide provides a comprehensive explanation of how to effectively interact w
 
 **Table of contents:**
 
+* [Install Docker](for-developers.md#install-docker)
+* Setup Docker
 * [Subscribe](for-developers.md#subscribe)
 * [Unsubscribe](for-developers.md#unsubscribe)
 * [Receiving Requests](for-developers.md#receiving-requests)
 * [User Model](for-developers.md#user-model)
 
+### Install Docker
+
+Please select the appropriate link for your operation system and follow the provided instructions to install Docker:
+
+* For Linux: [Docker Installation Instructions for Linux](https://docs.docker.com/engine/install/)
+* For Windows: [Docker Installation Instructions for Windows](https://docs.docker.com/docker-for-windows/install/)&#x20;
+* For macOS: [Docker Installation Instructions for macOS](https://docs.docker.com/docker-for-mac/install/)
+
+After Docker successfully installed, you need to download **docker-compose.yml** from our official repository:
+
+```git
+git clone https://github.com/MyDataCoin/mdc-docker
+```
+
+1. Open **docker-compose.yml** file to make changes
+2. Get your **Secret Token** from [https://app.mydatacoin.io](https://app.mydatacoin.io/). You will find it in **Settings** tab
+3. Put the token in AUTH\_TOKEN env variable
+
+<figure><img src="../../.gitbook/assets/Screenshot 2023-06-28 at 17.40.23.png" alt=""><figcaption><p>Change Secret Token</p></figcaption></figure>
+
+After you made changes, save the file and run the following command in terminal:
+
+```
+docker-compose up -d
+```
+
+### Subscribe
+
 {% hint style="info" %}
 Before you begin, make sure that you have an Access Token. You should have received this token after completing the registration process, as described in the previous step.
 {% endhint %}
-
-### Subscribe
 
 In order to start receiving requests from the MyDataCoin, you need to subscribe.&#x20;
 
