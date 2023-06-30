@@ -41,8 +41,47 @@ This guide provides a comprehensive explanation of how to effectively interact w
 Please select the appropriate link for your operation system and follow the provided instructions to install Docker:
 
 * For Linux: [Docker Installation Instructions for Linux](https://docs.docker.com/engine/install/)
+
+If you use Ubuntu, and have a following error:
+
+```
+E: Package 'docker-ce' has no installation candidate
+E: Unable to locate package docker-ce-cli
+E: Unable to locate package containerd.io
+E: Couldn't find any package by glob 'containerd.io'
+E: Couldn't find any package by regex 'containerd.io'
+E: Unable to locate package docker-buildx-plugin
+E: Unable to locate package docker-compose-plugin
+```
+
+please visit: [Link](https://itslinuxfoss.com/fix-package-docker-ce-no-installation-candidate-error/).
+
 * For Windows: [Docker Installation Instructions for Windows](https://docs.docker.com/docker-for-windows/install/)&#x20;
 * For macOS: [Docker Installation Instructions for macOS](https://docs.docker.com/docker-for-mac/install/)
+
+### Installing Docker Compose
+
+To make sure you obtain the most updated stable version of Docker Compose, you’ll download this software from its [official Github repository](https://github.com/docker/compose).
+
+First, confirm the latest version available in their [releases page](https://github.com/docker/compose/releases). At the time of this writing, the most current stable version is `1.29.2`.
+
+The following command will download the `1.29.2` release and save the executable file at `/usr/local/bin/docker-compose`, which will make this software globally accessible as `docker-compose`:
+
+```bash
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```
+
+Next, set the correct permissions so that the `docker-compose` command is executable:
+
+```bash
+sudo chmod +x /usr/local/bin/docker-compose
+```
+
+To verify that the installation was successful, you can run:
+
+```bash
+docker-compose --version
+```
 
 ### Setup Docker
 
@@ -57,7 +96,7 @@ git clone https://github.com/MyDataCoin/mdc-docker
 ```
 
 1. Open **docker-compose.yml** file to make changes;
-2. Get your **Secret Token** from [https://app.mydatacoin.io](https://app.mydatacoin.io/). You will find it in **Settings** tab;
+2. Get your **Secret Token** from [https://app.mydatacoin.io/settings](https://app.mydatacoin.io/settings). You will find it in **Settings** tab;
 3. Put the token in AUTH\_TOKEN env variable.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2023-06-28 at 17.40.23.png" alt=""><figcaption><p>Change Secret Token</p></figcaption></figure>
@@ -68,6 +107,8 @@ After you made changes, save the file and run the following command in terminal:
 docker-compose up -d
 ```
 
+> Be sure, that port 8000 is open and ready for inbound connections. To change the settings, run the command: sudo ufw allow 8000/tcp
+
 ### Upload a DataSet
 
 {% hint style="warning" %}
@@ -75,6 +116,8 @@ Important! The data you upload will not be transferred to us or any third partie
 {% endhint %}
 
 To prepare the data monetization process, you need to prepare a CSV file with data in the format [User Model](for-developers.md#user-model) shown below.
+
+After docker successfully started, you need to open browser and input the following url: http://your\_server\_address:8000/upload, then you'll see&#x20;
 
 
 
