@@ -33,7 +33,7 @@ This guide provides a comprehensive explanation of how to effectively interact w
 * [Setup Docker](for-developers.md#setup-docker)
 * [Subscribe](for-developers.md#subscribe)
 * [Unsubscribe](for-developers.md#unsubscribe)
-* [Receiving Requests](for-developers.md#receiving-requests)
+* [Upload a DataSet](for-developers.md#upload-a-dataset)
 * [User Model](for-developers.md#user-model)
 
 ### Install Docker
@@ -111,7 +111,11 @@ docker-compose up -d
 
 ### Upload a DataSet
 
-{% hint style="warning" %}
+{% hint style="danger" %}
+Please ensure that you create a DataProvider entity in the Marketplace before uploading any datasets. To proceed, please provide your company information [here](https://app.mydatacoin.io/settings).
+{% endhint %}
+
+{% hint style="info" %}
 Important! The data you upload will not be transferred to us or any third parties; it will be stored in your Docker container.
 {% endhint %}
 
