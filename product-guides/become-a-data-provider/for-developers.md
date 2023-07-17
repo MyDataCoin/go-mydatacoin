@@ -119,93 +119,195 @@ Please ensure that you create a DataProvider entity in the Marketplace before up
 Important! The data you upload will not be transferred to us or any third parties; it will be stored in your Docker container.
 {% endhint %}
 
-To prepare the data monetization process, you need to prepare a CSV file with data in the format [User Model](for-developers.md#user-model) shown below.
+To prepare the data monetization process, you need to prepare a JSON file with data in the format [User Model](for-developers.md#user-model) shown below.
 
 After docker successfully started, you need to open browser and input the following url: http://your\_server\_address:8000/upload, then you'll see following page:
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-07-11 at 17.53.13.png" alt=""><figcaption><p>Upload DataSet</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2023-07-17 at 19.10.50.png" alt=""><figcaption></figcaption></figure>
 
 Put your Secret Token in the **Secret Token** field and give your dataset a name, choose a dataset you've prepared and press Upload.&#x20;
 
 Now you ready to go! Please feel free to ask any questions about integration process. Send us email to as@mydatacoin.io
 
-### User model
+### User model sample
 
 <details>
 
 <summary>Json User Model</summary>
 
-```json5
-
-
-
-{
-  "profile": {
-    "firstName": "Alice",
-    "lastName": "Smith",
-    "dateOfBirth": "1999-09-09T00:00:00Z",
-    "gender": null,
-    "email": [
-      "example@mail.com"
-    ],
-    "phone": [],
-    "maritalStatus": 0,
-    "income": 0
+````json5
+```json
+[
+  {
+     "profile":{
+        "firstName":"John",
+        "lastName":"Doe",
+        "dateOfBirth":"1999-09-09T00:00:00Z",
+        "gender":null,
+        "email":[
+           "sagynbaev6@mail.com"
+        ],
+        "phone":[
+           
+        ],
+        "maritalStatus":0,
+        "income":0
+     },
+     "basicData":{
+        "interests":null,
+        "languages":null,
+        "religionViews":null,
+        "politicalViews":null
+     },
+     "contacts":{
+        "mobilePhone":null,
+        "address":null,
+        "linkedAccounts":null,
+        "website":null
+     },
+     "workAndEducation":{
+        "placeOfWork":null,
+        "skills":null,
+        "university":null,
+        "faculty":null
+     },
+     "placeOfResidence":{
+        "currentCity":null,
+        "birthPlace":null,
+        "otherCities":null
+     },
+     "personalInterests":{
+        "briefDescription":null,
+        "hobby":null,
+        "sport":null
+     },
+     "deviceInformation":{
+        "operatingSystem":null,
+        "displayResolution":null,
+        "browser":null,
+        "iSP":null,
+        "adBlock":false
+     },
+     "cookies":{
+        "sessionState":null,
+        "language":null,
+        "region":null,
+        "recentPages":null,
+        "shoppingCart":[
+           {
+              "productId":null,
+              "productName":"maxsimus1",
+              "productPrice":null,
+              "quantity":null,
+              "subTotal":null,
+              "total":null,
+              "couponCode":null,
+              "shippingInformation":null,
+              "taxInformation":null
+           },
+           {
+              "productId":null,
+              "productName":"maxsimus",
+              "productPrice":6565,
+              "quantity":null,
+              "subTotal":null,
+              "total":null,
+              "couponCode":null,
+              "shippingInformation":null,
+              "taxInformation":null
+           }
+        ]
+     }
   },
-  "basicData": {
-    "interests": null,
-    "languages": null,
-    "religionViews": null,
-    "politicalViews": null
-  },
-  "contacts": {
-    "mobilePhone": null,
-    "address": null,
-    "linkedAccounts": null,
-    "website": null
-  },
-  "workAndEducation": {
-    "placeOfWork": null,
-    "skills": null,
-    "university": null,
-    "faculty": null
-  },
-  "placeOfResidence": {
-    "currentCity": null,
-    "birthPlace": null,
-    "otherCities": null
-  },
-  "personalInterests": {
-    "briefDescription": null,
-    "hobby": null,
-    "sport": null
-  },
-  "deviceInformation": {
-    "operatingSystem": null,
-    "displayResolution": null,
-    "browser": null,
-    "iSP": null,
-    "adBlock": false
-  },
-  "cookies": {
-    "sessionState": null,
-    "language": null,
-    "region": null,
-    "recentPages": null,
-    "shoppingCart": {
-      "productId": null,
-      "productName": null,
-      "productPrice": null,
-      "quantity": null,
-      "subTotal": null,
-      "total": null,
-      "couponCode": null,
-      "shippingInformation": null,
-      "taxInformation": null
-    }
+  {
+     "profile":{
+        "firstName":"Jason",
+        "lastName":"Cropp",
+        "dateOfBirth":"2002-11-09T00:00:00Z",
+        "gender":null,
+        "email":[
+           "amaymon02@mail.ru"
+        ],
+        "phone":[
+           "+77443332424",
+           "+996222334455"
+        ],
+        "maritalStatus":0,
+        "income":0
+     },
+     "basicData":{
+        "interests":null,
+        "languages":null,
+        "religionViews":null,
+        "politicalViews":null
+     },
+     "contacts":{
+        "mobilePhone":"IPHONE13",
+        "address":null,
+        "linkedAccounts":null,
+        "website":null
+     },
+     "workAndEducation":{
+        "placeOfWork":null,
+        "skills":null,
+        "university":"KNU",
+        "faculty":null
+     },
+     "placeOfResidence":{
+        "currentCity":null,
+        "birthPlace":"bishkek",
+        "otherCities":null
+     },
+     "personalInterests":{
+        "briefDescription":null,
+        "hobby":[
+           "biohacking"
+        ],
+        "sport":[
+           "boxing"
+        ]
+     },
+     "deviceInformation":{
+        "operatingSystem":null,
+        "displayResolution":null,
+        "browser":null,
+        "iSP":null,
+        "adBlock":true
+     },
+     "cookies":{
+        "sessionState":null,
+        "language":null,
+        "region":"chui area",
+        "recentPages":null,
+        "shoppingCart":[
+           {
+              "productId":null,
+              "productName":"max",
+              "productPrice":64464,
+              "quantity":null,
+              "subTotal":null,
+              "total":null,
+              "couponCode":null,
+              "shippingInformation":null,
+              "taxInformation":null
+           },
+           {
+              "productId":null,
+              "productName":"max2",
+              "productPrice":6565,
+              "quantity":null,
+              "subTotal":null,
+              "total":null,
+              "couponCode":null,
+              "shippingInformation":null,
+              "taxInformation":null
+           }
+        ]
+     }
   }
-}
+]
 ```
+````
 
 </details>
 
