@@ -135,8 +135,7 @@ Now you ready to go! Please feel free to ask any questions about integration pro
 
 <summary>Json User Model</summary>
 
-````json5
-```json
+```json5
 [
   {
      "profile":{
@@ -307,7 +306,6 @@ Now you ready to go! Please feel free to ask any questions about integration pro
   }
 ]
 ```
-````
 
 </details>
 
