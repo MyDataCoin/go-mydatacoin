@@ -34,7 +34,7 @@ The MyDataCoin Bridge implementation will serve as the link between the main net
 
 The goal of this protocol is to provide a decentralized and transparent data sharing mechanism that empowers individuals to control their personal data and securely share it with trusted parties. By leveraging the MyDataCoin network and associated technologies, this protocol aims to improve data privacy and security while enabling more efficient and effective data sharing.
 
-<figure><img src="../.gitbook/assets/MainSchema2.drawio.png" alt=""><figcaption><p>Protocol Architecture</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/MainSchema2.drawio (3).png" alt=""><figcaption><p>MDC Main Scheme</p></figcaption></figure>
 
 ### Self-Sovereign Identity
 
