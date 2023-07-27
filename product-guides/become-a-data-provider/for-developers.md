@@ -35,6 +35,7 @@ This guide provides a comprehensive explanation of how to effectively interact w
 * [Unsubscribe](for-developers.md#unsubscribe)
 * [Upload a DataSet](for-developers.md#upload-a-dataset)
 * [User Model](for-developers.md#user-model)
+* [Add Records](for-developers.md#add-records)
 
 ### Install Docker
 
@@ -123,7 +124,7 @@ To prepare the data monetization process, you need to prepare a JSON file with d
 
 After docker successfully started, you need to open browser and input the following url: http://your\_server\_address:8000/upload, then you'll see following page:
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-07-17 at 19.10.50.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2023-07-17 at 19.10.50.png" alt=""><figcaption><p>Upload json file</p></figcaption></figure>
 
 Put your Secret Token in the **Secret Token** field and give your dataset a name, choose a dataset you've prepared and press Upload.&#x20;
 
@@ -135,6 +136,7 @@ Now you ready to go! Please feel free to ask any questions about integration pro
 
 <summary>Json User Model</summary>
 
+{% code title="user.json" lineNumbers="true" fullWidth="true" %}
 ```json5
 [
   {
@@ -306,6 +308,7 @@ Now you ready to go! Please feel free to ask any questions about integration pro
   }
 ]
 ```
+{% endcode %}
 
 </details>
 
@@ -375,3 +378,13 @@ Marital status is a characteristic that reflects a person's marital status. Depe
 | Separated          | Separated - a person who was in an official marriage but is in the process of getting divorced.                   |
 | Living\_Separately | Living separately - a person who lives separately from their family, for example, in a dormitory or student room. |
 | Remarried          | Remarried - spouses who have already been in an official marriage and have remarried.                             |
+
+#### Add Records
+
+How to insert new records into your dataset
+
+{% swagger method="post" path="/insert" baseUrl="" summary="" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+{% endswagger %}
