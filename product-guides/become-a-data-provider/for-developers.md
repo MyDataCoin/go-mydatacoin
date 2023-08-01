@@ -319,7 +319,7 @@ Model details:
 
 #### Profile
 
-<table><thead><tr><th>Parameter</th><th>Data Type</th><th>Comment</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>RecordId</td><td>string</td><td>Here should be unique </td><td>false</td></tr><tr><td>FirstName</td><td>string</td><td></td><td>true</td></tr><tr><td>LastName</td><td>string</td><td></td><td>true</td></tr><tr><td>DateOfBirth</td><td>DateTime</td><td>Format(1999-09-09T00:00:00Z)</td><td>false</td></tr><tr><td>Gender</td><td>int</td><td><p>Enum</p><pre class="language-csharp"><code class="lang-csharp">0 = Male,
+<table><thead><tr><th>Parameter</th><th>Data Type</th><th>Comment</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>RecordId</td><td>string</td><td>Unique identifier of record, you can use your database identifier</td><td>false</td></tr><tr><td>FirstName</td><td>string</td><td></td><td>true</td></tr><tr><td>LastName</td><td>string</td><td></td><td>true</td></tr><tr><td>DateOfBirth</td><td>DateTime</td><td>Format(1999-09-09T00:00:00Z)</td><td>false</td></tr><tr><td>Gender</td><td>int</td><td><p>Enum</p><pre class="language-csharp"><code class="lang-csharp">0 = Male,
 1 = Female
 </code></pre></td><td>false</td></tr><tr><td>Email</td><td>string[]</td><td></td><td>false</td></tr><tr><td>Phone</td><td>string[]</td><td></td><td>true</td></tr><tr><td>MaritalStatus</td><td>int</td><td><p><a href="for-developers.md#maritalstatus">MaritalStatus</a></p><pre class="language-json"><code class="lang-json"><strong>0 = Single,
 </strong>1 = Married,
