@@ -10,6 +10,16 @@ description: >-
 **Disclaimer:** The development team is working diligently, and the documentation will be updated with each new release.
 {% endhint %}
 
+**Table of contents:**
+
+* [Install Docker](for-developers.md#install-docker)
+* [Setup Docker](for-developers.md#setup-docker)
+* [Subscribe](for-developers.md#subscribe)
+* [Unsubscribe](for-developers.md#unsubscribe)
+* [Upload a DataSet](for-developers.md#upload-a-dataset)
+* [User Model](for-developers.md#user-model)
+* [Add Records](for-developers.md#add-records)
+
 ### System Requirements
 
 *   **Hardware:**\
@@ -26,16 +36,6 @@ description: >-
 ### Overview
 
 This guide provides a comprehensive explanation of how to effectively interact with the MyDataCoin ecosystem. To integrate successfully, you will need to set up an endpoint that can receive POST requests, which will, in turn, return the response described in the sections below.
-
-**Table of contents:**
-
-* [Install Docker](for-developers.md#install-docker)
-* [Setup Docker](for-developers.md#setup-docker)
-* [Subscribe](for-developers.md#subscribe)
-* [Unsubscribe](for-developers.md#unsubscribe)
-* [Upload a DataSet](for-developers.md#upload-a-dataset)
-* [User Model](for-developers.md#user-model)
-* [Add Records](for-developers.md#add-records)
 
 ### Install Docker
 
@@ -141,6 +141,7 @@ Now you ready to go! Please feel free to ask any questions about integration pro
 [
   {
      "profile":{
+        "recordId": "1" or "dd3cc469-096f-4b9e-a8fb-ce5ef32c5642",
         "firstName":"John",
         "lastName":"Doe",
         "dateOfBirth":"1999-09-09T00:00:00Z",
@@ -280,31 +281,31 @@ Now you ready to go! Please feel free to ask any questions about integration pro
         "language":null,
         "region":"chui area",
         "recentPages":null,
-        "shoppingCart":[
-           {
-              "productId":null,
-              "productName":"max",
-              "productPrice":64464,
-              "quantity":null,
-              "subTotal":null,
-              "total":null,
-              "couponCode":null,
-              "shippingInformation":null,
-              "taxInformation":null
-           },
-           {
-              "productId":null,
-              "productName":"max2",
-              "productPrice":6565,
-              "quantity":null,
-              "subTotal":null,
-              "total":null,
-              "couponCode":null,
-              "shippingInformation":null,
-              "taxInformation":null
-           }
-        ]
-     }
+     },
+     "shoppingCart":[
+        {
+           "productId":1,
+           "productName":"pen",
+           "productPrice":12,
+           "quantity":2,
+           "subTotal":24,
+           "total":null,
+           "couponCode":null,
+           "shippingInformation":null,
+           "taxInformation":null
+        },
+        {
+           "productId":2,
+           "productName":"cup",
+           "productPrice":30,
+           "quantity":1,
+           "subTotal":null,
+           "total":null,
+           "couponCode":null,
+           "shippingInformation":null,
+           "taxInformation":null
+        }
+     ]
   }
 ]
 ```
@@ -318,7 +319,7 @@ Model details:
 
 #### Profile
 
-<table><thead><tr><th>Parameter</th><th>Data Type</th><th>Comment</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>FirstName</td><td>string</td><td></td><td>true</td></tr><tr><td>LastName</td><td>string</td><td></td><td>true</td></tr><tr><td>DateOfBirth</td><td>DateTime</td><td>Format(1999-09-09T00:00:00Z)</td><td>false</td></tr><tr><td>Gender</td><td>int</td><td><p>Enum</p><pre class="language-csharp"><code class="lang-csharp">0 = Male,
+<table><thead><tr><th>Parameter</th><th>Data Type</th><th>Comment</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>RecordId</td><td>string</td><td>Here should be unique </td><td>false</td></tr><tr><td>FirstName</td><td>string</td><td></td><td>true</td></tr><tr><td>LastName</td><td>string</td><td></td><td>true</td></tr><tr><td>DateOfBirth</td><td>DateTime</td><td>Format(1999-09-09T00:00:00Z)</td><td>false</td></tr><tr><td>Gender</td><td>int</td><td><p>Enum</p><pre class="language-csharp"><code class="lang-csharp">0 = Male,
 1 = Female
 </code></pre></td><td>false</td></tr><tr><td>Email</td><td>string[]</td><td></td><td>false</td></tr><tr><td>Phone</td><td>string[]</td><td></td><td>true</td></tr><tr><td>MaritalStatus</td><td>int</td><td><p><a href="for-developers.md#maritalstatus">MaritalStatus</a></p><pre class="language-json"><code class="lang-json"><strong>0 = Single,
 </strong>1 = Married,
@@ -357,7 +358,7 @@ Model details:
 
 #### Cookies
 
-<table><thead><tr><th>Parameter</th><th>Data Type</th><th>Comment</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>Id</td><td>string</td><td>User identifier</td><td>true</td></tr><tr><td>SessionState</td><td>string</td><td>Session state</td><td>true</td></tr><tr><td>Language</td><td>string</td><td>Language settings</td><td>true</td></tr><tr><td>Region</td><td>string</td><td>Preferred region settings</td><td>true</td></tr><tr><td>RecentPages</td><td>string[]</td><td>Recently visited pages</td><td>true</td></tr><tr><td>ShoppingCart</td><td><a href="for-developers.md#shoppingcart">ShoppingCart[]</a></td><td>Shopping cart information</td><td>true</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th>Data Type</th><th>Comment</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>Id</td><td>string</td><td>User identifier</td><td>true</td></tr><tr><td>SessionState</td><td>string</td><td>Session state</td><td>true</td></tr><tr><td>Language</td><td>string</td><td>Language settings</td><td>true</td></tr><tr><td>Region</td><td>string</td><td>Preferred region settings</td><td>true</td></tr><tr><td>RecentPages</td><td>string[]</td><td>Recently visited pages</td><td>true</td></tr><tr><td>ShoppingCart</td><td><a href="for-developers.md#shoppingcart">ShoppingCart[]</a></td><td>Shopping cart items</td><td>true</td></tr></tbody></table>
 
 #### ShoppingCart
 
@@ -379,12 +380,56 @@ Marital status is a characteristic that reflects a person's marital status. Depe
 | Living\_Separately | Living separately - a person who lives separately from their family, for example, in a dormitory or student room. |
 | Remarried          | Remarried - spouses who have already been in an official marriage and have remarried.                             |
 
-#### Add Records
+### Add Records
 
-How to insert new records into your dataset
+How to insert new records into your dataset.
 
-{% swagger method="post" path="/insert" baseUrl="" summary="" %}
+{% swagger method="post" path="/insert" baseUrl="https://your-ip-address:your-port" summary="Inserts new user profile " expanded="true" %}
 {% swagger-description %}
+All the body parameters described in 
+
+[User Model](for-developers.md#user-model-sample)
+
 
 {% endswagger-description %}
+
+{% swagger-parameter in="body" required="true" name="profile" type="Profile" %}
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="basicData" type="BasicData" %}
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="сontacts" type="Contacts" %}
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" %}
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" %}
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" %}
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" %}
+
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+
+{% endswagger-response %}
+
+{% swagger-response status="400: Bad Request" description="" %}
+
+{% endswagger-response %}
+
+{% swagger-response status="401: Unauthorized" description="" %}
+
+{% endswagger-response %}
 {% endswagger %}
