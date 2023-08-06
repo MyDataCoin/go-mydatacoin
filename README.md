@@ -1,7 +1,5 @@
 ---
 description: Join the personal data revolution with MyDataCoin!
-cover: .gitbook/assets/backgraund.png
-coverY: 0
 ---
 
 # 👋 Welcome to MyDataCoin
