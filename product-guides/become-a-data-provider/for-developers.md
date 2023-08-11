@@ -7,7 +7,7 @@ description: >-
 # 👨💻 For Developers
 
 {% hint style="warning" %}
-**Disclaimer:** The development team is working diligently, and the documentation will be updated with each new release.
+[#profile](for-developers.md#profile "mention")**Disclaimer:** The development team is working diligently, and the documentation will be updated with each new release.
 {% endhint %}
 
 **Table of contents:**
@@ -319,9 +319,9 @@ Model details:
 
 #### Profile
 
-<table><thead><tr><th>Parameter</th><th>Data Type</th><th>Comment</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>RecordId</td><td>string</td><td>Unique identifier of record, you can use your database identifier</td><td>false</td></tr><tr><td>FirstName</td><td>string</td><td></td><td>true</td></tr><tr><td>LastName</td><td>string</td><td></td><td>true</td></tr><tr><td>DateOfBirth</td><td>DateTime</td><td>Format(1999-09-09T00:00:00Z)</td><td>false</td></tr><tr><td>Gender</td><td>int</td><td><p>Enum</p><pre class="language-csharp"><code class="lang-csharp">0 = Male,
+<table><thead><tr><th>Parameter</th><th>Data Type</th><th>Comment</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>recordId</td><td>string</td><td>Unique identifier of record, you can use your database identifier</td><td>false</td></tr><tr><td>firstName</td><td>string</td><td></td><td>true</td></tr><tr><td>lastName</td><td>string</td><td></td><td>true</td></tr><tr><td>dateOfBirth</td><td>DateTime</td><td>Format(1999-09-09T00:00:00Z)</td><td>false</td></tr><tr><td>gender</td><td>int</td><td><p>Enum</p><pre class="language-csharp"><code class="lang-csharp">0 = Male,
 1 = Female
-</code></pre></td><td>false</td></tr><tr><td>Email</td><td>string[]</td><td></td><td>false</td></tr><tr><td>Phone</td><td>string[]</td><td></td><td>true</td></tr><tr><td>MaritalStatus</td><td>int</td><td><p><a href="for-developers.md#maritalstatus">MaritalStatus</a></p><pre class="language-json"><code class="lang-json"><strong>0 = Single,
+</code></pre></td><td>false</td></tr><tr><td>email</td><td>string[]</td><td></td><td>false</td></tr><tr><td>phone</td><td>string[]</td><td></td><td>true</td></tr><tr><td>maritalStatus</td><td>int</td><td><p><a href="for-developers.md#maritalstatus">MaritalStatus</a></p><pre class="language-json"><code class="lang-json"><strong>0 = Single,
 </strong>1 = Married,
 2 = Divorced,
 3 = Bachelor,
@@ -330,39 +330,39 @@ Model details:
 6 = Separated,
 7 = Living_Separately,
 8 = Remarried
-</code></pre></td><td>true</td></tr><tr><td>Income</td><td>decimal</td><td>Income refers to the amount of money a user earns within a certain period of time.</td><td>true</td></tr></tbody></table>
+</code></pre></td><td>true</td></tr><tr><td>income</td><td>decimal</td><td>Income refers to the amount of money a user earns within a certain period of time.</td><td>true</td></tr></tbody></table>
 
 #### BasicData
 
-<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>Interests</td><td>string[]</td><td>true</td></tr><tr><td>Languages</td><td>string[]</td><td>true</td></tr><tr><td>ReligionViews</td><td>string[]</td><td>true</td></tr><tr><td>PoliticalViews</td><td>string[]</td><td>true</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>interests</td><td>string[]</td><td>true</td></tr><tr><td>languages</td><td>string[]</td><td>true</td></tr><tr><td>religionViews</td><td>string[]</td><td>true</td></tr><tr><td>politicalViews</td><td>string[]</td><td>true</td></tr></tbody></table>
 
 #### Contacts
 
-<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox"></th></tr></thead><tbody><tr><td>MobilePhone</td><td>string</td><td>true</td></tr><tr><td>Address</td><td>string</td><td>true</td></tr><tr><td>LinkedAccounts</td><td>string[]</td><td>true</td></tr><tr><td>Website</td><td>string</td><td>true</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox"></th></tr></thead><tbody><tr><td>mobilePhone</td><td>string</td><td>true</td></tr><tr><td>address</td><td>string</td><td>true</td></tr><tr><td>linkedAccounts</td><td>string[]</td><td>true</td></tr><tr><td>website</td><td>string</td><td>true</td></tr></tbody></table>
 
 #### WorkAndEducation
 
-<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>PlaceOfWork</td><td>string</td><td>true</td></tr><tr><td>Skills</td><td>string[]</td><td>true</td></tr><tr><td>University</td><td>string</td><td>true</td></tr><tr><td>Faculty</td><td>string</td><td>true</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>placeOfWork</td><td>string</td><td>true</td></tr><tr><td>skills</td><td>string[]</td><td>true</td></tr><tr><td>university</td><td>string</td><td>true</td></tr><tr><td>faculty</td><td>string</td><td>true</td></tr></tbody></table>
 
 #### PlaceOfResidence
 
-<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>CurrentCity</td><td>string</td><td>true</td></tr><tr><td>BirthPlace</td><td>string</td><td>true</td></tr><tr><td>OtherCities</td><td>string[]</td><td>true</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>currentCity</td><td>string</td><td>true</td></tr><tr><td>birthPlace</td><td>string</td><td>true</td></tr><tr><td>otherCities</td><td>string[]</td><td>true</td></tr></tbody></table>
 
 #### PersonalInterests
 
-<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>BreifDescription</td><td>string</td><td>true</td></tr><tr><td>Hobby</td><td>string[]</td><td>true</td></tr><tr><td>Sport</td><td>string[]</td><td>true</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th>Data Type</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>breifDescription</td><td>string</td><td>true</td></tr><tr><td>hobby</td><td>string[]</td><td>true</td></tr><tr><td>sport</td><td>string[]</td><td>true</td></tr></tbody></table>
 
 #### DeviceInformation
 
-<table><thead><tr><th>Parameter</th><th width="169">Data Type</th><th>Comments</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>DeviceName</td><td>string</td><td>Device used to access the internet</td><td>false</td></tr><tr><td>DeviceId</td><td>string</td><td>DeviceId is a parameter that refers to a unique identifier for a device.</td><td>true</td></tr><tr><td>OperatingSystem</td><td>string</td><td>Operating system and its version</td><td>false</td></tr><tr><td>DisplayResolution</td><td>string</td><td>Screen resolution</td><td>true</td></tr><tr><td>Browser</td><td>string</td><td>Used browser and its version</td><td>false</td></tr><tr><td>ISP</td><td>string</td><td>Information about the internet service provider and type of connection</td><td>true</td></tr><tr><td>AdBlock</td><td>bool</td><td>Presence of ad blockers</td><td>true</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th width="169">Data Type</th><th>Comments</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>deviceName</td><td>string</td><td>Device used to access the internet</td><td>false</td></tr><tr><td>deviceId</td><td>string</td><td>DeviceId is a parameter that refers to a unique identifier for a device.</td><td>true</td></tr><tr><td>operatingSystem</td><td>string</td><td>Operating system and its version</td><td>false</td></tr><tr><td>displayResolution</td><td>string</td><td>Screen resolution</td><td>true</td></tr><tr><td>browser</td><td>string</td><td>Used browser and its version</td><td>false</td></tr><tr><td>iSP</td><td>string</td><td>Information about the internet service provider and type of connection</td><td>true</td></tr><tr><td>adBlock</td><td>bool</td><td>Presence of ad blockers</td><td>true</td></tr></tbody></table>
 
 #### Cookies
 
-<table><thead><tr><th>Parameter</th><th>Data Type</th><th>Comment</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>Id</td><td>string</td><td>User identifier</td><td>true</td></tr><tr><td>SessionState</td><td>string</td><td>Session state</td><td>true</td></tr><tr><td>Language</td><td>string</td><td>Language settings</td><td>true</td></tr><tr><td>Region</td><td>string</td><td>Preferred region settings</td><td>true</td></tr><tr><td>RecentPages</td><td>string[]</td><td>Recently visited pages</td><td>true</td></tr><tr><td>ShoppingCart</td><td><a href="for-developers.md#shoppingcart">ShoppingCart[]</a></td><td>Shopping cart items</td><td>true</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th>Data Type</th><th>Comment</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>id</td><td>string</td><td>User identifier</td><td>true</td></tr><tr><td>sessionState</td><td>string</td><td>Session state</td><td>true</td></tr><tr><td>language</td><td>string</td><td>Language settings</td><td>true</td></tr><tr><td>region</td><td>string</td><td>Preferred region settings</td><td>true</td></tr><tr><td>recentPages</td><td>string[]</td><td>Recently visited pages</td><td>true</td></tr><tr><td>shoppingCart</td><td><a href="for-developers.md#shoppingcart">ShoppingCart[]</a></td><td>Shopping cart items</td><td>true</td></tr></tbody></table>
 
 #### ShoppingCart
 
-<table><thead><tr><th>Parameter</th><th>Data Type</th><th>Comments</th><th data-type="checkbox"></th></tr></thead><tbody><tr><td>ProductId</td><td>string</td><td>unique identifier of the product in the shopping cart</td><td>true</td></tr><tr><td>ProductName</td><td>string</td><td>name of the product in the shopping cart</td><td>false</td></tr><tr><td>ProductPrice</td><td>string</td><td>price of the product in the shopping cart</td><td>false</td></tr><tr><td>Quantity</td><td>string</td><td>the number of units of a product in the shopping cart</td><td>false</td></tr><tr><td>SubTotal</td><td>string</td><td>the total cost of a particular product in the shopping cart (quantity x price)</td><td>true</td></tr><tr><td>Total</td><td>string</td><td>the total cost of all products in the shopping cart</td><td>false</td></tr><tr><td>CouponCode</td><td>string</td><td>any applied discounts or coupons to the shopping cart</td><td>true</td></tr><tr><td>ShippingInformation</td><td>string</td><td>shipping method and cost for the items in the shopping cart</td><td>true</td></tr><tr><td>TaxInformation</td><td>string</td><td>applicable taxes for the items in the shopping cart</td><td>true</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th>Data Type</th><th>Comments</th><th data-type="checkbox"></th></tr></thead><tbody><tr><td>productId</td><td>string</td><td>unique identifier of the product in the shopping cart</td><td>true</td></tr><tr><td>productName</td><td>string</td><td>name of the product in the shopping cart</td><td>false</td></tr><tr><td>productPrice</td><td>string</td><td>price of the product in the shopping cart</td><td>false</td></tr><tr><td>quantity</td><td>string</td><td>the number of units of a product in the shopping cart</td><td>false</td></tr><tr><td>subTotal</td><td>string</td><td>the total cost of a particular product in the shopping cart (quantity x price)</td><td>true</td></tr><tr><td>total</td><td>string</td><td>the total cost of all products in the shopping cart</td><td>false</td></tr><tr><td>couponCode</td><td>string</td><td>any applied discounts or coupons to the shopping cart</td><td>true</td></tr><tr><td>shippingInformation</td><td>string</td><td>shipping method and cost for the items in the shopping cart</td><td>true</td></tr><tr><td>taxInformation</td><td>string</td><td>applicable taxes for the items in the shopping cart</td><td>true</td></tr></tbody></table>
 
 #### MaritalStatus
 
@@ -393,43 +393,109 @@ All the body parameters described in
 
 {% endswagger-description %}
 
-{% swagger-parameter in="body" required="true" name="profile" type="Profile" %}
+{% swagger-parameter in="body" required="true" name="profile" type="profile" %}
+
+
+[This object and it`s fields are described above](for-developers.md#profile)
+
 
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="basicData" type="BasicData" %}
+{% swagger-parameter in="body" name="basicData" type="basicData" %}
+
+
+[This object and it`s fields are described above ](for-developers.md#basicdata)
+
 
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="сontacts" type="Contacts" %}
+{% swagger-parameter in="body" name="сontacts" type="contacts" %}
+
+
+[This object and it`s fields are described above](for-developers.md#contacts)
+
 
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" %}
+{% swagger-parameter in="body" name="workAndEducation" type="workdAndEducation" %}
+
+
+[This object and it`s fields are described above](for-developers.md#workandeducation)
+
 
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" %}
+{% swagger-parameter in="body" name="placeOfResidence" type="placeOfResidence" %}
+
+
+[This object and it`s fields are described above](for-developers.md#placeofresidence)
+
 
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" %}
+{% swagger-parameter in="body" name="personalInterests" type="personalInterests" %}
+
+
+[This object and it`s fields are described above](for-developers.md#personalinterests)
+
 
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" %}
+{% swagger-parameter in="body" name="deviceInformation" type="deviceInformation" %}
+
+
+[This object and it`s fields are described above](for-developers.md#deviceinformation)
+
 
 {% endswagger-parameter %}
 
-{% swagger-response status="200: OK" description="" %}
+{% swagger-parameter in="body" name="cookies" type="cookies" %}
 
+
+[This object and it`s fields are described above](for-developers.md#cookies)
+
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Authorization" %}
+there should be an authorization token that was entered in docker-compose.yml
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="Simple string response" %}
+"add user Successfully"
 {% endswagger-response %}
 
-{% swagger-response status="400: Bad Request" description="" %}
-
+{% swagger-response status="400: Bad Request" description="this error is only thrown when the user already exists" %}
+`"this user in already have in database"`
 {% endswagger-response %}
 
-{% swagger-response status="401: Unauthorized" description="" %}
+{% swagger-response status="401: Unauthorized" description="if you have the wrong authorization token which is in your docker-compose.yml" %}
+```
+# Check if the provided token in the 'Authorization' header does not match the expected 'auth_token'.
+# If it doesn't match, return an error response indicating "Invalid token".
+# The status code is set to 401 (Unauthorized).
 
+{
+    'error': 'Invalid token',
+     'details': "The token provided in the 'Authorization' header is invalid"
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="415: Unsupported Media Type" description="if you don't have application/json in your headers" %}
+```
+# Check if the 'Content-Type' header of the request is not set to 'application/json'.
+# If it's not set correctly, return an error response indicating "Unsupported Media Type".
+# The status code is set to 415 (Unsupported Media Type).
+
+{
+    'error': 'Unsupported Media Type', 
+    'details': "The 'Content-Type' header must be set to 'application/json'"
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="500: Internal Server Error" description="if an error occurred while loading data into the postgres database" %}
+`"An error occurred while processing the data: {}"  and error in brackets`
 {% endswagger-response %}
 {% endswagger %}
