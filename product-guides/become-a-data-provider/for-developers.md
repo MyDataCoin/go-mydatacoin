@@ -384,7 +384,7 @@ Marital status is a characteristic that reflects a person's marital status. Depe
 
 How to insert new records into your dataset.
 
-{% swagger method="post" path="/insert" baseUrl="https://your-ip-address:your-port" summary="Inserts new user profile " expanded="true" %}
+{% swagger method="post" path="/api/v1/insert" baseUrl="https://your-ip-address:your-port" summary="Inserts new user profile " expanded="false" %}
 {% swagger-description %}
 All the body parameters described in 
 
@@ -457,16 +457,25 @@ All the body parameters described in
 
 {% endswagger-parameter %}
 
-{% swagger-parameter in="header" name="Authorization" %}
+{% swagger-parameter in="header" name="Authorization" required="true" %}
 there should be an authorization token that was entered in docker-compose.yml
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Simple string response" %}
-"add user Successfully"
+```
+{
+    "success": "profile add successfully"
+}
+```
 {% endswagger-response %}
 
 {% swagger-response status="400: Bad Request" description="this error is only thrown when the user already exists" %}
-`"this user in already have in database"`
+<pre><code># error occurs only when recordId already exists in the database
+
+{
+<strong>    "error": "this user in already have in database"
+</strong>}
+</code></pre>
 {% endswagger-response %}
 
 {% swagger-response status="401: Unauthorized" description="if you have the wrong authorization token which is in your docker-compose.yml" %}
@@ -499,3 +508,183 @@ there should be an authorization token that was entered in docker-compose.yml
 `"An error occurred while processing the data: {}"  and error in brackets`
 {% endswagger-response %}
 {% endswagger %}
+
+{% tabs %}
+{% tab title="First Tab" %}
+
+{% endtab %}
+
+{% tab title="Second Tab" %}
+
+{% endtab %}
+{% endtabs %}
+
+{% swagger method="put" path="/api/v1/update" baseUrl="https://your-ip-address:your-port" summary="updating an existing user" expanded="false" %}
+{% swagger-description %}
+This method is used to update the data of an existing user, please note that identification occurs by recordId which is located separately outside the data to update
+{% endswagger-description %}
+
+{% swagger-parameter in="header" name="Authorization" required="true" %}
+This token is needed for authorization, which is located in docker-compose.yml
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="recordId" required="true" %}
+this string is an identifier by which we will find and update user data, RecordId is the user id in your database
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="profile" type="Profile" %}
+
+
+[this object and it`s fields in the structure are described above](for-developers.md#profile)
+
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="basicData" type="BasicData" %}
+
+
+[this object and it`s fields in the structure are described above](for-developers.md#basicdata)
+
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="contacts" type="Contacts" %}
+
+
+[this object and it`s fields in the structure are described above](for-developers.md#contacts)
+
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="workAndEducation" type="workAndEducation" %}
+
+
+[this object and it`s fields in the structure are described above](for-developers.md#workandeducation)
+
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="placeOfresidence" type="placeOfResidence" %}
+
+
+[this object and it`s fields in the structure are described above](for-developers.md#placeofresidence)
+
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="personalInterests" type="personalInterests" %}
+
+
+[this object and it`s fields in the structure are described above](for-developers.md#personalinterests)
+
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="deviceInformation" type="deviceInformation" %}
+
+
+[this object and it`s fields in the structure are described above](for-developers.md#deviceinformation)
+
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="cookies" type="Cookies" %}
+
+
+[this object and it`s fields in the structure are described above](for-developers.md#cookies)
+
+
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="succesfull response" %}
+```
+# with id profile in brecets
+{
+    "message":"profile {} successfully updated!"
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="400: Bad Request" description="Bad request if Record Id invalid" %}
+```
+# Check if the 'recordId' parameter is missing.
+# If it is, return an error response indicating that the record ID must not be null.
+# The status code is set to 400 (Bad Request).
+
+{
+    'error': "recordID is must be not null", 
+    'details': "Please provide a valid 'recordId' parameter."
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="401: Unauthorized" description="this happens if you do not have an authorization token in your headers, "Authorization", which is in your docker-compose.yml" %}
+```
+# Check if the provided token in the 'Authorization' header does not match the expected 'auth_token'.
+# If it doesn't match, return an error response indicating "Invalid token".
+# The status code is set to 401 (Unauthorized).
+
+{
+  'error': 'Invalid token',
+  'details': "The token provided in the 'Authorization' header is invalid. Please provide a valid token."
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="404: Not Found" description="Not found " %}
+```
+#with record Id in brecets
+{
+"error": "Profile with recordId: {} not found." 
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="415: Unsupported Media Type" description="This error occurs when application/json is not specified in headers" %}
+```
+# Check if the 'Content-Type' header of the request is not set to 'application/json'.
+# If it's not set correctly, return an error response indicating "Unsupported Media Type".
+# The status code is set to 415 (Unsupported Media Type).
+
+{
+    'error': 'Unsupported Media Type', 
+    'details': "The 'Content-Type' header must be set to 'application/json'."
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="500: Internal Server Error" description="Server Error" %}
+```
+#with details in brecets
+{
+    "error": "Error updating data.", "details": {}
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
+{% tabs %}
+{% tab title="cURL" %}
+```
+// Some code
+```
+{% endtab %}
+
+{% tab title="Java" %}
+```java
+// Some code
+```
+{% endtab %}
+
+{% tab title="Node.js" %}
+```javascript
+// Some code
+```
+{% endtab %}
+
+{% tab title="Python" %}
+```python
+// Some code
+```
+{% endtab %}
+{% endtabs %}
