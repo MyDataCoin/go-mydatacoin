@@ -510,11 +510,388 @@ there should be an authorization token that was entered in docker-compose.yml
 {% endswagger %}
 
 {% tabs %}
-{% tab title="First Tab" %}
-
+{% tab title="cURL" %}
+```
+http://your-server-ip:8000/api/v1/insert
+```
 {% endtab %}
 
-{% tab title="Second Tab" %}
+{% tab title="Java" %}
+```java
+// this endpoint is designed 
+// to update the database singly, 
+// this solves the problem, let's say that you have new users, and 
+// in order not to form and then load json into the database each time, 
+// you can simultaneously throw a request to our database at the time of filling 
+// your database using api/v1/insert method
+
+
+// this is an example of an object
+// that should be sent to our endpoint, api/v1/insert
+
+// data = {
+//     "profile": {
+//         "recordId": "54",
+//         "firstName": "Alex",
+//         "lastName": "Vishnevski",
+//         "dateOfBirth": "2002-11-09T00:00:00Z",
+//         "gender": 1,
+//         "email": ["amaymon02@mai8.ru"],
+//         "phone": ["+996222116992", "+996555848652"],
+//         "maritalStatus": 0,
+//         "income": 0
+//     },
+//     "basicData": {
+//         "interests": ["hobbyhorsing","boxing"],
+//         "languages": ["english", "indian"],
+//         "religionViews": ["Atheist","Agnostik"],
+//         "politicalViews": ["liberal"]
+//     },
+//     "contacts": {
+//         "mobilePhone": "IPHONE13",
+//         "address": "avenue 13",
+//         "linkedAccounts": ["https://www.tiktok.com/@angiejoliefan?is_from_webapp=1&sender_device=pc"],
+//         "website": "http://flibusta.site/b/668844/read"
+//     },
+//     "workAndEducation": {
+//         "placeOfWork": "MydataCoin",
+//         "skills": ["Attractive"],
+//         "university": "KNU",
+//         "faculty": "ФИиИт"
+//     },
+//     "placeOfResidence": {
+//         "currentCity": "New-York",
+//         "birthPlace": "bishkek",
+//         "otherCities": ["Astana","Peru","Amsterdam"]
+//     },
+//     "personalInterests": {
+//         "briefDescription": "Smart",
+//         "hobby": ["biohacking"],
+//         "sport": ["boxing"]
+//     },
+//     "deviceInformation": {
+//         "deviceName": "Mac m2 pro",
+//         "deviceId": "21313-asdasd-12313",
+//         "operatingSystem": "windows",
+//         "displayResolution": "999X999",
+//         "browser": "internet explorer",
+//         "iSP": "megaCom provider",
+//         "adBlock": True
+//     },
+//     "cookies": {
+//         "sessionState": "Active",
+//         "language": "Russia",
+//         "region": "chui area",
+//         "recentPages": ["https://ru.wikipedia.org/wiki/%D0%A5%D0%BE%D0%B1%D0%B1%D0%B8%D1%85%D0%BE%D1%80%D1%81%D0%B8%D0%BD%D0%B3"],
+//         "shoppingCart": [
+//             {
+//                 "productId": "123-asda-12312",
+//                 "productName": "dragon",
+//                 "productPrice": 100000000,
+//                 "quantity": 1,
+//                 "subTotal": 120000,
+//                 "total": 20,
+//                 "couponCode": "free-dragondotpy",
+//                 "shippingInformation": "st.Avenue 13",
+//                 "taxInformation": "12.23"
+//             },
+//             {
+//                 "productId": "123-qwe-123",
+//                 "productName": "dragon-wife",
+//                 "productPrice": 1,
+//                 "quantity": 1,
+//                 "subTotal": 1,
+//                 "total": 2,
+//                 "couponCode": "free-incubator",
+//                 "shippingInformation": "st.Avenue 13",
+//                 "taxInformation": "0.01"
+//             }
+//         ]
+//     }
+// }
+
+
+public class InsertDataExample {
+    public static void insert(Object data) {
+        HttpClient httpClient = HttpClient.newHttpClient();
+        String url = "http://your-server-ip:8000/api/v1/insert";
+        
+        // here you have to pass your authorization token which you specified 
+        // in docker-compose.yml file in environment variables
+        
+        String authToken = "your_auth_token_here";
+
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Authorization", authToken);
+        headers.put("Content-Type", "application/json");
+
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(url))
+                .headers(headers.entrySet().stream()
+                        .map(entry -> entry.getKey() + ":" + entry.getValue())
+                        .toArray(String[]::new))
+                .POST(HttpRequest.BodyPublishers.ofString(data))
+                .build();
+
+        try {
+            HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+
+            if (response.statusCode() == 200) {
+                System.out.println("Data inserted successfully: " + response.body());
+            } else {
+                System.out.println("Error inserting data: " + response.body());
+            }
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+{% endtab %}
+
+{% tab title="Node.js" %}
+```javascript
+// this endpoint is designed 
+// to update the database singly, 
+// this solves the problem, let's say that you have new users, and 
+// in order not to form and then load json into the database each time, 
+// you can simultaneously throw a request to our database at the time of filling 
+// your database using api/v1/insert method
+
+
+// this is an example of an object
+// that should be sent to our endpoint, api/v1/insert
+
+// data = {
+//     "profile": {
+//         "recordId": "54",
+//         "firstName": "Alex",
+//         "lastName": "Vishnevski",
+//         "dateOfBirth": "2002-11-09T00:00:00Z",
+//         "gender": 1,
+//         "email": ["amaymon02@mai8.ru"],
+//         "phone": ["+996222116992", "+996555848652"],
+//         "maritalStatus": 0,
+//         "income": 0
+//     },
+//     "basicData": {
+//         "interests": ["hobbyhorsing","boxing"],
+//         "languages": ["english", "indian"],
+//         "religionViews": ["Atheist","Agnostik"],
+//         "politicalViews": ["liberal"]
+//     },
+//     "contacts": {
+//         "mobilePhone": "IPHONE13",
+//         "address": "avenue 13",
+//         "linkedAccounts": ["https://www.tiktok.com/@angiejoliefan?is_from_webapp=1&sender_device=pc"],
+//         "website": "http://flibusta.site/b/668844/read"
+//     },
+//     "workAndEducation": {
+//         "placeOfWork": "MydataCoin",
+//         "skills": ["Attractive"],
+//         "university": "KNU",
+//         "faculty": "ФИиИт"
+//     },
+//     "placeOfResidence": {
+//         "currentCity": "New-York",
+//         "birthPlace": "bishkek",
+//         "otherCities": ["Astana","Peru","Amsterdam"]
+//     },
+//     "personalInterests": {
+//         "briefDescription": "Smart",
+//         "hobby": ["biohacking"],
+//         "sport": ["boxing"]
+//     },
+//     "deviceInformation": {
+//         "deviceName": "Mac m2 pro",
+//         "deviceId": "21313-asdasd-12313",
+//         "operatingSystem": "windows",
+//         "displayResolution": "999X999",
+//         "browser": "internet explorer",
+//         "iSP": "megaCom provider",
+//         "adBlock": True
+//     },
+//     "cookies": {
+//         "sessionState": "Active",
+//         "language": "Russia",
+//         "region": "chui area",
+//         "recentPages": ["https://ru.wikipedia.org/wiki/%D0%A5%D0%BE%D0%B1%D0%B1%D0%B8%D1%85%D0%BE%D1%80%D1%81%D0%B8%D0%BD%D0%B3"],
+//         "shoppingCart": [
+//             {
+//                 "productId": "123-asda-12312",
+//                 "productName": "dragon",
+//                 "productPrice": 100000000,
+//                 "quantity": 1,
+//                 "subTotal": 120000,
+//                 "total": 20,
+//                 "couponCode": "free-dragondotpy",
+//                 "shippingInformation": "st.Avenue 13",
+//                 "taxInformation": "12.23"
+//             },
+//             {
+//                 "productId": "123-qwe-123",
+//                 "productName": "dragon-wife",
+//                 "productPrice": 1,
+//                 "quantity": 1,
+//                 "subTotal": 1,
+//                 "total": 2,
+//                 "couponCode": "free-incubator",
+//                 "shippingInformation": "st.Avenue 13",
+//                 "taxInformation": "0.01"
+//             }
+//         ]
+//     }
+// }
+
+
+function insertData(data) {
+    const url = 'http://your-server-ip:8000/api/v1/insert';
+    
+    // here you have to pass your authorization token which you specified 
+    // in docker-compose.yml file in environment variables
+    const headers = {
+        'Authorization': 'your_auth_token_here',
+        'Content-Type': 'application/json'
+    };
+
+    axios.post(url, data, { headers })
+        .then(response => {
+            const responseData = response.data;
+            if (response.status === 200) {
+                console.log('Data inserted successfully:', responseData);
+            } else {
+                console.log('Error inserting data:', responseData);
+            }
+        })
+        .catch(error => {
+            console.error('Request error:', error);
+        });
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+```python
+# this endpoint is designed 
+# to update the database singly, 
+# this solves the problem, let's say that you have new users, and 
+# in order not to form and then load json into the database each time, 
+# you can simultaneously throw a request to our database at the time of filling 
+# your database using api/v1/insert method
+
+
+# this is an example of an object
+# that should be sent to our endpoint, api/v1/insert
+
+
+# data = {
+#     "profile": {
+#         "recordId": "54",
+#         "firstName": "Alex",
+#         "lastName": "Vishnevski",
+#         "dateOfBirth": "2002-11-09T00:00:00Z",
+#         "gender": 1,
+#         "email": ["amaymon02@mai8.ru"],
+#         "phone": ["+996222116992", "+996555848652"],
+#         "maritalStatus": 0,
+#         "income": 0
+#     },
+#     "basicData": {
+#         "interests": ["hobbyhorsing","boxing"],
+#         "languages": ["english", "indian"],
+#         "religionViews": ["Atheist","Agnostik"],
+#         "politicalViews": ["liberal"]
+#     },
+#     "contacts": {
+#         "mobilePhone": "IPHONE13",
+#         "address": "avenue 13",
+#         "linkedAccounts": ["https://www.tiktok.com/@angiejoliefan?is_from_webapp=1&sender_device=pc"],
+#         "website": "http://flibusta.site/b/668844/read"
+#     },
+#     "workAndEducation": {
+#         "placeOfWork": "MydataCoin",
+#         "skills": ["Attractive"],
+#         "university": "KNU",
+#         "faculty": "ФИиИт"
+#     },
+#     "placeOfResidence": {
+#         "currentCity": "New-York",
+#         "birthPlace": "bishkek",
+#         "otherCities": ["Astana","Peru","Amsterdam"]
+#     },
+#     "personalInterests": {
+#         "briefDescription": "Smart",
+#         "hobby": ["biohacking"],
+#         "sport": ["boxing"]
+#     },
+#     "deviceInformation": {
+#         "deviceName": "Mac m2 pro",
+#         "deviceId": "21313-asdasd-12313",
+#         "operatingSystem": "windows",
+#         "displayResolution": "999X999",
+#         "browser": "internet explorer",
+#         "iSP": "megaCom provider",
+#         "adBlock": True
+#     },
+#     "cookies": {
+#         "sessionState": "Active",
+#         "language": "Russia",
+#         "region": "chui area",
+#         "recentPages": ["https://ru.wikipedia.org/wiki/%D0%A5%D0%BE%D0%B1%D0%B1%D0%B8%D1%85%D0%BE%D1%80%D1%81%D0%B8%D0%BD%D0%B3"],
+#         "shoppingCart": [
+#             {
+#                 "productId": "123-asda-12312",
+#                 "productName": "dragon",
+#                 "productPrice": 100000000,
+#                 "quantity": 1,
+#                 "subTotal": 120000,
+#                 "total": 20,
+#                 "couponCode": "free-dragondotpy",
+#                 "shippingInformation": "st.Avenue 13",
+#                 "taxInformation": "12.23"
+#             },
+#             {
+#                 "productId": "123-qwe-123",
+#                 "productName": "dragon-wife",
+#                 "productPrice": 1,
+#                 "quantity": 1,
+#                 "subTotal": 1,
+#                 "total": 2,
+#                 "couponCode": "free-incubator",
+#                 "shippingInformation": "st.Avenue 13",
+#                 "taxInformation": "0.01"
+#             }
+#         ]
+#     }
+# }
+
+
+def insert_data(data):
+    url = 'http://your-server-ip:8000/api/v1/insert'
+    
+    # here you have to pass your authorization token which you specified 
+    # in docker-compose.yml file in environment variables
+    headers = {
+        'Authorization': 'your_auth_token_here',
+        'Content-Type': 'application/json'
+    }
+
+    try:
+        response = requests.post(url, json=data, headers=headers)
+        response_data = response.json()
+        
+        if response.status_code == 200:
+            print("Data inserted successfully:", response_data)
+        else:
+            print("Error inserting data:", response_data)
+
+    except requests.exceptions.RequestException as e:
+        print("Request error:", e)
+```
+{% endtab %}
+
+{% tab title="Untitled" %}
 
 {% endtab %}
 {% endtabs %}
@@ -665,26 +1042,370 @@ this string is an identifier by which we will find and update user data, RecordI
 
 {% tabs %}
 {% tab title="cURL" %}
-```
-// Some code
-```
+<pre><code><strong>http://your-server-ip:8000/api/v1/update
+</strong></code></pre>
 {% endtab %}
 
 {% tab title="Java" %}
 ```java
-// Some code
+// this url is designed to synchronize data in the database, that is,
+// when updating your user's data, you can simultaneously 
+// generate json and send it to our url so that the data is always up to date
+
+
+
+// data = {
+//    "recordId":"54",
+//     "profile": {
+//         "recordId": "54",
+//         "firstName": "Alex",
+//         "lastName": "Vishnevski",
+//         "dateOfBirth": "2002-11-09T00:00:00Z",
+//         "gender": 1,
+//         "email": ["amaymon02@mai8.ru"],
+//         "phone": ["+996222116992", "+996555848652"],
+//         "maritalStatus": 0,
+//         "income": 0
+//     },
+//     "basicData": {
+//         "interests": ["hobbyhorsing","boxing"],
+//         "languages": ["english", "indian"],
+//         "religionViews": ["Atheist","Agnostik"],
+//         "politicalViews": ["liberal"]
+//     },
+//     "contacts": {
+//         "mobilePhone": "IPHONE13",
+//         "address": "avenue 13",
+//         "linkedAccounts": ["https://www.tiktok.com/@angiejoliefan?is_from_webapp=1&sender_device=pc"],
+//         "website": "http://flibusta.site/b/668844/read"
+//     },
+//     "workAndEducation": {
+//         "placeOfWork": "MydataCoin",
+//         "skills": ["Attractive"],
+//         "university": "KNU",
+//         "faculty": "ФИиИт"
+//     },
+//     "placeOfResidence": {
+//         "currentCity": "New-York",
+//         "birthPlace": "bishkek",
+//         "otherCities": ["Astana","Peru","Amsterdam"]
+//     },
+//     "personalInterests": {
+//         "briefDescription": "Smart",
+//         "hobby": ["biohacking"],
+//         "sport": ["boxing"]
+//     },
+//     "deviceInformation": {
+//         "deviceName": "Mac m2 pro",
+//         "deviceId": "21313-asdasd-12313",
+//         "operatingSystem": "windows",
+//         "displayResolution": "999X999",
+//         "browser": "internet explorer",
+//         "iSP": "megaCom provider",
+//         "adBlock": True
+//     },
+//     "cookies": {
+//         "sessionState": "Active",
+//         "language": "Russia",
+//         "region": "chui area",
+//         "recentPages": ["https://ru.wikipedia.org/wiki/%D0%A5%D0%BE%D0%B1%D0%B1%D0%B8%D1%85%D0%BE%D1%80%D1%81%D0%B8%D0%BD%D0%B3"],
+//         "shoppingCart": [
+//             {
+//                 "productId": "123-asda-12312",
+//                 "productName": "dragon",
+//                 "productPrice": 100000000,
+//                 "quantity": 1,
+//                 "subTotal": 120000,
+//                 "total": 20,
+//                 "couponCode": "free-dragondotpy",
+//                 "shippingInformation": "st.Avenue 13",
+//                 "taxInformation": "12.23"
+//             },
+//             {
+//                 "productId": "123-qwe-123",
+//                 "productName": "dragon-wife",
+//                 "productPrice": 1,
+//                 "quantity": 1,
+//                 "subTotal": 1,
+//                 "total": 2,
+//                 "couponCode": "free-incubator",
+//                 "shippingInformation": "st.Avenue 13",
+//                 "taxInformation": "0.01"
+//             }
+//         ]
+//     }
+// }
+
+public class UpdateDataExample {
+    public static void Update(Object data) {
+        HttpClient httpClient = HttpClient.newHttpClient();
+
+        String url = "http://your-server-ip:8000/api/v1/update";
+        String authToken = "your_auth_token_here";
+
+        Map<String, String> headers = new HashMap<>();
+        // here you have to pass your authorization token which you specified 
+        // in docker-compose.yml file in environment variables
+        headers.put("Authorization", authToken);
+        headers.put("Content-Type", "application/json");
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(url))
+                .headers(headers.entrySet().stream()
+                        .map(entry -> entry.getKey() + ":" + entry.getValue())
+                        .toArray(String[]::new))
+                .PUT(HttpRequest.BodyPublishers.ofString(data))
+                .build();
+
+        try {
+            HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+
+            if (response.statusCode() == 200) {
+                System.out.println("Data updated successfully: " + response.body());
+            } else {
+                System.out.println("Error updating data: " + response.body());
+            }
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
 ```
 {% endtab %}
 
 {% tab title="Node.js" %}
 ```javascript
-// Some code
+// this url is designed to synchronize data in the database, that is,
+// when updating your user's data, you can simultaneously 
+// generate json and send it to our url so that the data is always up to date
+
+
+
+// data = {
+//    "recordId":"54",
+//     "profile": {
+//         "recordId": "54",
+//         "firstName": "Alex",
+//         "lastName": "Vishnevski",
+//         "dateOfBirth": "2002-11-09T00:00:00Z",
+//         "gender": 1,
+//         "email": ["amaymon02@mai8.ru"],
+//         "phone": ["+996222116992", "+996555848652"],
+//         "maritalStatus": 0,
+//         "income": 0
+//     },
+//     "basicData": {
+//         "interests": ["hobbyhorsing","boxing"],
+//         "languages": ["english", "indian"],
+//         "religionViews": ["Atheist","Agnostik"],
+//         "politicalViews": ["liberal"]
+//     },
+//     "contacts": {
+//         "mobilePhone": "IPHONE13",
+//         "address": "avenue 13",
+//         "linkedAccounts": ["https://www.tiktok.com/@angiejoliefan?is_from_webapp=1&sender_device=pc"],
+//         "website": "http://flibusta.site/b/668844/read"
+//     },
+//     "workAndEducation": {
+//         "placeOfWork": "MydataCoin",
+//         "skills": ["Attractive"],
+//         "university": "KNU",
+//         "faculty": "ФИиИт"
+//     },
+//     "placeOfResidence": {
+//         "currentCity": "New-York",
+//         "birthPlace": "bishkek",
+//         "otherCities": ["Astana","Peru","Amsterdam"]
+//     },
+//     "personalInterests": {
+//         "briefDescription": "Smart",
+//         "hobby": ["biohacking"],
+//         "sport": ["boxing"]
+//     },
+//     "deviceInformation": {
+//         "deviceName": "Mac m2 pro",
+//         "deviceId": "21313-asdasd-12313",
+//         "operatingSystem": "windows",
+//         "displayResolution": "999X999",
+//         "browser": "internet explorer",
+//         "iSP": "megaCom provider",
+//         "adBlock": True
+//     },
+//     "cookies": {
+//         "sessionState": "Active",
+//         "language": "Russia",
+//         "region": "chui area",
+//         "recentPages": ["https://ru.wikipedia.org/wiki/%D0%A5%D0%BE%D0%B1%D0%B1%D0%B8%D1%85%D0%BE%D1%80%D1%81%D0%B8%D0%BD%D0%B3"],
+//         "shoppingCart": [
+//             {
+//                 "productId": "123-asda-12312",
+//                 "productName": "dragon",
+//                 "productPrice": 100000000,
+//                 "quantity": 1,
+//                 "subTotal": 120000,
+//                 "total": 20,
+//                 "couponCode": "free-dragondotpy",
+//                 "shippingInformation": "st.Avenue 13",
+//                 "taxInformation": "12.23"
+//             },
+//             {
+//                 "productId": "123-qwe-123",
+//                 "productName": "dragon-wife",
+//                 "productPrice": 1,
+//                 "quantity": 1,
+//                 "subTotal": 1,
+//                 "total": 2,
+//                 "couponCode": "free-incubator",
+//                 "shippingInformation": "st.Avenue 13",
+//                 "taxInformation": "0.01"
+//             }
+//         ]
+//     }
+// }
+
+const axios = require('axios');
+
+function updateData(data) {
+    const url = 'http://your-server-ip:8000/api/v1/update';
+   // here you have to pass your authorization token which you specified 
+   // in docker-compose.yml file in environment variables
+    const authToken = 'your_auth_token_here';
+
+    const headers = {
+        'Authorization': authToken,
+        'Content-Type': 'application/json'
+    };
+
+    axios.put(url, data, { headers })
+        .then(response => {
+            const responseData = response.data;
+            if (response.status === 200) {
+                console.log('Data updated successfully:', responseData);
+            } else {
+                console.log('Error updating data:', responseData);
+            }
+        })
+        .catch(error => {
+            console.error('Request error:', error);
+        });
+}
 ```
 {% endtab %}
 
 {% tab title="Python" %}
 ```python
-// Some code
+# this url is designed to synchronize data in the database, that is,
+# when updating your user's data, you can simultaneously 
+# generate json and send it to our url so that the data is always up to date
+
+
+
+# data = {
+#    "recordId":"54",
+#     "profile": {
+#         "recordId": "54",
+#         "firstName": "Alex",
+#         "lastName": "Vishnevski",
+#         "dateOfBirth": "2002-11-09T00:00:00Z",
+#         "gender": 1,
+#         "email": ["amaymon02@mai8.ru"],
+#         "phone": ["+996222116992", "+996555848652"],
+#         "maritalStatus": 0,
+#         "income": 0
+#     },
+#     "basicData": {
+#         "interests": ["hobbyhorsing","boxing"],
+#         "languages": ["english", "indian"],
+#         "religionViews": ["Atheist","Agnostik"],
+#         "politicalViews": ["liberal"]
+#     },
+#     "contacts": {
+#         "mobilePhone": "IPHONE13",
+#         "address": "avenue 13",
+#         "linkedAccounts": ["https://www.tiktok.com/@angiejoliefan?is_from_webapp=1&sender_device=pc"],
+#         "website": "http://flibusta.site/b/668844/read"
+#     },
+#     "workAndEducation": {
+#         "placeOfWork": "MydataCoin",
+#         "skills": ["Attractive"],
+#         "university": "KNU",
+#         "faculty": "ФИиИт"
+#     },
+#     "placeOfResidence": {
+#         "currentCity": "New-York",
+#         "birthPlace": "bishkek",
+#         "otherCities": ["Astana","Peru","Amsterdam"]
+#     },
+#     "personalInterests": {
+#         "briefDescription": "Smart",
+#         "hobby": ["biohacking"],
+#         "sport": ["boxing"]
+#     },
+#     "deviceInformation": {
+#         "deviceName": "Mac m2 pro",
+#         "deviceId": "21313-asdasd-12313",
+#         "operatingSystem": "windows",
+#         "displayResolution": "999X999",
+#         "browser": "internet explorer",
+#         "iSP": "megaCom provider",
+#         "adBlock": True
+#     },
+#     "cookies": {
+#         "sessionState": "Active",
+#         "language": "Russia",
+#         "region": "chui area",
+#         "recentPages": ["https://ru.wikipedia.org/wiki/%D0%A5%D0%BE%D0%B1%D0%B1%D0%B8%D1%85%D0%BE%D1%80%D1%81%D0%B8%D0%BD%D0%B3"],
+#         "shoppingCart": [
+#             {
+#                 "productId": "123-asda-12312",
+#                 "productName": "dragon",
+#                 "productPrice": 100000000,
+#                 "quantity": 1,
+#                 "subTotal": 120000,
+#                 "total": 20,
+#                 "couponCode": "free-dragondotpy",
+#                 "shippingInformation": "st.Avenue 13",
+#                 "taxInformation": "12.23"
+#             },
+#             {
+#                 "productId": "123-qwe-123",
+#                 "productName": "dragon-wife",
+#                 "productPrice": 1,
+#                 "quantity": 1,
+#                 "subTotal": 1,
+#                 "total": 2,
+#                 "couponCode": "free-incubator",
+#                 "shippingInformation": "st.Avenue 13",
+#                 "taxInformation": "0.01"
+#             }
+#         ]
+#     }
+# }
+
+
+def update_data(data):
+    url = 'http://your-server-ip:8000/api/v1/update'
+   # here you have to pass your authorization token which you specified 
+   # in docker-compose.yml file in environment variables
+    auth_token = 'your_auth_token_here'
+
+    headers = {
+        'Authorization': auth_token,
+        'Content-Type': 'application/json'
+    }
+
+    try:
+        response = requests.put(url, json=data, headers=headers)
+        response_data = response.json()
+
+        if response.status_code == 200:
+            print('Data updated successfully:', response_data)
+        else:
+            print('Error updating data:', response_data)
+
+    except requests.exceptions.RequestException as e:
+        print('Request error:', e)
+
 ```
 {% endtab %}
 {% endtabs %}
