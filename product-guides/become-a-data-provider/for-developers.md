@@ -19,6 +19,7 @@ description: >-
 * [Upload a DataSet](for-developers.md#upload-a-dataset)
 * [User Model](for-developers.md#user-model)
 * [Add Records](for-developers.md#add-records)
+* [Update Records](for-developers.md#update-records)
 
 ### System Requirements
 
@@ -382,7 +383,7 @@ Marital status is a characteristic that reflects a person's marital status. Depe
 
 ### Add Records
 
-How to insert new records into your dataset.
+These two methods serve to update and add users, add user `api/v1/insert` serves so that you do not have to form json every time and fill it with the `/upload` method, instead you can simply write a function that will be executed when you add a new user to the database, that is, you simply add to yours and simultaneously make a request to our database data, in the future this will free you from the constant updating of data.
 
 {% swagger method="post" path="/api/v1/insert" baseUrl="https://your-ip-address:your-port" summary="Inserts new user profile " expanded="false" %}
 {% swagger-description %}
@@ -512,7 +513,89 @@ there should be an authorization token that was entered in docker-compose.yml
 {% tabs %}
 {% tab title="cURL" %}
 ```
-http://your-server-ip:8000/api/v1/insert
+curl -X PUT "http://your-server-ip:8000/api/v1/insert" \
+     -H "Authorization: your_auth_token_here" \
+     -H "Content-Type: application/json" \
+     -d '{
+    "profile": {
+        "recordId": "54",
+        "firstName": "Alex",
+        "lastName": "Vishnevski",
+        "dateOfBirth": "2002-11-09T00:00:00Z",
+        "gender": 1,
+        "email": ["amaymon02@mai8.ru"],
+        "phone": ["+996222116992", "+996555848652"],
+        "maritalStatus": 0,
+        "income": 0
+    },
+    "basicData": {
+        "interests": ["hobbyhorsing","boxing"],
+        "languages": ["english", "indian"],
+        "religionViews": ["Atheist","Agnostik"],
+        "politicalViews": ["liberal"]
+    },
+    "contacts": {
+        "mobilePhone": "IPHONE13",
+        "address": "avenue 13",
+        "linkedAccounts": ["https://www.tiktok.com/@angiejoliefan?is_from_webapp=1&sender_device=pc"],
+        "website": "http://flibusta.site/b/668844/read"
+    },
+    "workAndEducation": {
+        "placeOfWork": "MydataCoin",
+        "skills": ["Attractive"],
+        "university": "KNU",
+        "faculty": "ФИиИт"
+    },
+    "placeOfResidence": {
+        "currentCity": "New-York",
+        "birthPlace": "bishkek",
+        "otherCities": ["Astana","Peru","Amsterdam"]
+    },
+    "personalInterests": {
+        "briefDescription": "Smart",
+        "hobby": ["biohacking"],
+        "sport": ["boxing"]
+    },
+    "deviceInformation": {
+        "deviceName": "Mac m2 pro",
+        "deviceId": "21313-asdasd-12313",
+        "operatingSystem": "windows",
+        "displayResolution": "999X999",
+        "browser": "internet explorer",
+        "iSP": "megaCom provider",
+        "adBlock": true
+    },
+    "cookies": {
+        "sessionState": "Active",
+        "language": "Russia",
+        "region": "chui area",
+        "recentPages": ["https://ru.wikipedia.org/wiki%D0%A5%D0%BE%D0%B1%D0%B1%D0%B8%D1%85%D0%BE%D1%80%D1%81%D0%B8%D0%BD%D0%B3"],
+        "shoppingCart": [
+            {
+                "productId": 123,
+                "productName": "dragon",
+                "productPrice": 100000000,
+                "quantity": 1,
+                "subTotal": 120000,
+                "total": 20,
+                "couponCode": "free-dragondotpy",
+                "shippingInformation": "st.Avenue 13",
+                "taxInformation": "12.23"
+            },
+            {
+                "productId": 1233,
+                "productName": "dragon-wife",
+                "productPrice": 1,
+                "quantity": 1,
+                "subTotal": 1,
+                "total": 2,
+                "couponCode": "free-incubator",
+                "shippingInformation": "st.Avenue 13",
+                "taxInformation": "0.01"
+            }
+        ]
+    }
+}'
 ```
 {% endtab %}
 
@@ -891,10 +974,147 @@ def insert_data(data):
 ```
 {% endtab %}
 
-{% tab title="Untitled" %}
+{% tab title="C#" %}
+```csharp
+// this endpoint is designed 
+// to update the database singly, 
+// this solves the problem, let's say that you have new users, and 
+// in order not to form and then load json into the database each time, 
+// you can simultaneously throw a request to our database at the time of filling 
+// your database using api/v1/insert method
 
+
+// this is an example of an object
+// that should be sent to our endpoint, api/v1/insert
+
+// data = {
+//     "profile": {
+//         "recordId": "54",
+//         "firstName": "Alex",
+//         "lastName": "Vishnevski",
+//         "dateOfBirth": "2002-11-09T00:00:00Z",
+//         "gender": 1,
+//         "email": ["amaymon02@mai8.ru"],
+//         "phone": ["+996222116992", "+996555848652"],
+//         "maritalStatus": 0,
+//         "income": 0
+//     },
+//     "basicData": {
+//         "interests": ["hobbyhorsing","boxing"],
+//         "languages": ["english", "indian"],
+//         "religionViews": ["Atheist","Agnostik"],
+//         "politicalViews": ["liberal"]
+//     },
+//     "contacts": {
+//         "mobilePhone": "IPHONE13",
+//         "address": "avenue 13",
+//         "linkedAccounts": ["https://www.tiktok.com/@angiejoliefan?is_from_webapp=1&sender_device=pc"],
+//         "website": "http://flibusta.site/b/668844/read"
+//     },
+//     "workAndEducation": {
+//         "placeOfWork": "MydataCoin",
+//         "skills": ["Attractive"],
+//         "university": "KNU",
+//         "faculty": "ФИиИт"
+//     },
+//     "placeOfResidence": {
+//         "currentCity": "New-York",
+//         "birthPlace": "bishkek",
+//         "otherCities": ["Astana","Peru","Amsterdam"]
+//     },
+//     "personalInterests": {
+//         "briefDescription": "Smart",
+//         "hobby": ["biohacking"],
+//         "sport": ["boxing"]
+//     },
+//     "deviceInformation": {
+//         "deviceName": "Mac m2 pro",
+//         "deviceId": "21313-asdasd-12313",
+//         "operatingSystem": "windows",
+//         "displayResolution": "999X999",
+//         "browser": "internet explorer",
+//         "iSP": "megaCom provider",
+//         "adBlock": True
+//     },
+//     "cookies": {
+//         "sessionState": "Active",
+//         "language": "Russia",
+//         "region": "chui area",
+//         "recentPages": ["https://ru.wikipedia.org/wiki/%D0%A5%D0%BE%D0%B1%D0%B1%D0%B8%D1%85%D0%BE%D1%80%D1%81%D0%B8%D0%BD%D0%B3"],
+//         "shoppingCart": [
+//             {
+//                 "productId": "123-asda-12312",
+//                 "productName": "dragon",
+//                 "productPrice": 100000000,
+//                 "quantity": 1,
+//                 "subTotal": 120000,
+//                 "total": 20,
+//                 "couponCode": "free-dragondotpy",
+//                 "shippingInformation": "st.Avenue 13",
+//                 "taxInformation": "12.23"
+//             },
+//             {
+//                 "productId": "123-qwe-123",
+//                 "productName": "dragon-wife",
+//                 "productPrice": 1,
+//                 "quantity": 1,
+//                 "subTotal": 1,
+//                 "total": 2,
+//                 "couponCode": "free-incubator",
+//                 "shippingInformation": "st.Avenue 13",
+//                 "taxInformation": "0.01"
+//             }
+//         ]
+//     }
+// }
+
+
+namespace InsertDataExample
+{
+    class Program
+    {
+        static async Task Main(string[] args)
+        {
+            string url = "http://your-server-ip:8000/api/v1/insert";
+            string authToken = "your_auth_token_here";
+            
+            # here you have to pass your authorization token which you specified 
+            # in docker-compose.yml file in environment variables
+            
+            HttpClient httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Add("Authorization", authToken);
+            httpClient.DefaultRequestHeaders.Add("Content-Type", "application/json");
+
+            string requestBody = "{\"profile\": {...}}"; // Replace with your JSON data
+
+            try
+            {
+                HttpResponseMessage response = await httpClient.PostAsync(url, new StringContent(requestBody, Encoding.UTF8, "application/json"));
+                string responseData = await response.Content.ReadAsStringAsync();
+
+                if (response.IsSuccessStatusCode)
+                {
+                    Console.WriteLine("Data inserted successfully: " + responseData);
+                }
+                else
+                {
+                    Console.WriteLine("Error inserting data: " + responseData);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Request error: " + e.Message);
+            }
+        }
+    }
+}
+```
 {% endtab %}
 {% endtabs %}
+
+### Update Records
+
+The update method serves to synchronize your database with ours, so that the data is always up to date, you just need to write a function that, when updating your user's data, it simultaneously updates the user in our database to keep personal data up to date
 
 {% swagger method="put" path="/api/v1/update" baseUrl="https://your-ip-address:your-port" summary="updating an existing user" expanded="false" %}
 {% swagger-description %}
@@ -1042,8 +1262,92 @@ this string is an identifier by which we will find and update user data, RecordI
 
 {% tabs %}
 {% tab title="cURL" %}
-<pre><code><strong>http://your-server-ip:8000/api/v1/update
-</strong></code></pre>
+```
+curl -X PUT "http://your-server-ip:8000/api/v1/update" \
+     -H "Authorization: your_auth_token_here" \
+     -H "Content-Type: application/json" \
+     -d '{
+   "recordId":"55",
+    "profile": {
+        "recordId": "54",
+        "firstName": "Alex",
+        "lastName": "Vishnevski",
+        "dateOfBirth": "2002-11-09T00:00:00Z",
+        "gender": 1,
+        "email": ["amaymon02@mai8.ru"],
+        "phone": ["+996222116992", "+996555848652"],
+        "maritalStatus": 0,
+        "income": 0
+    },
+    "basicData": {
+        "interests": ["hobbyhorsing","boxing"],
+        "languages": ["english", "indian"],
+        "religionViews": ["Atheist","Agnostik"],
+        "politicalViews": ["liberal"]
+    },
+    "contacts": {
+        "mobilePhone": "IPHONE13",
+        "address": "avenue 13",
+        "linkedAccounts": ["https://www.tiktok.com/@angiejoliefan?is_from_webapp=1&sender_device=pc"],
+        "website": "http://flibusta.site/b/668844/read"
+    },
+    "workAndEducation": {
+        "placeOfWork": "MydataCoin",
+        "skills": ["Attractive"],
+        "university": "KNU",
+        "faculty": "ФИиИт"
+    },
+    "placeOfResidence": {
+        "currentCity": "New-York",
+        "birthPlace": "bishkek",
+        "otherCities": ["Astana","Peru","Amsterdam"]
+    },
+    "personalInterests": {
+        "briefDescription": "Smart",
+        "hobby": ["biohacking"],
+        "sport": ["boxing"]
+    },
+    "deviceInformation": {
+        "deviceName": "Mac m2 pro",
+        "deviceId": "21313-asdasd-12313",
+        "operatingSystem": "windows",
+        "displayResolution": "999X999",
+        "browser": "internet explorer",
+        "iSP": "megaCom provider",
+        "adBlock": true
+    },
+    "cookies": {
+        "sessionState": "Active",
+        "language": "Russia",
+        "region": "chui area",
+        "recentPages": ["https://ru.wikipedia.org/wiki%D0%A5%D0%BE%D0%B1%D0%B1%D0%B8%D1%85%D0%BE%D1%80%D1%81%D0%B8%D0%BD%D0%B3"],
+        "shoppingCart": [
+            {
+                "productId": 123,
+                "productName": "dragon",
+                "productPrice": 100000000,
+                "quantity": 1,
+                "subTotal": 120000,
+                "total": 20,
+                "couponCode": "free-dragondotpy",
+                "shippingInformation": "st.Avenue 13",
+                "taxInformation": "12.23"
+            },
+            {
+                "productId": 1233,
+                "productName": "dragon-wife",
+                "productPrice": 1,
+                "quantity": 1,
+                "subTotal": 1,
+                "total": 2,
+                "couponCode": "free-incubator",
+                "shippingInformation": "st.Avenue 13",
+                "taxInformation": "0.01"
+            }
+        ]
+    }
+}'
+```
 {% endtab %}
 
 {% tab title="Java" %}
@@ -1406,6 +1710,134 @@ def update_data(data):
     except requests.exceptions.RequestException as e:
         print('Request error:', e)
 
+```
+{% endtab %}
+
+{% tab title="C#" %}
+```csharp
+// this url is designed to synchronize data in the database, that is,
+// when updating your user's data, you can simultaneously 
+// generate json and send it to our url so that the data is always up to date
+
+
+// data = {
+//    "recordId":"54",
+//     "profile": {
+//         "recordId": "54",
+//         "firstName": "Alex",
+//         "lastName": "Vishnevski",
+//         "dateOfBirth": "2002-11-09T00:00:00Z",
+//         "gender": 1,
+//         "email": ["amaymon02@mai8.ru"],
+//         "phone": ["+996222116992", "+996555848652"],
+//         "maritalStatus": 0,
+//         "income": 0
+//     },
+//     "basicData": {
+//         "interests": ["hobbyhorsing","boxing"],
+//         "languages": ["english", "indian"],
+//         "religionViews": ["Atheist","Agnostik"],
+//         "politicalViews": ["liberal"]
+//     },
+//     "contacts": {
+//         "mobilePhone": "IPHONE13",
+//         "address": "avenue 13",
+//         "linkedAccounts": ["https://www.tiktok.com/@angiejoliefan?is_from_webapp=1&sender_device=pc"],
+//         "website": "http://flibusta.site/b/668844/read"
+//     },
+//     "workAndEducation": {
+//         "placeOfWork": "MydataCoin",
+//         "skills": ["Attractive"],
+//         "university": "KNU",
+//         "faculty": "ФИиИт"
+//     },
+//     "placeOfResidence": {
+//         "currentCity": "New-York",
+//         "birthPlace": "bishkek",
+//         "otherCities": ["Astana","Peru","Amsterdam"]
+//     },
+//     "personalInterests": {
+//         "briefDescription": "Smart",
+//         "hobby": ["biohacking"],
+//         "sport": ["boxing"]
+//     },
+//     "deviceInformation": {
+//         "deviceName": "Mac m2 pro",
+//         "deviceId": "21313-asdasd-12313",
+//         "operatingSystem": "windows",
+//         "displayResolution": "999X999",
+//         "browser": "internet explorer",
+//         "iSP": "megaCom provider",
+//         "adBlock": True
+//     },
+//     "cookies": {
+//         "sessionState": "Active",
+//         "language": "Russia",
+//         "region": "chui area",
+//         "recentPages": ["https://ru.wikipedia.org/wiki/%D0%A5%D0%BE%D0%B1%D0%B1%D0%B8%D1%85%D0%BE%D1%80%D1%81%D0%B8%D0%BD%D0%B3"],
+//         "shoppingCart": [
+//             {
+//                 "productId": "123-asda-12312",
+//                 "productName": "dragon",
+//                 "productPrice": 100000000,
+//                 "quantity": 1,
+//                 "subTotal": 120000,
+//                 "total": 20,
+//                 "couponCode": "free-dragondotpy",
+//                 "shippingInformation": "st.Avenue 13",
+//                 "taxInformation": "12.23"
+//             },
+//             {
+//                 "productId": "123-qwe-123",
+//                 "productName": "dragon-wife",
+//                 "productPrice": 1,
+//                 "quantity": 1,
+//                 "subTotal": 1,
+//                 "total": 2,
+//                 "couponCode": "free-incubator",
+//                 "shippingInformation": "st.Avenue 13",
+//                 "taxInformation": "0.01"
+//             }
+//         ]
+//     }
+// }
+
+namespace UpdateDataExample
+{
+    class Program
+    {
+        static async Task Update(Object data)
+        {
+            string url = "http://your-server-ip:8000/api/v1/update";
+            string authToken = "your_auth_token_here";
+
+            HttpClient httpClient = new HttpClient();
+            // here you have to pass your authorization token which you specified 
+            // in docker-compose.yml file in environment variables
+            httpClient.DefaultRequestHeaders.Add("Authorization", authToken);
+            httpClient.DefaultRequestHeaders.Add("Content-Type", "application/json");
+
+            try
+            {
+                HttpResponseMessage response = await httpClient.PutAsync(url, new StringContent(data, Encoding.UTF8, "application/json"));
+                string responseData = await response.Content.ReadAsStringAsync();
+
+                if (response.IsSuccessStatusCode)
+                {
+                    Console.WriteLine("Data updated successfully: " + responseData);
+                }
+                else
+                {
+                    Console.WriteLine("Error updating data: " + responseData);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Request error: " + e.Message);
+            }
+        }
+    }
+}
 ```
 {% endtab %}
 {% endtabs %}
