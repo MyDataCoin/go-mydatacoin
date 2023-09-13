@@ -1112,7 +1112,7 @@ namespace InsertDataExample
 
 The update method serves to synchronize your database with ours, so that the data is always up to date, you just need to write a function that, when updating your user's data, it simultaneously updates the user in our database to keep personal data up to date
 
-{% swagger method="put" path="/api/v1/update" baseUrl="https://your-ip-address:your-port" summary="updating an existing user" expanded="false" %}
+{% swagger method="put" path="/api/v1/update?recordId=55" baseUrl="https://your-ip-address:your-port" summary="updating an existing user" expanded="false" %}
 {% swagger-description %}
 This method is used to update the data of an existing user, please note that identification occurs by recordId which is located separately outside the data to update
 {% endswagger-description %}
