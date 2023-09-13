@@ -147,12 +147,8 @@ Now you ready to go! Please feel free to ask any questions about integration pro
         "lastName":"Doe",
         "dateOfBirth":"1999-09-09T00:00:00Z",
         "gender":null,
-        "email":[
-           "sagynbaev6@mail.com"
-        ],
-        "phone":[
-           
-        ],
+        "email":"sagynbaev6@mail.com",
+        "phone":"+7(777)222-33-44",
         "maritalStatus":0,
         "income":0
      },
@@ -322,7 +318,7 @@ Model details:
 
 <table><thead><tr><th>Parameter</th><th>Data Type</th><th>Comment</th><th data-type="checkbox">Nullable</th></tr></thead><tbody><tr><td>recordId</td><td>string</td><td>Unique identifier of record, you can use your database identifier</td><td>false</td></tr><tr><td>firstName</td><td>string</td><td></td><td>true</td></tr><tr><td>lastName</td><td>string</td><td></td><td>true</td></tr><tr><td>dateOfBirth</td><td>DateTime</td><td>Format(1999-09-09T00:00:00Z)</td><td>false</td></tr><tr><td>gender</td><td>int</td><td><p>Enum</p><pre class="language-csharp"><code class="lang-csharp">0 = Male,
 1 = Female
-</code></pre></td><td>false</td></tr><tr><td>email</td><td>string[]</td><td></td><td>false</td></tr><tr><td>phone</td><td>string[]</td><td></td><td>true</td></tr><tr><td>maritalStatus</td><td>int</td><td><p><a href="for-developers.md#maritalstatus">MaritalStatus</a></p><pre class="language-json"><code class="lang-json"><strong>0 = Single,
+</code></pre></td><td>false</td></tr><tr><td>email</td><td>string</td><td></td><td>false</td></tr><tr><td>phone</td><td>string</td><td></td><td>true</td></tr><tr><td>maritalStatus</td><td>int</td><td><p><a href="for-developers.md#maritalstatus">MaritalStatus</a></p><pre class="language-json"><code class="lang-json"><strong>0 = Single,
 </strong>1 = Married,
 2 = Divorced,
 3 = Bachelor,
@@ -1125,10 +1121,6 @@ This method is used to update the data of an existing user, please note that ide
 This token is needed for authorization, which is located in docker-compose.yml
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="recordId" required="true" %}
-this string is an identifier by which we will find and update user data, RecordId is the user id in your database
-{% endswagger-parameter %}
-
 {% swagger-parameter in="body" name="profile" type="Profile" %}
 
 
@@ -1191,6 +1183,10 @@ this string is an identifier by which we will find and update user data, RecordI
 [this object and it`s fields in the structure are described above](for-developers.md#cookies)
 
 
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="recordId" required="true" %}
+This string is an identifier by which you will find and update user data
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="succesfull response" %}
@@ -1263,11 +1259,10 @@ this string is an identifier by which we will find and update user data, RecordI
 {% tabs %}
 {% tab title="cURL" %}
 ```
-curl -X PUT "http://your-server-ip:8000/api/v1/update" \
+curl -X PUT "http://your-server-ip:8000/api/v1/update?recordId=55" \
      -H "Authorization: your_auth_token_here" \
      -H "Content-Type: application/json" \
      -d '{
-   "recordId":"55",
     "profile": {
         "recordId": "54",
         "firstName": "Alex",
@@ -1359,7 +1354,6 @@ curl -X PUT "http://your-server-ip:8000/api/v1/update" \
 
 
 // data = {
-//    "recordId":"54",
 //     "profile": {
 //         "recordId": "54",
 //         "firstName": "Alex",
@@ -1444,7 +1438,7 @@ public class UpdateDataExample {
     public static void Update(Object data) {
         HttpClient httpClient = HttpClient.newHttpClient();
 
-        String url = "http://your-server-ip:8000/api/v1/update";
+        String url = "http://your-server-ip:8000/api/v1/update?recordId=55";
         String authToken = "your_auth_token_here";
 
         Map<String, String> headers = new HashMap<>();
@@ -1486,7 +1480,6 @@ public class UpdateDataExample {
 
 
 // data = {
-//    "recordId":"54",
 //     "profile": {
 //         "recordId": "54",
 //         "firstName": "Alex",
@@ -1570,7 +1563,7 @@ public class UpdateDataExample {
 const axios = require('axios');
 
 function updateData(data) {
-    const url = 'http://your-server-ip:8000/api/v1/update';
+    const url = 'http://your-server-ip:8000/api/v1/update?recordId=55';
    // here you have to pass your authorization token which you specified 
    // in docker-compose.yml file in environment variables
     const authToken = 'your_auth_token_here';
@@ -1605,7 +1598,6 @@ function updateData(data) {
 
 
 # data = {
-#    "recordId":"54",
 #     "profile": {
 #         "recordId": "54",
 #         "firstName": "Alex",
@@ -1688,7 +1680,7 @@ function updateData(data) {
 
 
 def update_data(data):
-    url = 'http://your-server-ip:8000/api/v1/update'
+    url = 'http://your-server-ip:8000/api/v1/update?recordId=55'
    # here you have to pass your authorization token which you specified 
    # in docker-compose.yml file in environment variables
     auth_token = 'your_auth_token_here'
@@ -1721,7 +1713,6 @@ def update_data(data):
 
 
 // data = {
-//    "recordId":"54",
 //     "profile": {
 //         "recordId": "54",
 //         "firstName": "Alex",
@@ -1808,7 +1799,7 @@ namespace UpdateDataExample
     {
         static async Task Update(Object data)
         {
-            string url = "http://your-server-ip:8000/api/v1/update";
+            string url = "http://your-server-ip:8000/api/v1/update?recordId=55";
             string authToken = "your_auth_token_here";
 
             HttpClient httpClient = new HttpClient();
