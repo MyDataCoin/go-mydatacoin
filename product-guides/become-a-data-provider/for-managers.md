@@ -9,6 +9,11 @@
 * [Registration](for-managers.md#registration)
 * [Dataset Upload Process](for-managers.md#dataset-upload-process)
 
+To access our website:
+
+* For the testing environment, use [https://test-app.mydatacoin.io](https://test-app.mydatacoin.io)
+* For the production environment, use [https://app.mydatacoin.io](https://app.mydatacoin.io)
+
 ### Registration
 
 <figure><img src="../../.gitbook/assets/Screenshot 2023-06-20 at 17.58.03.png" alt=""><figcaption><p>Marketplace</p></figcaption></figure>
@@ -54,7 +59,7 @@ Do not transfer the token to third parties, and beware of getting the token on t
 
 You need to send this token to your IT specialists to grant access to work with MyDataCoin Bridge. The last step is to obtain the **URL** from the IT specialist and enter it in the designated field alongside the secret token (you can also reach it on your settings page later).
 
-<figure><img src="../../.gitbook/assets/photo-output.HEIC" alt=""><figcaption><p>Secret token and Service URL</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/photo-output.jpg" alt=""><figcaption><p>Secret token and Service URL</p></figcaption></figure>
 
 After successful completion of all stages, you will see all the data you have filled in on the **Dashboard** page and your dataset uploaded in the Manage Dataset page.
 
