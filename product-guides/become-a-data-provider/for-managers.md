@@ -7,6 +7,7 @@
 **Table of contents:**
 
 * [Registration](for-managers.md#registration)
+* [Dataset Upload Process](for-managers.md#dataset-upload-process)
 
 ### Registration
 
@@ -41,6 +42,8 @@ After successful completion of the first two stages, the system will automatical
 
 <figure><img src="../../.gitbook/assets/Screenshot 2023-11-21 at 11.57.34 AM.png" alt=""><figcaption><p>Data of your company (3)</p></figcaption></figure>
 
+### Dataset Upload Process
+
 Once you’ve completed the information for your company, which includes uploading your company logo, you’ll receive a **secret token** as a first step for uploading your dataset.&#x20;
 
 {% hint style="danger" %}
@@ -51,6 +54,18 @@ You need to send this token to your IT specialists to grant access to work with 
 
 <figure><img src="../../.gitbook/assets/photo-output.HEIC" alt=""><figcaption><p>Secret token and Service URL</p></figcaption></figure>
 
-After successful completion of all stages, you will see all the data you have filled in on the **Dashboard** page.
+After successful completion of all stages, you will see all the data you have filled in on the **Dashboard** page and your dataset uploaded in the Manage Dataset page.
+
+<figure><img src="../../.gitbook/assets/Screenshot 2023-11-21 at 2.46.43 PM (1).jpg" alt=""><figcaption></figcaption></figure>
+
+To enhance your dataset in 'My Datasets,' simply click the 'Edit' button and fill in the details. The more comprehensive your data, the more appealing it becomes to potential buyers.
+
+{% hint style="info" %}
+It's important to set the price of your dataset. The estimated price set by the system is 8.77 USD.
+{% endhint %}
+
+Immediately after you add all the information, voilà, you can find your updated dataset!
+
+<figure><img src="../../.gitbook/assets/Screenshot 2023-11-21 at 3.13.18 PM.png" alt=""><figcaption><p>Your Dataset</p></figcaption></figure>
 
 After your status of company changes from "Awaiting" to "Verified", you will get access to the functionality of the system.
