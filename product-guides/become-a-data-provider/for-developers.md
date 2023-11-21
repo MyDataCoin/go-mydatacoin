@@ -383,75 +383,39 @@ These two methods serve to update and add users, add user `api/v1/insert` serves
 
 {% swagger method="post" path="/api/v1/insert" baseUrl="https://your-ip-address:your-port" summary="Inserts new user profile " expanded="false" %}
 {% swagger-description %}
-All the body parameters described in 
-
-[User Model](for-developers.md#user-model-sample)
-
-
+All the body parameters described in [User Model](for-developers.md#user-model-sample)
 {% endswagger-description %}
 
 {% swagger-parameter in="body" required="true" name="profile" type="profile" %}
-
-
-[This object and it`s fields are described above](for-developers.md#profile)
-
-
+[This object and it\`s fields are described above](for-developers.md#profile)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="basicData" type="basicData" %}
-
-
-[This object and it`s fields are described above ](for-developers.md#basicdata)
-
-
+[This object and it\`s fields are described above ](for-developers.md#basicdata)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="сontacts" type="contacts" %}
-
-
-[This object and it`s fields are described above](for-developers.md#contacts)
-
-
+[This object and it\`s fields are described above](for-developers.md#contacts)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="workAndEducation" type="workdAndEducation" %}
-
-
-[This object and it`s fields are described above](for-developers.md#workandeducation)
-
-
+[This object and it\`s fields are described above](for-developers.md#workandeducation)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="placeOfResidence" type="placeOfResidence" %}
-
-
-[This object and it`s fields are described above](for-developers.md#placeofresidence)
-
-
+[This object and it\`s fields are described above](for-developers.md#placeofresidence)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="personalInterests" type="personalInterests" %}
-
-
-[This object and it`s fields are described above](for-developers.md#personalinterests)
-
-
+[This object and it\`s fields are described above](for-developers.md#personalinterests)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="deviceInformation" type="deviceInformation" %}
-
-
-[This object and it`s fields are described above](for-developers.md#deviceinformation)
-
-
+[This object and it\`s fields are described above](for-developers.md#deviceinformation)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="cookies" type="cookies" %}
-
-
-[This object and it`s fields are described above](for-developers.md#cookies)
-
-
+[This object and it\`s fields are described above](for-developers.md#cookies)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authorization" required="true" %}
@@ -1122,67 +1086,35 @@ This token is needed for authorization, which is located in docker-compose.yml
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="profile" type="Profile" %}
-
-
-[this object and it`s fields in the structure are described above](for-developers.md#profile)
-
-
+[this object and it\`s fields in the structure are described above](for-developers.md#profile)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="basicData" type="BasicData" %}
-
-
-[this object and it`s fields in the structure are described above](for-developers.md#basicdata)
-
-
+[this object and it\`s fields in the structure are described above](for-developers.md#basicdata)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="contacts" type="Contacts" %}
-
-
-[this object and it`s fields in the structure are described above](for-developers.md#contacts)
-
-
+[this object and it\`s fields in the structure are described above](for-developers.md#contacts)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="workAndEducation" type="workAndEducation" %}
-
-
-[this object and it`s fields in the structure are described above](for-developers.md#workandeducation)
-
-
+[this object and it\`s fields in the structure are described above](for-developers.md#workandeducation)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="placeOfresidence" type="placeOfResidence" %}
-
-
-[this object and it`s fields in the structure are described above](for-developers.md#placeofresidence)
-
-
+[this object and it\`s fields in the structure are described above](for-developers.md#placeofresidence)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="personalInterests" type="personalInterests" %}
-
-
-[this object and it`s fields in the structure are described above](for-developers.md#personalinterests)
-
-
+[this object and it\`s fields in the structure are described above](for-developers.md#personalinterests)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="deviceInformation" type="deviceInformation" %}
-
-
-[this object and it`s fields in the structure are described above](for-developers.md#deviceinformation)
-
-
+[this object and it\`s fields in the structure are described above](for-developers.md#deviceinformation)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="cookies" type="Cookies" %}
-
-
-[this object and it`s fields in the structure are described above](for-developers.md#cookies)
-
-
+[this object and it\`s fields in the structure are described above](for-developers.md#cookies)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="recordId" required="true" %}
