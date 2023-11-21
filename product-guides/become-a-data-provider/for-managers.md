@@ -24,7 +24,9 @@ Furthermore, you'll be prompted to input your First Name, Last Name, and email a
 
 > Upon successful email verification, the subsequent steps diverge based on the role you select.
 
-After opting for the role of a _Data Consumer_ and completing the email verification process, Data Consumers should fill in the company information on the settings page. Upon successful completion, you can navigate to the Home page and explore all uploaded datasets.&#x20;
+After opting for the role of a _Data Consumer_ and completing the email verification process, Data Consumers should fill in the company information on the settings page.&#x20;
+
+After your status of company changes from "Awaiting" to "Verified", you can navigate to the Home page and explore all uploaded datasets.&#x20;
 
 Save your favorites and make purchases hassle-free!
 
