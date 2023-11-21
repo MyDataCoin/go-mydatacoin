@@ -60,13 +60,13 @@ After successful completion of all stages, you will see all the data you have fi
 
 <figure><img src="../../.gitbook/assets/Screenshot 2023-11-21 at 2.46.43 PM (1).jpg" alt=""><figcaption></figcaption></figure>
 
-To enhance your dataset in 'My Datasets,' simply click the 'Edit' button and fill in the details. The more comprehensive your data, the more appealing it becomes to potential buyers.
+To enhance your dataset in the page My Datasets, simply click the 'Edit' button and fill in the details. The more comprehensive your data, the more appealing it becomes to potential buyers.
 
 {% hint style="info" %}
 It's important to set the price of your dataset. The estimated price set by the system is 8.77 USD.
 {% endhint %}
 
-Immediately after you add all the information, voilà, you can find your updated dataset!
+Once you've added all the information, your updated dataset will be readily available.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2023-11-21 at 3.13.18 PM.png" alt=""><figcaption><p>Your Dataset</p></figcaption></figure>
 
