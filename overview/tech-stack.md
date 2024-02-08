@@ -34,7 +34,7 @@ The MyDataCoin Bridge implementation will serve as the link between the main net
 
 The goal of this protocol is to provide a decentralized and transparent data sharing mechanism that empowers individuals to control their personal data and securely share it with trusted parties. By leveraging the MyDataCoin network and associated technologies, this protocol aims to improve data privacy and security while enabling more efficient and effective data sharing.
 
-<figure><img src="../.gitbook/assets/MainSchema2.drawio (3).png" alt=""><figcaption><p>MDC Main Scheme</p></figcaption></figure>
+<figure><img src="https://lh7-us.googleusercontent.com/_XtFRRZKe2Tm9sXNFklDnvnleWNafTPR3qulN1evT_lRo9NaQqH_cq10PmFatrqoG9ocqCvLfBS02UoWe6OaVNLkD1W1rXwsoNVIMXMnlBFvaeBO4yxpFn0UmOdUVgYnz6NyTxzwuirzWoHt484N83o" alt=""><figcaption><p>Basic Schema</p></figcaption></figure>
 
 ### Self-Sovereign Identity
 
@@ -48,10 +48,9 @@ Verifiable Credentials (VCs) are digital credentials that contain information ab
 
 Together, these three technologies provide the foundation for a new paradigm of digital identity that is secure, decentralized, and empowers individuals to control their own identity data.
 
-\
+<figure><img src="https://lh7-us.googleusercontent.com/ubyQINQUlhtDQEkSQ99UL3rEdhXE3y-40EUK8xbevb_fgkGy3C89SruQW62p2dtor1dKITbc3kYdCts3GYWpfKXewas39D_N8cg8Jw5onmjgn7YdapL68wX0BWDW0dose7LCrH1fMyS05tw73H5G_5M" alt=""><figcaption><p>SSI</p></figcaption></figure>
 
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 **Why SSI?**
 
