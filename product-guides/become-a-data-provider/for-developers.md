@@ -4,7 +4,7 @@ description: >-
   to MyDataCoin Bridge and receiving requests.
 ---
 
-# 👨💻 For Developers
+# 👨‍💻 For Developers
 
 {% hint style="warning" %}
 [#profile](for-developers.md#profile "mention")**Disclaimer:** The development team is working diligently, and the documentation will be updated with each new release.
@@ -381,65 +381,50 @@ Marital status is a characteristic that reflects a person's marital status. Depe
 
 These two methods serve to update and add users, add user `api/v1/insert` serves so that you do not have to form json every time and fill it with the `/upload` method, instead you can simply write a function that will be executed when you add a new user to the database, that is, you simply add to yours and simultaneously make a request to our database data, in the future this will free you from the constant updating of data.
 
-{% swagger method="post" path="/api/v1/insert" baseUrl="https://your-ip-address:your-port" summary="Inserts new user profile " expanded="false" %}
-{% swagger-description %}
+## Inserts new user profile&#x20;
+
+<mark style="color:green;">`POST`</mark> `https://your-ip-address:your-port/api/v1/insert`
+
 All the body parameters described in [User Model](for-developers.md#user-model-sample)
-{% endswagger-description %}
 
-{% swagger-parameter in="body" required="true" name="profile" type="profile" %}
-[This object and it\`s fields are described above](for-developers.md#profile)
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-parameter in="body" name="basicData" type="basicData" %}
-[This object and it\`s fields are described above ](for-developers.md#basicdata)
-{% endswagger-parameter %}
+| Name                                            | Type   | Description                                                                   |
+| ----------------------------------------------- | ------ | ----------------------------------------------------------------------------- |
+| Authorization<mark style="color:red;">\*</mark> | String | there should be an authorization token that was entered in docker-compose.yml |
 
-{% swagger-parameter in="body" name="сontacts" type="contacts" %}
-[This object and it\`s fields are described above](for-developers.md#contacts)
-{% endswagger-parameter %}
+#### Request Body
 
-{% swagger-parameter in="body" name="workAndEducation" type="workdAndEducation" %}
-[This object and it\`s fields are described above](for-developers.md#workandeducation)
-{% endswagger-parameter %}
+| Name                                      | Type              | Description                                                                             |
+| ----------------------------------------- | ----------------- | --------------------------------------------------------------------------------------- |
+| profile<mark style="color:red;">\*</mark> | profile           | [This object and it\`s fields are described above](for-developers.md#profile)           |
+| basicData                                 | basicData         | [This object and it\`s fields are described above ](for-developers.md#basicdata)        |
+| сontacts                                  | contacts          | [This object and it\`s fields are described above](for-developers.md#contacts)          |
+| workAndEducation                          | workdAndEducation | [This object and it\`s fields are described above](for-developers.md#workandeducation)  |
+| deviceInformation                         | deviceInformation | [This object and it\`s fields are described above](for-developers.md#deviceinformation) |
+| personalInterests                         | personalInterests | [This object and it\`s fields are described above](for-developers.md#personalinterests) |
+| placeOfResidence                          | placeOfResidence  | [This object and it\`s fields are described above](for-developers.md#placeofresidence)  |
+| cookies                                   | cookies           | [This object and it\`s fields are described above](for-developers.md#cookies)           |
 
-{% swagger-parameter in="body" name="placeOfResidence" type="placeOfResidence" %}
-[This object and it\`s fields are described above](for-developers.md#placeofresidence)
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="personalInterests" type="personalInterests" %}
-[This object and it\`s fields are described above](for-developers.md#personalinterests)
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="deviceInformation" type="deviceInformation" %}
-[This object and it\`s fields are described above](for-developers.md#deviceinformation)
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="cookies" type="cookies" %}
-[This object and it\`s fields are described above](for-developers.md#cookies)
-{% endswagger-parameter %}
-
-{% swagger-parameter in="header" name="Authorization" required="true" %}
-there should be an authorization token that was entered in docker-compose.yml
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="Simple string response" %}
+{% tabs %}
+{% tab title="200: OK Simple string response" %}
 ```
 {
     "success": "profile add successfully"
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="this error is only thrown when the user already exists" %}
+{% tab title="400: Bad Request this error is only thrown when the user already exists" %}
 <pre><code># error occurs only when recordId already exists in the database
 
 {
 <strong>    "error": "this user in already have in database"
 </strong>}
 </code></pre>
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="401: Unauthorized" description="if you have the wrong authorization token which is in your docker-compose.yml" %}
+{% tab title="401: Unauthorized if you have the wrong authorization token which is in your docker-compose.yml" %}
 ```
 # Check if the provided token in the 'Authorization' header does not match the expected 'auth_token'.
 # If it doesn't match, return an error response indicating "Invalid token".
@@ -450,9 +435,9 @@ there should be an authorization token that was entered in docker-compose.yml
      'details': "The token provided in the 'Authorization' header is invalid"
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="415: Unsupported Media Type" description="if you don't have application/json in your headers" %}
+{% tab title="415: Unsupported Media Type if you don't have application/json in your headers" %}
 ```
 # Check if the 'Content-Type' header of the request is not set to 'application/json'.
 # If it's not set correctly, return an error response indicating "Unsupported Media Type".
@@ -463,12 +448,12 @@ there should be an authorization token that was entered in docker-compose.yml
     'details': "The 'Content-Type' header must be set to 'application/json'"
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="500: Internal Server Error" description="if an error occurred while loading data into the postgres database" %}
+{% tab title="500: Internal Server Error if an error occurred while loading data into the postgres database" %}
 `"An error occurred while processing the data: {}"  and error in brackets`
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 {% tabs %}
 {% tab title="cURL" %}
@@ -1076,61 +1061,66 @@ namespace InsertDataExample
 
 The update method serves to synchronize your database with ours, so that the data is always up to date, you just need to write a function that, when updating your user's data, it simultaneously updates the user in our database to keep personal data up to date
 
-{% swagger method="put" path="/api/v1/update?recordId=55" baseUrl="https://your-ip-address:your-port" summary="updating an existing user" expanded="false" %}
-{% swagger-description %}
+## updating an existing user
+
+<mark style="color:orange;">`PUT`</mark> `https://your-ip-address:your-port/api/v1/update?recordId=55`
+
 This method is used to update the data of an existing user, please note that identification occurs by recordId which is located separately outside the data to update
-{% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" required="true" %}
-This token is needed for authorization, which is located in docker-compose.yml
-{% endswagger-parameter %}
+#### Query Parameters
 
-{% swagger-parameter in="body" name="profile" type="Profile" %}
-[this object and it\`s fields in the structure are described above](for-developers.md#profile)
-{% endswagger-parameter %}
+| Name                                       | Type   | Description                                                              |
+| ------------------------------------------ | ------ | ------------------------------------------------------------------------ |
+| recordId<mark style="color:red;">\*</mark> | String | This string is an identifier by which you will find and update user data |
 
-{% swagger-parameter in="body" name="basicData" type="BasicData" %}
-[this object and it\`s fields in the structure are described above](for-developers.md#basicdata)
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-parameter in="body" name="contacts" type="Contacts" %}
-[this object and it\`s fields in the structure are described above](for-developers.md#contacts)
-{% endswagger-parameter %}
+| Name                                            | Type   | Description                                                                    |
+| ----------------------------------------------- | ------ | ------------------------------------------------------------------------------ |
+| Authorization<mark style="color:red;">\*</mark> | String | This token is needed for authorization, which is located in docker-compose.yml |
 
-{% swagger-parameter in="body" name="workAndEducation" type="workAndEducation" %}
-[this object and it\`s fields in the structure are described above](for-developers.md#workandeducation)
-{% endswagger-parameter %}
+#### Request Body
 
-{% swagger-parameter in="body" name="placeOfresidence" type="placeOfResidence" %}
-[this object and it\`s fields in the structure are described above](for-developers.md#placeofresidence)
-{% endswagger-parameter %}
+| Name              | Type              | Description                                                                                              |
+| ----------------- | ----------------- | -------------------------------------------------------------------------------------------------------- |
+| deviceInformation | deviceInformation | [this object and it\`s fields in the structure are described above](for-developers.md#deviceinformation) |
+| personalInterests | personalInterests | [this object and it\`s fields in the structure are described above](for-developers.md#personalinterests) |
+| placeOfresidence  | placeOfResidence  | [this object and it\`s fields in the structure are described above](for-developers.md#placeofresidence)  |
+| workAndEducation  | workAndEducation  | [this object and it\`s fields in the structure are described above](for-developers.md#workandeducation)  |
+| contacts          | Contacts          | [this object and it\`s fields in the structure are described above](for-developers.md#contacts)          |
+| basicData         | BasicData         | [this object and it\`s fields in the structure are described above](for-developers.md#basicdata)         |
+| profile           | Profile           | [this object and it\`s fields in the structure are described above](for-developers.md#profile)           |
+| cookies           | Cookies           | [this object and it\`s fields in the structure are described above](for-developers.md#cookies)           |
 
-{% swagger-parameter in="body" name="personalInterests" type="personalInterests" %}
-[this object and it\`s fields in the structure are described above](for-developers.md#personalinterests)
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="deviceInformation" type="deviceInformation" %}
-[this object and it\`s fields in the structure are described above](for-developers.md#deviceinformation)
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="cookies" type="Cookies" %}
-[this object and it\`s fields in the structure are described above](for-developers.md#cookies)
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="recordId" required="true" %}
-This string is an identifier by which you will find and update user data
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="succesfull response" %}
+{% tabs %}
+{% tab title="200: OK succesfull response" %}
 ```
 # with id profile in brecets
 {
     "message":"profile {} successfully updated!"
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="Bad request if Record Id invalid" %}
+{% tab title="404: Not Found Not found " %}
+```
+#with record Id in brecets
+{
+"error": "Profile with recordId: {} not found." 
+}
+```
+{% endtab %}
+
+{% tab title="500: Internal Server Error Server Error" %}
+```
+#with details in brecets
+{
+    "error": "Error updating data.", "details": {}
+}
+```
+{% endtab %}
+
+{% tab title="400: Bad Request Bad request if Record Id invalid" %}
 ```
 # Check if the 'recordId' parameter is missing.
 # If it is, return an error response indicating that the record ID must not be null.
@@ -1141,31 +1131,9 @@ This string is an identifier by which you will find and update user data
     'details': "Please provide a valid 'recordId' parameter."
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="401: Unauthorized" description="this happens if you do not have an authorization token in your headers, "Authorization", which is in your docker-compose.yml" %}
-```
-# Check if the provided token in the 'Authorization' header does not match the expected 'auth_token'.
-# If it doesn't match, return an error response indicating "Invalid token".
-# The status code is set to 401 (Unauthorized).
-
-{
-  'error': 'Invalid token',
-  'details': "The token provided in the 'Authorization' header is invalid. Please provide a valid token."
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="404: Not Found" description="Not found " %}
-```
-#with record Id in brecets
-{
-"error": "Profile with recordId: {} not found." 
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="415: Unsupported Media Type" description="This error occurs when application/json is not specified in headers" %}
+{% tab title="415: Unsupported Media Type This error occurs when application/json is not specified in headers" %}
 ```
 # Check if the 'Content-Type' header of the request is not set to 'application/json'.
 # If it's not set correctly, return an error response indicating "Unsupported Media Type".
@@ -1176,17 +1144,21 @@ This string is an identifier by which you will find and update user data
     'details': "The 'Content-Type' header must be set to 'application/json'."
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="500: Internal Server Error" description="Server Error" %}
+{% tab title="401: Unauthorized this happens if you do not have an authorization token in your headers, "Authorization", which is in your docker-compose.yml" %}
 ```
-#with details in brecets
+# Check if the provided token in the 'Authorization' header does not match the expected 'auth_token'.
+# If it doesn't match, return an error response indicating "Invalid token".
+# The status code is set to 401 (Unauthorized).
+
 {
-    "error": "Error updating data.", "details": {}
+  'error': 'Invalid token',
+  'details': "The token provided in the 'Authorization' header is invalid. Please provide a valid token."
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 {% tabs %}
 {% tab title="cURL" %}

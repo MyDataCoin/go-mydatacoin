@@ -2,8 +2,16 @@
 description: Here you can find additional files to download
 ---
 
-# ⬇ Downloads
+# ⬇️ Downloads
 
-{% file src="../.gitbook/assets/8e6c5154-3864-427b-96aa-3474766ae0ce.pdf" %}
+{% file src="../.gitbook/assets/Brandbook.pdf" %}
 Brandbook
+{% endfile %}
+
+{% file src="../.gitbook/assets/deck_en.pdf" %}
+Pitch Deck (English)
+{% endfile %}
+
+{% file src="../.gitbook/assets/deck_ru.pdf" %}
+Pitch Deck (Russian)
 {% endfile %}
