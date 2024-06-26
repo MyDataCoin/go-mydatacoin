@@ -17,6 +17,7 @@
   * [👨‍💼 For Managers](product-guides/become-a-data-provider/for-managers.md)
   * [👨‍💻 For Developers](product-guides/become-a-data-provider/for-developers.md)
 * [⚙️ Become a Validator](product-guides/become-a-validator.md)
+* [📲 Widget](product-guides/widget.md)
 
 ## HELPFUL MATERIALS
 

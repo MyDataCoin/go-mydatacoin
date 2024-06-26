@@ -4,7 +4,7 @@ description: Watch paid Ads and earn DataCrystals
 
 # 📺 By watching paid Ads
 
-{% hint style="warning" %}
+{% hint style="info" %}
 **Disclaimer:** The development team is working diligently, and the documentation will be updated with each new release.
 {% endhint %}
 
