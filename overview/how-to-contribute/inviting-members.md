@@ -1,8 +1,9 @@
 ---
 description: Earn DataCrystals by inviting new members
+icon: users
 ---
 
-# 🧑 By inviting new members
+# By inviting new members
 
 {% hint style="info" %}
 **Disclaimer:** The development team is working diligently, and the documentation will be updated with each new release.

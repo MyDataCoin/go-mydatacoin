@@ -1,4 +1,8 @@
-# 🤖 Tech Stack
+---
+icon: robot
+---
+
+# Tech Stack
 
 {% hint style="info" %}
 **Disclaimer:** The development team is working diligently, and the documentation will be updated with each new release.

@@ -2,9 +2,10 @@
 description: >-
   In this guide, we provide detailed instructions for connecting a Data Holder
   to MyDataCoin Bridge and receiving requests.
+icon: square-code
 ---
 
-# 👨‍💻 For Developers
+# For Developers
 
 {% hint style="warning" %}
 [#profile](for-developers.md#profile "mention")**Disclaimer:** The development team is working diligently, and the documentation will be updated with each new release.
@@ -32,7 +33,7 @@ description: >-
     64-bit kernel and CPU support for virtualization.
 * **Software:**\
   Linux 18.04 LTS or Higher, Windows 10 or Higher\
-  Docker for [Linux](https://docs.docker.com/desktop/install/linux-install/) or [Windows](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm\_source=docker\&utm\_medium=webreferral\&utm\_campaign=dd-smartbutton\&utm\_location=module&\_gl=1\*1h1edy2\*\_ga\*MTY3NDYyODgzOC4xNjg1OTUxODU2\*\_ga\_XJWPQMJYHQ\*MTY4NzI1MzU5Ny4zLjEuMTY4NzI1MzcxMC42MC4wLjA.)
+  Docker for [Linux](https://docs.docker.com/desktop/install/linux-install/) or [Windows](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker\&utm_medium=webreferral\&utm_campaign=dd-smartbutton\&utm_location=module&_gl=1*1h1edy2*_ga*MTY3NDYyODgzOC4xNjg1OTUxODU2*_ga_XJWPQMJYHQ*MTY4NzI1MzU5Ny4zLjEuMTY4NzI1MzcxMC42MC4wLjA.)
 
 ### Overview
 

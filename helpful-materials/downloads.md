@@ -1,8 +1,9 @@
 ---
 description: Here you can find additional files to download
+icon: folder-arrow-down
 ---
 
-# ⬇️ Downloads
+# Downloads
 
 {% file src="../.gitbook/assets/Brandbook.pdf" %}
 Brandbook

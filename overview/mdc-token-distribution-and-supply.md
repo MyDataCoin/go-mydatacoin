@@ -1,4 +1,8 @@
-# 🪙 MDC Token Distribution and Supply
+---
+icon: coin-vertical
+---
+
+# MDC Token Distribution and Supply
 
 MDC is the native currency of the MyDataCoin blockchain, and it is necessary to participate in block production and receive rewards for users who share their data. MDC is an inflationary currency with no maximum supply cap.
 

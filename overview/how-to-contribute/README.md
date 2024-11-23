@@ -1,8 +1,9 @@
 ---
 description: Help us grow.
+icon: hand-holding-medical
 ---
 
-# 💁 How to contribute
+# How to contribute
 
 {% hint style="info" %}
 **Disclaimer:** The development team is working diligently, and the documentation will be updated with each new release.

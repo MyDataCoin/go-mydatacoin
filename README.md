@@ -1,8 +1,9 @@
 ---
 description: Join the personal data revolution with MyDataCoin!
+icon: hand-wave
 ---
 
-# 👋 Welcome to MyDataCoin
+# Welcome to MyDataCoin
 
 {% hint style="info" %}
 **Disclaimer:** The development team is working diligently, and the documentation will be updated with each new release.

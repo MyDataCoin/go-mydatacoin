@@ -1,4 +1,8 @@
-# 👨‍💼 For Managers
+---
+icon: user-gear
+---
+
+# For Managers
 
 {% hint style="info" %}
 **Disclaimer:** The development team is working diligently, and the documentation will be updated with each new release.
