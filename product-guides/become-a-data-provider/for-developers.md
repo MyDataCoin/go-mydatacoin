@@ -1,14 +1,14 @@
 ---
+icon: square-code
 description: >-
   In this guide, we provide detailed instructions for connecting a Data Holder
   to MyDataCoin Bridge and receiving requests.
-icon: square-code
 ---
 
 # For Developers
 
 {% hint style="warning" %}
-[#profile](for-developers.md#profile "mention")**Disclaimer:** The development team is working diligently, and the documentation will be updated with each new release.
+**Disclaimer:** The development team is working diligently, and the documentation will be updated with each new release.
 {% endhint %}
 
 **Table of contents:**
@@ -1082,16 +1082,7 @@ This method is used to update the data of an existing user, please note that ide
 
 #### Request Body
 
-| Name              | Type              | Description                                                                                              |
-| ----------------- | ----------------- | -------------------------------------------------------------------------------------------------------- |
-| deviceInformation | deviceInformation | [this object and it\`s fields in the structure are described above](for-developers.md#deviceinformation) |
-| personalInterests | personalInterests | [this object and it\`s fields in the structure are described above](for-developers.md#personalinterests) |
-| placeOfresidence  | placeOfResidence  | [this object and it\`s fields in the structure are described above](for-developers.md#placeofresidence)  |
-| workAndEducation  | workAndEducation  | [this object and it\`s fields in the structure are described above](for-developers.md#workandeducation)  |
-| contacts          | Contacts          | [this object and it\`s fields in the structure are described above](for-developers.md#contacts)          |
-| basicData         | BasicData         | [this object and it\`s fields in the structure are described above](for-developers.md#basicdata)         |
-| profile           | Profile           | [this object and it\`s fields in the structure are described above](for-developers.md#profile)           |
-| cookies           | Cookies           | [this object and it\`s fields in the structure are described above](for-developers.md#cookies)           |
+<table><thead><tr><th>Name</th><th width="231">Type</th><th>Description</th></tr></thead><tbody><tr><td>deviceInformation</td><td>deviceInformation</td><td><a href="for-developers.md#deviceinformation">this object and it`s fields in the structure are described above</a></td></tr><tr><td>personalInterests</td><td>personalInterests</td><td><a href="for-developers.md#personalinterests">this object and it`s fields in the structure are described above</a></td></tr><tr><td>placeOfresidence</td><td>placeOfResidence</td><td><a href="for-developers.md#placeofresidence">this object and it`s fields in the structure are described above</a></td></tr><tr><td>workAndEducation</td><td>workAndEducation</td><td><a href="for-developers.md#workandeducation">this object and it`s fields in the structure are described above</a></td></tr><tr><td>contacts</td><td>Contacts</td><td><a href="for-developers.md#contacts">this object and it`s fields in the structure are described above</a></td></tr><tr><td>basicData</td><td>BasicData</td><td><a href="for-developers.md#basicdata">this object and it`s fields in the structure are described above</a></td></tr><tr><td>profile</td><td>Profile</td><td><a href="for-developers.md#profile">this object and it`s fields in the structure are described above</a></td></tr><tr><td>cookies</td><td>Cookies</td><td><a href="for-developers.md#cookies">this object and it`s fields in the structure are described above</a></td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="200: OK succesfull response" %}

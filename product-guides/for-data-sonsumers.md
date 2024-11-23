@@ -1,9 +1,9 @@
 ---
+icon: landmark
 description: >-
   In this section, you will find information on how to integrate with the
   service for providing legal consent for the transfer and processing of
   personal data.
-icon: landmark
 ---
 
 # For Data Сonsumers
@@ -16,7 +16,7 @@ icon: landmark
 This functionality is available only on the territory of the Kyrgyz Republic.
 {% endhint %}
 
-Beforre you start you need to get an Authorization Token(Bearer). Please talk to our team to obtain the token.
+Before you start you need to get an Authorization Token(Bearer). Please talk to our team to obtain the token.
 
 If you need to get a consent from user, you need to create an application first. To do that you need to make a POST request.
 
